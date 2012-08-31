@@ -1,0 +1,22 @@
+<% form_for "master_song[]", :url => master_song_pricing_path do |f| %>
+<ul>
+  <li class="layout">
+    <div class="header"><h2><%= @title %></h2></div>
+    <table>
+      <thead>
+          ...
+      </thead>
+      <tbody>
+        <% @master_songs.each do |master_song| %>
+          <% puts "Master Song #{master_song}" %>
+            <tr>
+              <td><%= m_song_file_name %></td>
+              <td><%= f.text_field :price %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </li>
+</ul>
+<%= submit_tag "Save"%>
+<% end %>

@@ -1,0 +1,83 @@
+<% if notice %>
+<%= notice %>
+<% end %>
+
+<div class="span10" id="fan_base_show">
+    <h4>Join this fan base to receive notifications about <%= @fan_base.name %>'s new music and news. Eliminate the hassle of staying up to date on artists you're a fan of. Let us do the work for you.
+    </h4>
+    <h1><%= @fan_base.name %>'s Fan Base</h1>
+
+    <div id="fan-base-image"><%= image_tag(@fan_base.fb_art.url(:medium)) %>
+      <% if user_signed_in? %>
+    <%= render 'follow_form' %>
+      <% else %>
+      <div class="btn btn-primary disabled" style="float:left; margin-top:15px;">Login to join this fan base</div>
+    <% end %></div>
+    <h2 id="fan-base-stats">Total Songs: <%= @fan_base.number_of_songs %><br />
+      <% if user_signed_in? %>
+    <%= link_to "Total Fans: #{@fan_base.total_fans}", fan_base_followers_fan_base_path(@fan_base), remote: :true, :id => "page-link" %><br />
+      <% else %>
+      Total Fans: <% @fan_base.total_fans %><br />
+      <% end %>
+    Total Upvotes: <%= @fan_base.total_upvotes %><br />
+    <%= tweet_button(:url => "http://www.musicmind.co#{url_for(@fan_base)}", :text => " Join #{@fan_base.name}'s fan base and stay up to date on new releases.", :via => "mmalpha", :count => "none") %></h2>
+    
+
+    <div id="artist-label">
+      <% if @label.present? %>
+        <%= image_tag (@label.label_image.url(:thumb)) %>
+      <% end %> 
+    </div>
+
+    <section id="albums">
+      <% if @albums.present? %>
+      <%= render 'albums' %>
+      <% end %>
+    </section>
+    
+    <section id="fan-base-music">
+      <%= render 'fan_base_music' %>
+    </section>
+    
+    
+    <% unless @fan_base.events.empty? %>
+  	<%= @fan_base.event.first %>
+  	<%= link_to 'See all', events_path(@fan_base) %>
+    <% else %>
+    <% end %>
+  <section id="fan-base-owner-links">
+    <% if current_user == @fan_base.user %>
+     <%# <%= link_to 'Create An Event', new_event_path(@fan_base) %>
+    <% end %>
+
+    <% if current_user == @fan_base.user %>
+      <%= link_to 'Edit', edit_fan_base_path(@fan_base), remote: :true, :id => "page-link" %> |
+      <%= link_to 'Upload Songs', new_master_song_path, remote: :true, :id => "page-link" %> |
+      <%= link_to 'Add Label', new_fan_base_label_path(@fan_base), remote: :true, :id => "page-link" %> 
+      <%#= <%= link_to 'Create An Album', new_album_path, remote: :true, :id => "page-link" %> 
+    <% else %>
+    <% end %>
+  </section>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#jquery_jplayer_1").jPlayer({
+        swfPath: "/app/assets/jplayerflash",
+        supplied: "mp3",
+        wmode: "window"
+    });
+    $("a.play").click(function(e) {
+        e.preventDefault();
+        $("#jquery_jplayer_1")
+            .jPlayer("setMedia", {mp3: this.href })
+            .jPlayer("play");
+      var songid = $(e.target).attr('data-id');
+      var songtype = $(e.target).attr('data-type');
+      $.ajax({
+      url: '/create_listen.json',
+      data: { songid: songid, songtype: songtype },
+      async: false
+      });
+    });
+});
+  </script>

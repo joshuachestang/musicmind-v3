@@ -1,0 +1,10 @@
+<div id="comment">
+<%= div_for @comment do %>
+
+<%= @comment.comment %><br />
+Posted <%= time_ago_in_words(@comment.created_at) %> ago.
+by: <%= link_to "#{@comment.user.username}", user_path(@comment.user), remote: :true, :id => "page-link" %>
+
+<% end %>
+</div>
+

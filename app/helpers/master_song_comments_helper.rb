@@ -1,0 +1,2 @@
+module MasterSongCommentsHelper
+end

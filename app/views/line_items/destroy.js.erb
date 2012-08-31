@@ -1,0 +1,10 @@
+$('#cart-line-item-<%= @line_item.id %>').remove();
+$('td#total-price').html('<%= escape_javascript(number_to_currency(@cart.total_price)) %>');
+
+$('#cart tr#item-<%= @line_item.id %>').remove();
+$('div#quick-cart-total').html('<%= escape_javascript(number_to_currency(@cart.total_price)) %>');
+
+<% if @cart.line_items.size == 0 %>
+$('#cart').remove();
+$('p#notice').html('<%= escape_javascript('Your cart is empty.') %>');
+<% end %>

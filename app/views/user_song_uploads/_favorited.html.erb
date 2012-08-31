@@ -1,0 +1,60 @@
+<section id="lib">
+<table id="music-lib" class="table table-striped table-bordered table-condensed">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Time</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @uploaded_favorites.each do |favorite| %>
+              <td><%= link_to "#{favorite.title}", favorite.song.url, class: :play, remote: :true ,
+                      'data-id' => favorite.id ,
+                      'data-type' => 'UserSongUpload'
+                      %></td>
+              <td><%= favorite.artist %></td>
+              <td><%= convert_seconds_to_time(favorite.length + 2) %></td>
+              <td><a class="btn btn-primary" href="<%= download_path(favorite) %>">Download</a></td>
+          </tr>
+        </tbody>
+        <% end %>
+        <tbody>
+          <tr>
+            <% @master_favorites.each do |favorite| %>
+            <% if favorite.owned.released? %>
+            <td><%= link_to "#{favorite.owned.title}", favorite.owned.m_song.url, class: :play, remote: :true,
+                   'data-id' => favorite.owned.id ,
+                   'data-type' => 'MasterSong'
+                                              %></td>
+            <td><%= favorite.owned.artist %></td>
+            <td>.................</td>
+        </tbody>
+        <% end %>
+        <% end %>
+    </table><br />
+  </section>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#jquery_jplayer_1").jPlayer({
+        swfPath: "/app/assets/jplayerflash",
+        supplied: "mp3",
+        wmode: "window"
+    });
+    $("a.play").click(function(e) {
+        e.preventDefault();
+        $("#jquery_jplayer_1")
+            .jPlayer("setMedia", {mp3: this.href })
+            .jPlayer("play");
+      var songid = $(e.target).attr('data-id');
+      var songtype = $(e.target).attr('data-type');
+      $.ajax({
+      url: '/create_listen.json',
+      data: { songid: songid, songtype: songtype },
+      async: false
+      });
+    });
+});
+  </script>

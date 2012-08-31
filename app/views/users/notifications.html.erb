@@ -1,0 +1,44 @@
+
+  <div class="span9" style="margin-left:50px;">
+<h1 id="notification-feed-title"><%= @title %></h1>
+  	<% if @new_notifications.present? %>
+	  	<%= link_to 'Clear New Notifications', mark_read_user_path(current_user), remote: :true %><br />
+  	<% end %>
+
+<table class="table table-striped">
+	<tbody>
+	
+	<% @all_notifications.each do |notification| %>
+	  <% if current_user.fan_base_following?(notification.user.fan_base) %>
+			<% if notification.unread?(current_user) %>
+				<tr>
+				  
+				  <td>
+				  	<%= link_to image_tag(notification.user.fan_base.fb_art.url(:thumb_small)), fan_base_path(notification.user.fan_base), remote: :true, :id => "page-link" %>
+				  	<%= link_to "#{notification.user.fan_base.name}", fan_base_path(notification.user.fan_base), remote: :true, :id => "page-link" %> added <%= link_to "#{notification.title}", master_song_path(notification), remote: :true, :id => "page-link" %> to their fan base. <br />
+				  	<%= time_ago_in_words(notification.created_at) %> ago.
+				  </td>
+				</tr>  
+				  
+				<% else %>
+				<tr>
+				<td>
+				    <%= link_to image_tag(notification.user.fan_base.fb_art.url(:thumb_small)), fan_base_path(notification.user.fan_base), remote: :true, :id => "page-link" %>
+				  	<%= link_to "#{notification.user.fan_base.name}", fan_base_path(notification.user.fan_base), remote: :true, :id => "page-link" %> added <%= link_to "#{notification.title}", master_song_path(notification), remote: :true, :id => "page-link" %> to their fan base. <br />
+				  	<%= time_ago_in_words(notification.created_at) %>ago.
+			    </td>
+			
+		        </tr>
+		    <% end %>
+	  <% end %>
+	<% end %>
+   
+  </tbody>
+ </table>
+
+  </div>
+</div>
+
+
+	
+

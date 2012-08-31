@@ -1,0 +1,18 @@
+Hi <%= @account.name %>,
+  <%= link_to '#{@new_notification.user.fan_base.name}', fan_base_url(@new_notification.user.fan_base) %> added a new song to their fan base.
+
+  <%= link_to '#{@new_notification.title}', master_song_url(@new_notification) %> by: <% @new_notification.artist %>
+
+  Check it out!
+
+  You can get 50mb of free storage when you invite your friends to join MusicMind
+
+  You can get 75mb of free storage when you share this song with your friends on FB, Twitter
+
+  Share here!
+
+  Add it to your library
+
+  "MusicMind creates an easy way for artists to reach their music to fans and for fans to enjoy music."
+
+

@@ -1,0 +1,69 @@
+<div class="master_song">
+   <div>
+    <div id="song-title"><%= link_to truncate("#{master_song.title}", :length => 25), master_song_path(master_song), remote: :true, :id => "page-link" %></div>
+   </div>
+   
+   <div id="line-2">
+    <% if master_song.created_at > 1.week.ago %>
+      <span class="label label-important" style="float:left">NEW</span>
+    <% end %>
+      <div id="song-artist" style="float:right">By:<%= link_to "#{master_song.user.fan_base.name}", fan_base_path(master_song.user.fan_base), remote: :true, :id => "page-link" %></div>
+   </div>
+   
+   <div id="line-3">
+      <div id="song-artwork"><%= link_to image_tag(master_song.song_art_work.url(:medium2)), master_song_path(master_song), remote: :true, :id => "page-link" %></div>
+   </div>
+   <div style="float:right;"><%= tweet_button(:url => "http://www.musicmind.co#{url_for(master_song)}", :text => "#{master_song.title} by #{master_song.artist} - Add to your library on MusicMind", :via => "musicmindalpha", :count => "none") %></div>
+   <% if user_signed_in? %>
+     <div id="line-4">
+        <% unless current_user.owning?(master_song) %>
+          <% if master_song.price == 0.00 %>
+            <div id="add-to-library-free-<%= master_song.id %>" style="float:left; margin-top:-8px; margin-right:40px;"><%= form_for current_user.master_song_relationships.build(:owned_id => master_song.id), 
+                                remote: :true do |f| %>
+            <%= f.hidden_field :owned_id %>
+            <%= image_submit_tag('add-button.png') %></div>
+            <% end %>
+          <% else %>
+          <div id="add-to-cart-<%= master_song.id %>">
+         <% if current_cart.line_items.find_by_master_song_id(master_song.id).present? %>
+                <%= render 'fan_bases/added_to_cart' %>
+              <% else %>
+                <%= button_to 'Add to Cart', line_items_path(master_song_id: master_song), remote: :true %>
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= render 'master_songs/owned' %>
+        <% end %>
+       <div id="discover-upvote-form-<%= master_song.id %>">
+        <% unless current_user.up_voted_song?(master_song) %>
+          <div style="float:left;"><%= link_to "Upvote", song_up_votes_path(:master_song_id => master_song.id), method: :post, remote: :true, :class => "btn icon-arrow-up" %></div>
+        <% else %>
+          <%= render 'master_songs/upvoted' %>
+        <% end %>
+      </div>
+     </div>  
+   <% else %>
+     <% if master_song.price == 0.00 %>
+            <button class="btn btn-primary disabled">Free | Must Login</button>
+          <% else %>
+          <div id="add-to-cart-<%= master_song.id %>">
+         <% if current_cart.line_items.find_by_master_song_id(master_song.id).present? %>
+                <%= render 'fan_bases/added_to_cart' %>
+              <% else %>
+                <%= button_to "#{number_to_currency(master_song.price)} | Add to Cart", line_items_path(master_song_id: master_song), remote: :true %>
+              <% end %>
+            </div>
+          <% end %>
+      <% end %>
+
+    <div id="song-stats">
+      UpVotes: <%= master_song.song_up_votes_count %>
+      Listens: <%= master_song.song_listens_count %>
+      Comments: <%= master_song.master_song_comments_count %>
+    </div>
+    <% master_song.master_song_comments.limit(2).each do |comment| %>
+      <%= comment.comment %><br />
+    <% end %>
+    <%= link_to 'More Comments', master_song_path(master_song), remote: :true, :id => "page-link" %>
+  </div>

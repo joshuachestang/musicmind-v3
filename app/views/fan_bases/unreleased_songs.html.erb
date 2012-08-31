@@ -1,0 +1,38 @@
+<div class="fan-base" id="unreleased-songs">
+  <div class="span9">
+<h1>Songs Available For Pre-Order</h1>
+<h3>Pre-Order these songs and they'll automatically be in your MusicMind library as soon as the Artist or Group has release them.</h3>
+
+
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @master_songs.each do |master_song| %>
+  <tbody>
+  	<tr>
+    <% if master_song.not_released? %>
+      <td><%= link_to "#{master_song.title}", master_song_path(master_song), remote: :true, :id => "page-link" %></td>
+      <td><%= number_to_currency(master_song.price) %></td>
+      <td>
+         <% unless current_cart.line_items.find_by_master_song_id(master_song.id).present? %>
+            <div id="add-to-cart-<%= master_song.id %>">
+        <%= button_to 'Pre-Order', line_items_path(master_song_id: master_song.id), remote: :true, :class => 'btn btn-warning' %>
+         <% else %>
+         <%= render 'fan_bases/added_to_cart' %>
+         <% end %>
+       </div>
+       </td>
+    </tr>
+  </tbody>
+<% end %>
+<% end %>
+</table>
+  <%= link_to '<-- Back', :back, remote: :true, :id => "page-link" %>
+</div>
+</div>

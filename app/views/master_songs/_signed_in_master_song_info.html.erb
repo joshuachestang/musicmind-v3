@@ -1,0 +1,38 @@
+<% if @master_song.released? %>
+      <% unless current_user.owning?(@master_song) %>    
+	    <% unless @master_song.price == 0.00 %>
+		  <% unless current_cart.line_items.find_by_master_song_id(@master_song.id).present? %>
+		    <div id="add-to-cart-<%= @master_song.id %>">
+			  <%= button_to "#{number_to_currency(@master_song.price)} | Add to Cart", line_items_path(master_song_id: @master_song), remote: :true, :class => 'btn' %>
+		  <% else %>
+			  <%= render 'fan_bases/added_to_cart' %>
+		  <% end %>
+			</div>
+		<% else %>
+	      <div id="add-to-library-free-2">
+	      	<%= form_for current_user.master_song_relationships.build(:owned_id => @master_song.id), 
+					                          remote: :true do |f| %>
+			<%= f.hidden_field :owned_id %>
+		    <%= f.submit "Free | Add To Your Library", :class => 'btn' %><br />
+			<% end %>
+		  </div>
+		<% end %>
+	  <% else %>
+		<div id="owned-links"><%= render 'owned_song_links' %></div>
+	  <% end %>
+	<% else %>
+	  <% unless current_cart.line_items.find_by_master_song_id(@master_song.id).present? %>
+	    <div id="add-to-cart-<%= @master_song.id %>">
+		  <%= button_to "#{number_to_currency(@master_song.price)} | Pre-Order", line_items_path(master_song_id: @master_song), remote: :true, :class => 'btn btn-warning' %>
+	  <% else %>
+		  <%= render 'fan_bases/added_to_cart_pre_order' %>
+	  <% end %>
+		</div>
+	<% end %>  
+	<% if @master_song.playable = true %>
+	  <td>
+	  	<%= link_to 'Play Song', @master_song.m_song.url, class: :play, remote: :true,
+                   'data-id' => @master_song.id ,
+                   'data-type' => 'MasterSong'  %>
+      </td><br />
+    <% end %>

@@ -1,0 +1,12 @@
+
+<h1>Are you a part of a music group, label, or business? You can brand your fan base with a label badge.</h1>
+<%= simple_form_for(@label, :url => fan_base_labels_path, remote: :true) do |f| %>
+
+    <div class="form-field"><%= f.input :name %></div>
+
+    <div class="form-field"><%= f.input :label_image %></div>
+  
+    <div class="form-field"><%= f.button :submit, :class => "btn btn-success", :id => "page-link" %></div>
+
+<% end %>
+

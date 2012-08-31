@@ -1,0 +1,6 @@
+<% if @fan_base.user == current_user %>
+  <%= link_to 'Upload Songs to your Fan Base', new_master_song_path %>
+  <%= link_to 'Edit', edit_fan_base_path(@fan_base) %>
+<% else %>
+<% end %>
+

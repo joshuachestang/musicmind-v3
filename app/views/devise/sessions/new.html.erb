@@ -1,0 +1,19 @@
+<div class="span10" id="sign-up-page">
+  <section id="sign-up-pitch">
+      <h1>A new way to discover and experience music.</h1>
+      <%= link_to 'Sign Up', new_user_registration_path, :class => "btn btn-success btn-large" %><br />
+       <div style="float:left; margin-top:15px;"><h1>Artists: <%= User.where(:user_type => "music artist").count %></h1><br />
+       <h1>Fans: <%= User.where(:user_type => "music fan").count %></h1><br />
+       <h1>Songs From Artists: <%= MasterSong.count %></h1><br />
+       <h1>Songs in Libraries: <%= MasterSongRelationship.count + UserSongUpload.count %></h1></div>
+  </section>
+</div>
+
+
+
+
+
+
+
+
+

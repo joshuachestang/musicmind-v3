@@ -1,0 +1,77 @@
+h1{
+	padding-bottom:20px;
+	padding-top:15px;
+}
+
+h2{
+	padding: 40px 0px 10px 0px;
+}
+
+h2#fan-base-stats{
+	float:left;
+}
+
+div#fan_base_show{
+    margin:25px 0px 0px 35px;
+}
+
+section#fan-base-music{
+	width:100%;
+	clear:both;
+}
+
+section#user-fan-bases{
+	float: left;
+	margin-left: 50px;
+	margin-top:20px;
+}
+
+section#fan-bases-you-are-in{
+    margin-top:20px;
+    
+  }
+
+div#fan-base-image{
+	float: left;
+	padding: 0px 20px 10px 0px;
+}
+
+div#artist-label{
+   float: right;
+}
+
+section#albums{
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 40px 40px;
+   float: left;
+   width:auto;
+}
+
+
+section#listing-fan-bases{
+	margin: 0px 0px 40px 50px;
+	
+	
+}
+
+section#fan-base-owner-links{
+	
+
+}
+
+h2#all-fan-bases-link{
+    float:right;
+    
+    }
+
+div.fan-base{
+	margin-top:40px;
+}
+
+div#edit-fan-base{
+	margin-left:40px;
+}
+
+div#new-fan-base{
+	margin-left:40px;
+}

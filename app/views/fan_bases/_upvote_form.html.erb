@@ -1,0 +1,7 @@
+<div id="upvote-form">
+<% unless current_user.up_voted_song?(master_song) %>
+    <%= render 'upvote', :master_song => master_song %>
+<% else %>
+    <%= render 'upvoted' %>
+<% end %>
+</div>

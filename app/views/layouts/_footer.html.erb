@@ -1,0 +1,7 @@
+
+    <%= link_to 'About', pages_about_path %>
+    <%= link_to 'Help', pages_help_path %>
+    <%= link_to 'Recruiting', pages_recruiting_path %>
+<% unless user_signed_in? %>
+	<%= link_to "Sign up", new_user_registration_path %> 
+<% end %>

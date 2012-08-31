@@ -1,0 +1,3 @@
+$("div#add-to-library-free-<%= @master_song.id %>").html("<%= escape_javascript(render('master_songs/owned')) %>");
+$("div#add-to-library-free-2").html("<%= escape_javascript(render('master_songs/owned_song_links')) %>");
+$("div#add-to-library-free-3-<%= @master_song.id %>").html("<%= escape_javascript(render('fan_bases/owned')) %>");

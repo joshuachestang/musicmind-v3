@@ -1,0 +1,16 @@
+<%= simple_form_for @master_song, remote: :true do |f| %>
+  <div class="form-field"><%= f.input :m_song, :as => :file, :label => "Upload a song" %></div>
+  <div class="form-field"><%= f.input :song_art_work, :as => :file, :label => "Upload Artwork for this song" %></div>
+  <div class="form-field"><%= f.input :price, :label => "Offer your music for free or a price ($0.00 to $10.00):" %></div>
+  <div class="form-field"><%= f.input :release_date, :label => "When would you like this song to be released?" %></div>
+  
+  <div class="form-field">
+    <p style="color:blue;">Can a user play this song if they have not added it to their library?</p>
+    
+    <%= f.collection_radio_buttons :playable, [['true', 'Can Play'] ,['false', 'Cannot Play']], :first, :last, :default => true %>
+  </div>
+  <div class="form-field"><%= f.button :submit, :value => "Add Song", :class => "btn btn-success" %></div>
+  <% end %>
+   
+
+

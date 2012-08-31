@@ -1,0 +1,65 @@
+<%= notice %>
+
+	
+    
+	<div class="span8" id="master-song-show">
+		<h2><%= @master_song.title %> by: <%= link_to "#{@master_song.user.fan_base.name}", fan_base_path(@master_song.user.fan_base), remote: :true, :id => "page-link" %></h2>
+		<section id ="song-artwork-and-title">
+        	<%= image_tag @master_song.song_art_work(:medium) %>
+        </section>
+		
+		<%= render 'master_song_info' %>
+
+		
+      <% if user_signed_in? %>
+      <div id="comment-form">
+			<%= form_for current_user.master_song_comments.build(:master_song_id => @master_song.id), remote: :true do |f| %>
+          <%= f.text_area :comment, rows: 3 %> 
+          <%= f.hidden_field :master_song_id %>
+          <%= f.submit "Add Comment", :class => 'btn btn-primary' %>
+      </div>
+     <% end %>
+     <% end %>
+		
+
+		<div id="comments" class="span8">
+			<% @comments.each do |comment| %>
+        <div id="comment">
+          <div style="padding-left:15px;">
+        <%= comment.comment %><br />
+        Posted <%= time_ago_in_words(comment.created_at) %> ago.
+        <% if user_signed_in? %>
+        by: <%= link_to "#{comment.user.username}", user_path(comment.user), remote: :true, :id => "page-link" %>
+        <% else %>
+        by: <%= comment.user.username %>
+        <% end %>
+      </div>
+        </div>
+        <% end %>
+		</div>
+
+	</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#jquery_jplayer_1").jPlayer({
+        swfPath: "/app/assets/jplayerflash",
+        supplied: "mp3",
+        wmode: "window"
+    });
+    $("a.play").click(function(e) {
+        e.preventDefault();
+        $("#jquery_jplayer_1")
+            .jPlayer("setMedia", {mp3: this.href })
+            .jPlayer("play");
+      var songid = $(e.target).attr('data-id');
+      var songtype = $(e.target).attr('data-type');
+      $.ajax({
+      url: '/create_listen.json',
+      data: { songid: songid, songtype: songtype },
+      async: false
+      });
+    });
+});
+  </script>

@@ -1,0 +1,16 @@
+<h1>Add Musicmind Money(cheesy)<h1>
+
+
+Select Credit amount to add:
+
+form_for (@cart) do |f|
+<div>
+  <%= f.label :credit_amount %>
+  <%= f.select :credit_amount, [["$5.00", "5.00"],["$10.00", "10.00"], ["$15.00", "15.00"],
+   ["$20.00", "20.00"], ["$25.00", "25.00"]] %>
+</div>
+
+add credit amount ot cart
+
+<%= f.submit %>
+

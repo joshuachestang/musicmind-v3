@@ -1,0 +1,35 @@
+<%= form_for(@album_track) do |f| %>
+  <% if @album_track.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@album_track.errors.count, "error") %> prohibited this album_track from being saved:</h2>
+
+      <ul>
+      <% @album_track.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  List of current_user's master_songs.(that dont have an album)
+
+  Select list to choose album.
+
+  drag and drop form to drag the current_user's selected master songs to the album track field. 
+
+  Upon save, the selected songs' master song id and album id of form should save to album tracks model
+
+  thus when calling @album.album_tracks should find all album_tracks with a certain album id.
+
+  <div class="field">
+    <%= f.label :album_id %><br />
+    <%= f.number_field :album_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ms_id %><br />
+    <%= f.number_field :ms_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<h2>Music</h2>
+<% unless @search_master_songs.nil? %>
+  <table id="search" class="table table-bordered">
+    <tbody>
+    <% @search_master_songs.each do |result_item| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= link_to "#{result_item.title}", master_song_path(result_item), remote: :true, :id => "page-link" %></td>
+        <td><%= link_to "#{result_item.user.fan_base.name}", fan_base_path(result_item.user.fan_base), remote: :true, :id => "page-link" %></td>
+        <td class="add_to_cart">
+          <% unless current_user.owning?(result_item) %>
+            <% if result_item.price == 0.00 %>
+                <div id="add-to-library-free-3-<%= result_item.id %>"><%= form_for current_user.master_song_relationships.build(:owned_id => result_item.id), 
+                            remote: :true do |f| %>
+                  <%= f.hidden_field :owned_id %>
+                  <%= f.submit "Free: Add To Your Library", :class => "btn btn-success" %><br />
+                <% end %></div>
+            <% else %>
+              <% unless current_cart.line_items.find_by_master_song_id(result_item.id).present? %>
+              <div id="add-to-cart-<%= result_item.id %>">
+                <%= button_to "#{number_to_currency(result_item.price)} | Add to Cart", line_items_path(master_song_id: result_item), remote: :true, :class => "btn" %>
+              <% else %>
+                <%= render 'fan_bases/added_to_cart' %>
+              <% end %>
+            </div>
+
+            <% end %>
+            <% else %>
+              <%= render 'fan_bases/owned' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+<% else %>
+<p>Nothing Found</p>
+<% end %>

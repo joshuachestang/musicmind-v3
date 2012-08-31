@@ -1,0 +1,13 @@
+
+      <h1><%= @title %></h1>
+
+      <% unless @recent_songs.empty? %>
+
+        
+        <% @recent_songs.each do |recent| %>
+          <%= recent.title %>
+          <%= link_to 'Play', recent.m_song.url, class: :play %>
+          <%= recent.price %>
+        <% end %>
+      <% end %>
+  

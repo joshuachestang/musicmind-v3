@@ -1,0 +1,10 @@
+<% if line_item == @current_item %>
+<tr id="current_item">
+<% else %>
+<tr>
+<% end %>
+<tr id="item-<%= line_item.id %>">
+<!-- <td><%= line_item.quantity %>&times;</td> -->
+<td><%= truncate(line_item.master_song.title, :length => 10) %></td>
+<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+</tr>

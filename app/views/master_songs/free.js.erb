@@ -1,0 +1,2 @@
+$("#master_songs").html("<%= escape_javascript(render('master_songs/free'))%>")
+$("#paginate").html('<%= j paginate(@free_songs, :theme => 'twitter-bootstrap', remote: :true, :id => "page-link") %>');

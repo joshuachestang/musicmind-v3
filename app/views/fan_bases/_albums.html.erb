@@ -1,0 +1,8 @@
+<h2>Albums</h2>
+<% unless @albums.empty? %>
+  <% @albums.each do |album| %>
+  
+  <%= link_to image_tag(album.album_artwork.url(:thumb)), album_path(album), remote: :true, :id => "page-link" %>
+  <% end %>
+  
+<% end %>

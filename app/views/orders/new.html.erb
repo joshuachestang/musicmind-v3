@@ -1,0 +1,21 @@
+<div class="span10" style="margin-left:30px;">
+<h1 id="about" style="padding-bottom:30px;color:#36F"><%= @title %><h1>
+
+<%= simple_form_for @order, remote: :true do |f| %>
+ 
+   <div class="form-field"><%= f.input :first_name, :required => true %></div>     
+   <div class="form-field"><%= f.input :last_name, :required => true %></div>      
+   <div class="form-field"><label>Card Type</label><%= f.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]] %></div>
+   <div class="form-field"><%= f.input :card_number, :required => true %></div>
+   <div class="form-field"><%= f.input :card_verification, :required => true %></div>
+   <div class="form-field"><%= f.input :card_expires_on, :required => true %></div>
+   <div class="form-field"><%= f.input :country, :required => true %></div>
+   <div class="form-field"><%= f.input :billing_address, :required => true %></div>
+   <div class="form-field"><%= f.input :city, :required => true %></div>
+   <div class="form-field"><%= f.input :state, :required => true %></div>
+   <div class="form-field"><%= f.input :zipcode, :required => true %></div>
+   <div class="form-field"><%= f.button :submit %></div>
+<% end %>
+<h4><%= link_to '<-- Back', :back, remote: :true, :id => "page-link" %></h4>
+</div>
+

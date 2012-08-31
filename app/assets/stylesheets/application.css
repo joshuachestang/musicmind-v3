@@ -1,0 +1,205 @@
+ /*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+
+ *= require_self
+ *= require carts
+ *= require events
+ *= require fan_bases
+ *= require jplayer.blue.monday
+ *= require line_items
+ *= require master_songs
+ *= require pages
+ *= require labels
+ *= require searches
+ *= require user_access_requests
+ *= require user_song_uploads
+ *= require users
+ *= require devise
+ *= require bootstrap_and_overrides
+ *= require jquery.fileupload-ui
+*/
+
+
+* {
+  margin: 0;
+}
+
+div.form-field{
+  margin: 20px 20px 20px 20px;
+}
+
+div.form-field span{
+  display:block;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+form#new_user.login{
+  width:440px;
+  float:left;
+  height:50px;
+  margin: 5px 5px 0px 0px;
+}
+
+span#music{
+  color:white;
+}
+
+span#mind{
+  color:#36F;
+}
+
+label.checkbox{
+  float:right;
+  color:white;
+  margin-right: 15px;
+margin-top: 5px;
+
+}
+input.btn{
+  margin: 0px 5px 6px 5px;
+line-height: 16px;
+}
+
+input#user-email.input-small{
+  margin-left:5px;
+}
+input#user_remember_me{
+  float:right;
+  margin-right:5px;
+  margin-top:8px;
+}
+
+section#main-content{
+  margin-right:20px;
+}
+
+a#page-link.btn.btn-primary{
+  margin:2px 0px 2px 0px;
+}
+
+
+sup{
+	color:white;
+	margin-left:2px;
+}
+
+#cartWrapper{
+right: 50px;
+  position: absolute;
+  margin-left: 35px;
+  width: auto;
+}
+
+#cart{
+  position: fixed;
+  top: 0;
+  right: 25px;
+  /* just used to show how to include the margin in the effect */
+  margin-top: 90px;
+  padding: 19px 10px 5px 10px;
+  margin-bottom:40px;
+  width:140px;
+  
+}
+
+section#search-main{
+  margin-top:35px;
+  float:left;
+  position:absolute;
+}
+
+h1#not-logged-in{
+  font-size:100px;
+  color:black;
+  width:400px;
+  margin: 0 auto;
+  color:black;
+}
+
+h1 span{
+  color:blue;
+}
+
+div#double-wrap{
+  background-image:url('groovepaper.png');
+  margin: 50px 145px 0px 145px;
+  height:auto;
+  border-radius:7px;
+  padding-bottom:80px;
+}
+
+a.button.facebook {
+color: white;
+background-color: #566E9F;
+padding: 10px 5px 10px 5px;
+margin-top:5px;
+border-radius:5px;
+border:1px solid white;
+background-repeat: repeat-x;
+background-image: -khtml-gradient(linear, left top, left bottom, from(#7088B8), to(#566E9F));
+background-image: -moz-linear-gradient(top, #7088B8, #566E9F);
+background-image: -ms-linear-gradient(top, #7088B8, #566E9F);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7088B8), color-stop(100%, #566E9F));
+background-image: -webkit-linear-gradient(top, #7088B8, #566E9F);
+background-image: -o-linear-gradient(top, #7088B8, #566E9F);
+background-image: linear-gradient(top, #7088B8, #566E9F);
+filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$startColor', endColorstr='$endColor', GradientType=0)";
+text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+border-color: white;
+text-decoration:none;
+
+}
+
+a.button.twitter{
+  background-color: #7BC4D9;
+  color:white;
+  border-radius:5px;
+  margin-top:5px;
+  border:1px solid white;
+background-repeat: repeat-x;
+background-image: -khtml-gradient(linear, left top, left bottom, from(#94DEF3), to(#7BC4D9));
+background-image: -moz-linear-gradient(top, #94DEF3, #7BC4D9);
+background-image: -ms-linear-gradient(top, #94DEF3, #7BC4D9);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #94DEF3), color-stop(100%, #7BC4D9));
+background-image: -webkit-linear-gradient(top, #94DEF3, #7BC4D9);
+background-image: -o-linear-gradient(top, #94DEF3, #7BC4D9);
+background-image: linear-gradient(top, #94DEF3, #7BC4D9);
+filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$startColor', endColorstr='$endColor', GradientType=0)";
+text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+border-color: white;
+padding: 10px 5px 10px 5px;
+text-decoration:none;
+}
+
+div#sign-in-new-links{
+  margin-top:50px;
+}
+
+section#j-player{
+  margin-right:40px;
+}
+
+div#not-logged-in{
+  border-bottom-right-radius:7px; 
+  border-bottom-left-radius:7px; 
+  box-shadow: 0px 2px #000;
+}
+
+div.span10{
+  margin-left:0px;
+}
+
+div#sign-up-page{
+  margin-left:40px;
+}
+
+div#sign-up-form{
+  margin-left:40px;
+}
+
+
+
+

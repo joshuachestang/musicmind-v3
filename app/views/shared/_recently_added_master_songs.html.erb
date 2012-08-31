@@ -1,0 +1,9 @@
+
+  <table class="table table-striped">
+    <tr>
+      <% @fan_base.recently_added_master_songs.each do |recent_song| %>
+        <tr>
+          <td><%= link_to recent_song.file_name, (@master_song) %></td>
+        </tr>
+      <% end %>
+  </table>

@@ -1,0 +1,7 @@
+
+<%= link_to image_tag("#{current_user.user_image.url(:thumb)}"), current_user, remote: :true, :id => "page-link" %><br />
+    <h2>Your Stats</h2>
+    <%= link_to "Following: #{current_user.following.count}", following_user_path(current_user), remote: :true, :class => "btn btn-primary", :id => "page-link" %><br />
+    <%= link_to "Followers: #{current_user.followers.count}", followers_user_path(current_user), remote: :true, :class => "btn btn-primary", :id => "page-link" %><br />
+    <%= link_to "Fan Bases: #{current_user.fan_base_followings.count}", fan_base_following_user_path(current_user), remote: :true, :class => "btn btn-primary", :id => "page-link" %>
+

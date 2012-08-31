@@ -1,0 +1,2 @@
+$("#master_songs").html("<%= escape_javascript(render('master_songs/most_upvoted'))%>")
+$("#paginate").html('<%= j paginate(@most_upvoted_songs, :theme => 'twitter-bootstrap', remote: :true, :id => "page-link") %>');

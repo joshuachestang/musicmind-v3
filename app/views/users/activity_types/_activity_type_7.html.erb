@@ -1,0 +1,19 @@
+	<% @activities.each do |activity| %>
+	<% unless activity.trackable.nil? %>
+	<% if activity.key == "activity.mastersongcomment.create" %>
+	<% if current_user.following?(activity.owner) %>
+
+      <div id="feed-item" style="float:left;">
+      	<h4 style="width:100%; margin-bottom:5px;">
+	  	<%= link_to image_tag(activity.owner.user_image.url(:thumb_small)), user_path(activity.owner), remote: :true, :id => "page-link" %>
+	    <%= link_to "#{activity.text}", user_path(activity.owner), remote: :true, :id => "page-link" %> posted a comment <%= time_ago_in_words(activity.created_at) %> ago.
+	    </h4>
+
+	    <div style="float:right"><%= link_to image_tag(activity.trackable.master_song.song_art_work.url(:thumb_small)), master_song_path(activity.trackable.master_song), remote: :true, :id => "page-link" %>
+	    <%= link_to "#{activity.trackable.comment}", master_song_path(activity.trackable.master_song), remote: :true, :id => "page-link" %> by 
+	    </div>
+      </div>
+<% end %>
+<% end %>
+	<% end %>
+	<% end %>

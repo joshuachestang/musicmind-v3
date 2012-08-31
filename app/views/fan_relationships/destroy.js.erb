@@ -1,0 +1,5 @@
+$("#fan_follow_form-<%= @fan_base.id %>").html("<%= escape_javascript(render('fan_bases/become_fan'))%>");
+$("#followers").html('<%= "#{@fan_base.fan_base_followers.count} followers" %>');
+$("#fan_follow_form-fan_base").html("<%= escape_javascript(render('fan_bases/become_fan'))%>");
+$("#fan_follow_form_master_song").html("<%= escape_javascript(render('fan_bases/become_fan'))%>");
+$("#fan_follow_form-search-<%= @fan_base.id %>").html("<%= escape_javascript(render('fan_bases/become_fan'))%>");

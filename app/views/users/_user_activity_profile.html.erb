@@ -1,0 +1,51 @@
+<div class="row">
+  <div id="profile-activity" class="span10">
+    <div class="row">
+      <div id="activity-boxes"class="span5">
+        <h3>Recent Upvotes</h3>
+        <table class="table table-bordered">
+          <% @recent_up_votes.each do |f| %>
+          <tbody>
+            <td><%= link_to image_tag(f.master_song.song_art_work.url(:thumb_small)), master_song_path(f.master_song), remote: :true, :id => "page-link" %></td>
+            <td><%= link_to "#{f.master_song.title}", master_song_path(f.master_song), remote: :true, :id => "page-link" %></td>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+      <div id="activity-boxes" class="span5">
+        <h3>Recently Added Songs</h3>
+        <table class="table table-bordered">
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div id="profile-activity" class="span10" >
+    
+    <div class="row">
+      <div id="activity-boxes" class="span5">
+        <h3>Recently Joined Fan Bases</h3>
+        <table class="table table-bordered">
+          <% @recently_joined_fan_bases.each do |f| %>
+          <tbody>
+            <td><%= link_to image_tag(f.fb_art.url(:thumb_small)), fan_base_path(f), remote: :true, :id => "page-link" %></td>
+            <td><%= link_to "#{f.name}", fan_base_path(f), remote: :true, :id => "page-link" %></td>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+      <div id="activity-boxes" class="span5">
+        <h3>Recent Follows</h3>
+        <table class="table table-bordered">
+          <% @recent_follows.each do |f| %>
+          <tbody>
+            <td><%= link_to image_tag(f.user_image.url(:thumb_small)), user_path(f), remote: :true, :id => "page-link" %></td>
+            <td><%= link_to "#{f.name}", user_path(f), remote: :true, :id => "page-link" %></td>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

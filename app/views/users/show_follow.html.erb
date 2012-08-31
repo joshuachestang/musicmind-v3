@@ -1,0 +1,48 @@
+<div class="user-relationships">
+<h1><%= @title %></h1>
+<div class="row">
+  <div class="span4" id="user-stats-main">
+    <%= render 'shared/user_stats_main' %>
+  </div>
+  <div class="span7">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Username</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% unless @users.empty? %>
+        <% @users.each do |user| %>    
+          <tr>
+            <td><%= link_to image_tag(user.user_image.url(:thumb_small)), user_path(user), remote: :true, :id => "page-link" %></td>
+            <td><%= user.username %></td>
+            <td>
+              <div id="follow_form-2-<%= user.id %>">
+                  <% unless current_user.following?(user) %>
+                    <%= form_for current_user.relationships.
+                          build(:followed_id => user.id),
+                          :remote => true do |f| %>
+                    <div><%= f.hidden_field :followed_id %></div>
+                    <%= f.submit "Follow", :class => "btn btn-primary" %>
+                    <% end %>
+                  <% else %>
+                    <%= form_for current_user.relationships.find_by_followed_id(user),
+                         :html => { :method => :delete },
+                         :remote => true do |f| %>
+                    <%= f.submit "Unfollow", :class => "btn btn-primary" %>
+                    <% end %>
+                  <% end %>
+                </div>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

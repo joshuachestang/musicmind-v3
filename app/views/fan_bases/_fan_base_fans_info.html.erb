@@ -1,0 +1,14 @@
+<div>
+  <%= render 'follow_form' if user_signed_in? %><br /> 
+  
+  <%= render 'shared/fan_base_fans' %>    
+    
+  <h3>Recently Joined Fans</h3>
+    <% @fan_base.recently_joined.each do |f| %>
+      <tr>
+        <td><%= f.username %></td>
+        <td><%= image_tag f.user_image.url(:thumbnail) %></td>
+        <td><%= f.created_at %></td>
+      </tr>
+    <% end %>
+</div>

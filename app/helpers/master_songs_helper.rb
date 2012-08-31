@@ -1,0 +1,2 @@
+module MasterSongsHelper
+end

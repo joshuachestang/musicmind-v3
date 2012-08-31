@@ -1,0 +1,3 @@
+$("div#favorite-form-<%= @user_song_upload.id %>").html("<%= escape_javascript(render('user_song_uploads/usu_favorited'))%>");
+$("#flash_notice").html("You have successfully favorited a song");
+$("#flash_notice").show("slow");

@@ -1,0 +1,7 @@
+<div id="favorite-form">
+  <% if user_song_upload.favorite == true %>
+    <td><button class="btn btn-warning disabled">Favorited</button></td>
+  <% else %>
+    <td><%= link_to "Add To Favorites", add_favorite_usu_user_song_upload_path(user_song_upload), method: :put, remote: :true, :class => "btn btn-warning" %></td>
+  <% end %>
+</div>

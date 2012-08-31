@@ -1,0 +1,12 @@
+<% @user ||= current_user %>
+
+        <a href="<%= fan_base_following_user_path(@user) %>">
+          
+            <%= @user.fan_base_followings.count %> following
+         
+          <% @recently_joined_fan_bases.each do |fbf| %>
+        
+         <%= link_to 'fbf.fb_art.url(:thumb)', fan_base %>
+         <%= link_to 'fbf.name', fan_base %>
+     
+      <% end %>

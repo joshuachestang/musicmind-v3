@@ -1,0 +1,11 @@
+document.write("<%= escape_javascript(render('maste_songs/music_widget_1')) %>");
+
+var receivedForm = function(data) {
+  $("#play-songs-live-long-widget").html(data["html"]);
+}
+
+$.ajax({
+  url: 'http://example.com/master_songs/<%= @master_song.id %>.json',
+  dataType: 'jsonp',
+  success: receivedForm
+});

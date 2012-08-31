@@ -1,0 +1,43 @@
+<div class="fan-base">
+<section id="listing-fan-bases" class="span9">
+  <h1>Explore Fan Bases</h1>
+  <table class="table table-striped table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Artist/Group</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @fan_bases.each do |fan_base| %>
+      <tr>
+        <td><%= link_to image_tag(fan_base.fb_art.url(:thumb)), fan_base_path(fan_base), remote: :true, :id => "page-link" %></td>
+        <td><%= link_to "#{fan_base.name}", fan_base_path(fan_base), remote: :true, :id => "page-link" %></td>
+        <td>
+          <% unless fan_base.user == current_user %>
+                <div id="fan_follow_form-<%= fan_base.id %>">
+                  <% if current_user.fan_base_following?(fan_base) %>
+                    <%= form_for current_user.fan_relationships.find_by_followed_id(fan_base),
+                               :html => { :method => :delete },
+                               :remote => true do |f| %>
+                    <%= f.submit "Unfan", :class => "btn btn-primary" %>
+                    <% end %>
+                  <% else %>
+                    <%= form_for current_user.fan_relationships.build(:followed_id => fan_base.id), 
+                          :remote => true do |f| %>
+                      <%= f.hidden_field :followed_id %>
+                    <%= f.submit "Become A Fan", :class => "btn btn-primary" %>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% else %>
+              <button class="btn btn-primary disabled">This is your fan base</button>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+   </tbody>
+  </table>
+</section>
+</div>

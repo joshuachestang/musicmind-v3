@@ -1,0 +1,18 @@
+<% if @user_song_upload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_song_upload.errors.count, "error") %> prohibited this song from being saved:</h2>
+      <% @user_song_upload.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<h2>Upload music to your library:</h2>  
+
+<section>
+<%= form_for @user_song_upload do |f|  %>
+  <%= f.file_field :song %>
+  <%= f.submit "Upload" %>
+<% end %>
+</section>

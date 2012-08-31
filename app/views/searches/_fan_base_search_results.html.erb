@@ -1,0 +1,34 @@
+<h2>Fan Bases</h2>
+<% unless @search_fan_bases.nil? %>
+  <table id="search" class="table table-bordered">
+    <tbody>
+  	<% @search_fan_bases.each do |result_item| %>
+  	  <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= link_to image_tag(result_item.fb_art.url(:thumb)), fan_base_path(result_item), remote: :true, :id => "page-link" %></td>
+        <td><%= link_to "#{result_item.name}", fan_base_path(result_item), remote: :true, :id => "page-link" %></td>
+        <td><% unless result_item.user == current_user %>
+                <div id="fan_follow_form-search-<%= result_item.id %>">
+                  <% if current_user.fan_base_following?(result_item) %>
+                    <%= form_for current_user.fan_relationships.find_by_followed_id(result_item),
+             :html => { :method => :delete },
+             :remote => true do |f| %>
+  <%= f.submit "Unfan", :class => "btn btn-primary" %>
+<% end %>
+
+                  <% else %>
+                    <%= form_for current_user.fan_relationships.build(:followed_id => result_item.id), 
+                          :remote => true do |f| %>
+  <div><%= f.hidden_field :followed_id %></div>
+  <%= f.submit "Become A Fan", :class => "btn btn-primary" %>
+<% end %>
+                  <% end %>
+                </div>
+              <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <% else %>
+  <p>Your query returned no results.</p>
+<% end %>

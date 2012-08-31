@@ -1,0 +1,25 @@
+<%= link_to 'Play', master_song.m_song.url, class: :play, remote: :true,
+                   'data-id' => master_song.id ,
+                   'data-type' => 'MasterSong' %>
+                   <script type="text/javascript">
+  $(document).ready(function(){
+    $("#jquery_jplayer_1").jPlayer({
+        swfPath: "/app/assets/jplayerflash",
+        supplied: "mp3",
+        wmode: "window"
+    });
+    $("a.play").click(function(e) {
+        e.preventDefault();
+        $("#jquery_jplayer_1")
+            .jPlayer("setMedia", {mp3: this.href })
+            .jPlayer("play");
+      var songid = $(e.target).attr('data-id');
+      var songtype = $(e.target).attr('data-type');
+      $.ajax({
+      url: '/create_listen.json',
+      data: { songid: songid, songtype: songtype },
+      async: false
+      });
+    });
+});
+  </script>

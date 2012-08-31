@@ -1,0 +1,4 @@
+$("#master_songs").html("<%= escape_javascript(render('master_songs/trending'))%>")
+$("#paginate").html('<%= j paginate(@trending_songs, :theme => 'twitter-bootstrap', remote: :true, :id => "page-link") %>');
+
+

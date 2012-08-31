@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @master_song_comment.user_id %>
+</p>
+
+<p>
+  <b>Master song:</b>
+  <%= @master_song_comment.master_song_id %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @master_song_comment.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_master_song_comment_path(@master_song_comment) %> |
+<%= link_to 'Back', master_song_comments_path %>

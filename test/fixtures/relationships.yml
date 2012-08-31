@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fan_id: 1
+  fanned_id: 1
+
+two:
+  fan_id: 1
+  fanned_id: 1

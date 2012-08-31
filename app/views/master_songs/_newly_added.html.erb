@@ -1,0 +1,7 @@
+
+<div id="master_songs">
+<% @newly_added_songs.each do |master_song| %>
+  <%= render 'master_songs/song_feed_item', :master_song => master_song %>
+<% end %>
+</div>
+

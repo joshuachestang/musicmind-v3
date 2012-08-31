@@ -1,0 +1,39 @@
+
+  <div class="span10" style="margin:20px 20px 20px 40px;">
+    <div class="row-fluid">
+      <div id="user-stats" class="span2">
+        <div style="float:left;">
+        <%= image_tag @user.user_image.url(:thumb) %>
+        </div>
+        <aside style="float:left;padding-left:5px;">
+          <%= @user.username %><br />
+          <% if @user == current_user %>   
+          <%= link_to 'Edit Info', edit_user_registration_path, :class => 'btn', remote: :true, :id => "page-link" %><br />
+          <% else %>
+          <%= render 'follow_form' %>
+          <% end %>
+        </aside>
+      </div>
+      <div class="span2">
+        Total Songs: <%= @user.total_songs %><br />
+        Fan Score: <%= @user.fan_score_count %><br />
+        Total Song Upvotes: <%= @user.total_up_votes %>
+      </div>
+      <div class="span2">
+        <%= link_to "Fan in: #{@user.number_of_fan_bases}", fan_base_following_user_path(@user), :class => 'btn btn-primary', remote: :true, :id => "page-link" %><br />
+        <%= link_to "Followers: #{@user.followers.count}", followers_user_path(@user), :class => "btn btn-primary", remote: :true, :id => "page-link" %><br />
+        <%= link_to "Following: #{@user.following.count}", following_user_path(@user), :class => "btn btn-primary", remote: :true, :id => "page-link" %></a>
+      </div>
+    </div>
+  </div>
+
+
+<%= render 'user_activity_profile' %>
+      
+
+
+
+
+
+
+

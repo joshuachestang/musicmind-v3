@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Album:</b>
+  <%= @album_track.album_id %>
+</p>
+
+<p>
+  <b>Ms:</b>
+  <%= @album_track.ms_id %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_album_track_path(@album_track) %> |
+<%= link_to 'Back', album_tracks_path %>

@@ -1,0 +1,13 @@
+
+<% @activities.each do |activity| %>
+  <% if activity.trackable_type == "UserSongUpload" %>
+  <% if current_user.following?(activity.owner) %>
+<div id="feed-item">
+	<%= link_to image_tag(activity.owner.user_image.url(:thumb)), user_path(activity.owner) %>
+    <%= activity.text %><br /> 
+</div>
+
+<% end %>
+  <% end %>
+<% end %>
+

@@ -1,0 +1,55 @@
+<div id="master-song-info">
+	<div style="height:30px;">
+  <h3 style="float:left;">Released <%= time_ago_in_words(@master_song.created_at) %> ago.</h3>
+    <div id="song-stats-master-song-page">
+      <i class="icon-arrow-up"></i> <%= @master_song.song_up_votes_count %> |
+      <i class="icon-headphones"></i> <%= @master_song.song_listens_count %> |
+      <i class="icon-user"></i> <%= @master_song.master_song_comments_count %>
+    </div>
+   </div>
+  <% if @master_song.released? %>
+	<% if @master_song.playable = true %>
+	  <% unless user_signed_in? %>
+		<audio controls="controls" preload="none" id="master-song-play">
+			<source src="<%= @master_song.m_song.url %>" type="audio/ogg" />
+			<source src="<%= @master_song.m_song.url %>" type="audio/mp3" />
+		</audio><br />
+	  <% end %>
+	<% end %>
+  <% end %>
+  <% if user_signed_in? %>	    
+    <%= render 'signed_in_master_song_info' %>
+  <% else %>
+    <%= render 'not_signed_in_master_song_info' %>
+  <% end %>
+  <% if user_signed_in? %>
+    <% unless current_user.up_voted_song?(@master_song) %>
+	  <div id="master-song-upvote"><%= link_to "Upvote", song_up_votes_path(:master_song_id => @master_song.id), method: :post, :class => "btn icon-arrow-up", remote: :true %></div><br />
+	<% else %>
+	   <div style="margin-top:10px; float:left;"><%= render 'master_song_page_upvoted' %></div>
+	<% end %>
+  <% end %>
+	<div style="float:right; padding-right:20px"><%= tweet_button(:url => "http://www.musicmind.co#{url_for(@master_song)}", :text => "#{@master_song.title} by #{@master_song.artist} - add to your MusicMind library here:", :via => "musicmindalpha", :count => "none") %></div>
+	<div id="fb-root"><%= facebook_share_once %></div><br /><!-- required by facebook -->
+</div>
+
+		<script type="text/javascript">$(document).ready(function(){
+    $("#jquery_jplayer_1").jPlayer({
+        swfPath: "/app/assets/jplayerflash",
+        supplied: "mp3",
+        wmode: "window"
+    });
+    $('a.play').click(function(e) {
+        e.preventDefault();
+        $("#jquery_jplayer_1")
+            .jPlayer("setMedia", {mp3: this.href })
+            .jPlayer("play");
+      var songid = $(e.target).attr('data-id');
+      var songtype = $(e.target).attr('data-type');
+      $.ajax({
+      url: '/create_listen.json',
+      data: { songid: songid, songtype: songtype },
+      async: false
+      });
+    });
+});</script>

@@ -1,0 +1,18 @@
+
+<% @activities.each do |activity| %>
+<% if activity.trackable_type == "MasterSongRelationship" %>
+<% if current_user.following?(activity.owner) %>
+<div id="feed-item">
+	<%= link_to image_tag(activity.owner.user_image.url(:thumb)), user_path(activity.owner) %>
+    <%= activity.text %>  <%= time_ago_in_words(activity.created_at) %> ago.<br/>
+    
+    <%= link_to image_tag(activity.trackable.owned.song_art_work.url(:thumb_small)), master_song_path(activity.trackable.owned) %>
+    
+    <%= link_to "#{activity.trackable.owned.title}", master_song_path(activity.trackable.owned) %> by <%= link_to "#{activity.trackable.owned.user.fan_base.name}", fan_base_path(activity.trackable.owned.user.fan_base) %><br />
+    
+    <%= pluralize(activity.trackable.owned.owners.count, "person") %> added this song to their library.<br />
+    It was upvoted <%= pluralize(activity.trackable.owned.song_up_votes.count, "time") %>
+</div>
+<% end %>
+<% end %>
+<% end %>

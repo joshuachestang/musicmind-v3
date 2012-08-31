@@ -1,0 +1,12 @@
+<%= simple_form_for @fan_base, :html => { :class => 'form-horizontal' }, remote: :true do |f| %>
+  
+  <div class="form-field"><%= f.input :name %></div>
+  <div class="form-field"><label id="fan_base_type">Choose fan base type:</label><br /><%= f.collection_radio_buttons :type_of_music_entity, [['Solo Artist', 'Solo Artist'] ,['Group', 'Group']], :first, :last, :default => 'Solo Artist' %>
+  </div>
+  <div class="form-field"><%= f.input :fb_art, :label => 'Fan Base Picture:', :as => :file %></div>
+  <div class="form-field"><label>Please agree to the terms and condiitons</label><%= f.check_box :terms %></div>
+  <div class="form-field"><%= f.button :submit, :class => "btn btn-success" %></div>
+  
+<% end %>
+
+

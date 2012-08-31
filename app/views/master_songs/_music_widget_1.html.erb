@@ -1,0 +1,29 @@
+<div id="play-songs-live-long-widget">
+  <a href="http://www.musicmind.co"><%= image_tag "images/MusicMlogo - twitter.png" %></a>
+  <section id="song-info">
+	  <%= link_to "#{@master_song.title}", master_song_url(@master_song) %>
+	  <%= link_to "#{@master_song.artist}", fan_base_url(@master_song.user.fan_base) %>
+	  <%= link_to image_tag(@master_song.song_art_work.url(:thumb)), master_song_url(@master_song) %>
+  </section>
+  <section id="song-stats">
+  	Listens: <%= @master_song.listens %>
+  	Adds: <%= @master_song.owners.count %>
+  	UpVotes: <%= @master_song.song_up_votes_count %>
+  </section>
+  <section id="widget-actions">
+  	  <%= link_to "Play", @master_song.m_song.url, class: :play, remote: :true ,
+                      'data-id' => @master_song.id ,
+                      'data-type' => 'MasterSong'
+                      %>
+	  <%= link_to "Upvote", song_up_votes_path(:master_song_id => @master_song.id), method: :post, remote: :true %>
+	  <%= form_for current_user.master_song_relationships.build(:owned_id => @master_song.id), 
+	                          remote: :true do |f| %>
+			  <div><%= f.hidden_field :owned_id %></div>
+			  
+	        <div class="actions"><%= f.submit "Add" %></div><br />
+	  <% end %>
+  </section>
+  <section id="share">
+  	  <%= tweet_button(:url => master_song_url(@master_song), :text => "Just listened to <%= @master_song.title %> in my musicmind. Add here") %>
+  </section>
+</div>

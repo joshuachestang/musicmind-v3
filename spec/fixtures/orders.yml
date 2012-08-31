@@ -1,0 +1,27 @@
+one:
+  cart_id: 1
+  ip_address: MyString
+  first_name: MyString
+  last_name: MyString
+  card_type: MyString
+  card_expires_on: 2012-01-04
+  country: MyString
+  address: MyText
+  city: MyString
+  state: MyString
+  zipcode: 1
+  email: MyString
+
+two:
+  cart_id: 1
+  ip_address: MyString
+  first_name: MyString
+  last_name: MyString
+  card_type: MyString
+  card_expires_on: 2012-01-04
+  country: MyString
+  address: MyText
+  city: MyString
+  state: MyString
+  zipcode: 1
+  email: MyString

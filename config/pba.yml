@@ -1,0 +1,37 @@
+activity:
+  usersongupload:
+    create: '<%= owner.username %> added a song to their MusicMind library.'
+    update: 'as'
+    destroy: 'as'
+  fanbase:
+    create: 'as'
+    update: 'as'
+    destroy: 'as'
+  fanrelationship:
+    create: ' <%= owner.username %> '
+    update: 'as'
+    destroy: 'as'
+  mastersong:
+    create: '<%= owner.username %> added a song to their fan base.'
+    update: 'as'
+    destroy: 'as'
+  mastersongrelationship:
+    create: '<%= owner.username %> added a song to their library.'
+    update: 'as'
+    destroy: 'as'
+  relationship:
+    create: 'as'
+    update: 'as'
+    destroy: 'as'
+  songlisten:
+    create: 'as'
+    destroy: 'as'
+  songupvote:
+    create: 'upvoted a song'
+    destroy: 'as'
+  user:
+    create: 'as'
+    update: 'as'
+    destroy: 'as'
+  mastersongcomment:
+    create: '<% owner.username %>' 

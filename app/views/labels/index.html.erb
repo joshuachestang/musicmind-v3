@@ -1,0 +1,26 @@
+TODO Make labels searchable: Allow user to find artists by label.
+<h1>Listing labels</h1>
+
+<table>
+  <tr>
+    <th>Fan base</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @labels.each do |label| %>
+  <tr>
+    <td><%= label.fan_base_id %></td>
+    <td><%= label.name %></td>
+    <td><%= link_to 'Show', label %></td>
+    <td><%= link_to 'Edit', edit_label_path(label) %></td>
+    <td><%= link_to 'Destroy', label, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Label', new_label_path %>

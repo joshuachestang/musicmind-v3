@@ -1,0 +1,11 @@
+<% unless @master_song.user.fan_base.user == current_user %>
+    <div id="fan_follow_form_master_song">
+   <% if current_user.fan_base_following?(@master_song.user.fan_base) %>
+   <%= render 'unfan' %>
+   <% else %>
+      <%= render 'fan' %>
+    <% end %>
+  </div>
+  <% else %>
+ <button class="btn btn-primary disabled">This is your song</button>
+ <% end %>

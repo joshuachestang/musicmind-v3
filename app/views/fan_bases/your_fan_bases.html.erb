@@ -1,0 +1,29 @@
+<section id="user-fan-bases">
+<% if current_user.user_type == "music artist" %>
+  <% unless current_user.fan_base.present? %>
+    <h3><div><%= link_to 'Create Your Fan Base >>', new_fan_base_path, remote: :true, :id => "page-link" %></div></h3>
+  <% else %>
+  <% end %>
+<% end %>
+<% if current_user.fan_base.present? %>
+  <h2>Your Fan Base</h2>
+  <%= link_to image_tag(current_user.fan_base.fb_art.url(:medium2)), @fan_base, remote: :true, :id => "page-link" %>
+<% end %>
+</section>
+<section id="fan-bases-you-are-in" class="span7">
+<h2>Fan Bases You're In:</h2>
+<% unless @fan_base_followings.present? %>
+<h3>You're currently not in any fan bases. You can start by joining fan bases <%= link_to 'HERE', fan_bases_path, remote: :true, :id => "page-link" %> </h3>
+<% else %>
+<% @fan_base_followings.each do |followed_fan_base| %>
+  <div id="user-fan-bases">
+      <%= link_to image_tag(followed_fan_base.fb_art.url(:medium2)), fan_base_path(followed_fan_base), remote: :true, :id => "page-link" %>
+      <%= followed_fan_base.name %>
+  </div>  
+<% end %>
+<% end %>
+<h4 id="all-fan-bases-link"><%= link_to 'All Fan Bases on MusicMind >>', fan_bases_path, remote: :true, :id => "page-link" %></h4>
+</section>
+
+
+

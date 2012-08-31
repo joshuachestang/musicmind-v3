@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fan base:</b>
+  <%= @event.fan_base_id %>
+</p>
+
+<p>
+  <b>Event name:</b>
+  <%= @event.event_name %>
+</p>
+
+<p>
+  <b>Event time:</b>
+  <%= @event.event_time %>
+</p>
+
+<p>
+  <b>Event address:</b>
+  <%= @event.event_address %>
+</p>
+
+<p>
+  <b>Event city:</b>
+  <%= @event.event_city %>
+</p>
+
+<p>
+  <b>Event state:</b>
+  <%= @event.event_state %>
+</p>
+
+<p>
+  <b>Zip code:</b>
+  <%= @event.zip_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

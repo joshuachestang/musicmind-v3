@@ -1,0 +1,5 @@
+<%= form_for current_user.fan_relationships.find_by_followed_id(@master_song.user.fan_base),
+             :html => { :method => :delete },
+             :remote => true do |f| %>
+  <%= f.submit "Unfan", :class => "btn btn-primary" %>
+<% end %>

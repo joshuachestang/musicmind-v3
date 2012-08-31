@@ -1,0 +1,34 @@
+<div class="user-relationships">
+<h1><%= @title %></h1>
+<div class="row">
+  <div class="span4" id="user-stats-main">
+    <%= render 'shared/user_stats_main' %>
+  </div>
+  <div class="span8">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Type of Fan Base</th>
+          <th>Verified?</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% unless @fan_bases.empty? %>
+        <% @fan_bases.each do |fan_base| %>  
+            <tr>
+              <td><%= link_to image_tag(fan_base.fb_art.url(:thumb)), fan_base_path(fan_base), remote: :true, :id => "page-link" %></td>
+              <td><%= link_to "#{fan_base.name}", fan_base_path(fan_base), remote: :true, :id => "page-link" %></td>
+			        <td><%= fan_base.type_of_music_entity %></td>
+			        <td><%= fan_base.verification %></td>
+            </tr>
+        <% end %>
+      <% else %>
+        <h3>You're not a fan of anybody. Join fan bases <%= link_to 'here', fan_bases_path, remote: :true, :id => "page-link" %>.</h3>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

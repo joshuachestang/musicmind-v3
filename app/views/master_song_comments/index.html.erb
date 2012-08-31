@@ -1,0 +1,27 @@
+<h1>Listing master_song_comments</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Master song</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @master_song_comments.each do |master_song_comment| %>
+  <tr>
+    <td><%= master_song_comment.user_id %></td>
+    <td><%= master_song_comment.master_song_id %></td>
+    <td><%= master_song_comment.comment %></td>
+    <td><%= link_to 'Show', master_song_comment %></td>
+    <td><%= link_to 'Edit', edit_master_song_comment_path(master_song_comment) %></td>
+    <td><%= link_to 'Destroy', master_song_comment, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Master song comment', new_master_song_comment_path %>

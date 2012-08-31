@@ -1,0 +1,34 @@
+<div id="sign-up-form">
+<p style="padding-top:50px;">MusicMind is very dedicated to fostering a certain quality and esteem of music.<br /> If you would like to know more about our solutions for artists gvie us call, send us an email, have your people call our people. </p>
+<h2>Sign up</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true, :class => 'form-horizontal' }) do |f| %>
+<fieldset>
+
+    <div class="form-field"><%= devise_error_messages! %></div>  
+
+    <div class="form-field"><label id="user_type">Choose a user type:</label><br /><%= f.collection_radio_buttons :user_type, [['music artist', 'Music Artist'] ,['music fan', 'Music Fan']], :first, :last, :default => 'music fan' %></div>
+
+    <div class="form-field"><%= f.input :email %></div>
+
+  <% if f.object.password_required? %>
+
+    <div class="form-field"><%= f.input :password %></div>
+
+    <div class="form-field"><%= f.input :password_confirmation %></div>
+
+  <% end %>
+    <div class="form-field"><%= f.input :username %></div>
+
+    <div class="form-field"><%= f.input :user_image, :as => :file %></div>
+
+    <div class="form-field"><label>Please agree to the terms and condiitons</label><%= f.check_box :terms %></div>
+
+    <div class="form-field"><%= f.button :submit, :value => "Sign Up", :class => "btn btn-success" %></div>
+
+  </fieldset>
+ <% end %>
+<div id="sign-in-new-links">
+<%= render :partial => "devise/shared/links" %>
+</div>
+</div>

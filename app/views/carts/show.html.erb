@@ -1,0 +1,51 @@
+<section class="span9">
+	<p id="notice"></p>
+ <section id="cart-level-2">
+	<h1 id="cart-head">Your MusicMind Cart</h1>
+	<h3>Any songs that you purchase will instantly be in your MusicMind library and available for listening.</h3>
+	<% unless user_signed_in? %>
+	  <h3 style="color:red">*Please sign up or sign in to complete your purchase.</h3>
+	<% end %>
+	<table class="table table-bordered" id="cart-line-items">
+		<tr>
+			<th>Quantity</th>
+			<th>Title</th>
+			<th>Price</th>
+		</tr>
+	  <% @cart.line_items.each do |item| %>
+	    <tr id="cart-line-item-<%= item.id %>" class="<%= cycle('cart_list_line_odd', 'cart_list_line_even') %>">
+	      <td><%= item.quantity %>&times;</td>
+	      <td><%= item.master_song.title %></td>
+	      <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+	      <td>
+	      	<div>
+		      <%= button_to 'Delete', item, :method => :delete, :confirm => 'Are You Sure', remote: :true, :class => "btn btn-danger" %>
+		    </div>
+	      </td>
+	  <% end %>
+	    </tr>
+	    <tr>
+	    	<th></th>
+	    	<th></th>
+	    	<th></th>
+	    	<th>Total Price</th>
+	    </tr>
+	    <tr>
+	    	<td></td>
+	    	<td></td>
+	    	<td></td>
+	    	<td id="total-price"><%= number_to_currency(@cart.total_price) %></td>
+        </tr>
+	 </table>
+	<section class="checkout-buttons">
+	<% if user_signed_in? %>
+	  <div id="one"><%= link_to "Checkout", new_order_path, remote: :true, :id => "page-link" %></div>
+	<% else %>
+	  <div id="one"><button class="btn btn-success disabled">Checkout <i class="icon-ok"></i></button></div>
+	<% end %>
+	  <div id="two"><%= button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?', remote: :true, :class => 'btn' %></div>
+	</section>
+
+	<div id="three"><%= link_to '<-- Discover', root_path, remote: :true, :id => "page-link" %></div>
+</section>
+</section>

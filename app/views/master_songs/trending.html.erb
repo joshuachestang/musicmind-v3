@@ -1,0 +1,19 @@
+<div class="span9" id="song-feed">
+  <% unless user_signed_in? %>
+  <h2>A cloud powered music discovery and storage platform.</h2>
+  <% end %>
+  <h1 id="discovery-head" style="margin-left:5px;">Discover Music</h1>
+  <div style="margin-left:5px;"><%= link_to 'Newly Added', master_songs_path, remote: :true, :class => "btn btn-primary", :id => "page-link" %> |
+  <%= link_to 'Trending Music', trending_master_songs_path, remote: :true, :class => "btn btn-primary", :id => "page-link" %> |
+  <%= link_to 'Most UpVoted Music', most_upvoted_master_songs_path, remote: :true, :class => "btn btn-primary", :id => "page-link" %> |
+  <%= link_to 'Free Music', free_master_songs_path, remote: :true, :class => "btn btn-primary", :id => "page-link" %> |
+  <%= link_to 'Most Listened To Music', most_listened_to_master_songs_path, remote: :true, :class => "btn btn-primary", :id => "page-link" %></div>
+<div id="master_songs">
+<% @trending_songs.each do |master_song| %>
+  <%= render 'master_songs/song_feed_item', :master_song => master_song %>
+<% end %>
+</div>
+
+<div id="paginate" class="pagination-centered">
+<%= paginate @trending_songs, :theme => 'twitter-bootstrap', remote: :true, :id => "page-link" %>
+</div>

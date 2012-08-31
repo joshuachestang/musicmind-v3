@@ -1,0 +1,23 @@
+The goal of MusicMind - To leverage social power to grow and provide an online music industry for music artists and fans.
+
+Before anything:
+Brew install ImageMagick
+
+
+MusicMind gives you the power to access and discover music with people around you and by yourself. When it comes to music, people have both social and personal experiences. With MusicMind we want to create that balance for you in a private and social place for music. 
+
+By making music discovery, listening, and storage easy, we create an ecosystem for music. On one end its the artist, who want to build a fan base. And on the otherside is a group a dedicated fans. Now users can stay in touch with the music by.
+
+
+The technology stack:
+  
+  Ruby/Rails
+  Sqlite3
+  Amazons3
+  Heroku(for deployment)
+  
+
+
+
+
+

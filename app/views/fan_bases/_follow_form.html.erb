@@ -1,0 +1,9 @@
+<% unless @fan_base.user == current_user %>
+  <div id="fan_follow_form-fan_base">
+    <% if current_user.fan_base_following?(@fan_base) %>
+      <%= render 'unfan' %>
+    <% else %>
+      <%= render 'become_fan' %>
+    <% end %>
+  </div>
+<% end %>

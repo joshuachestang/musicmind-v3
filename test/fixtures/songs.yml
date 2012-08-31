@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  title: Made Men
+  album: Take Care
+  artist: Drake
+  length: 1
+  size: 1
+  bit_rate: 1
+  sample_rate: 1
+  image_url: drake.jpg
+
+two:
+  user_id: 2
+  title: MyString
+  album: MyString
+  artist: MyString
+  length: 1
+  size: 1
+  bit_rate: 1
+  sample_rate: 1
+  image_url: MyString

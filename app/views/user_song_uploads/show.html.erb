@@ -1,0 +1,41 @@
+<div class="row-fluid">
+  <div class="span4" id="user-stats-main" style="padding-bottom:300px;">
+    <%= render 'shared/user_stats_main' %>
+  </div>
+  <div id="flash_notice"></div>
+  <div class="span9" id="library-head">
+     <div id="library-search">
+     <%= form_tag library_search_user_song_uploads_path, method: :get, remote: :true do %>
+                
+                  <%= text_field_tag :query, params[:query] , :placeholder => "Search Your Library" %>
+                  <%= submit_tag "Search", name: nil, remote: :true, :class => 'btn' %>
+                
+              <% end %>
+      </div>
+     <div id="head-stats">
+      Total Songs: <%= current_user.total_songs %> |
+      Total Listens: <%= current_user.song_listens.count %>  |
+      Total Song UpVotes: <%= current_user.song_up_votes.size %> |
+      Total Favorites: <%= @favoritings %> <br />
+      <%= link_to 'Upload Music', new_user_song_upload_path, :class => "btn pull-right", remote: :true, :id => "page-link" %>
+    </div>
+    
+    
+    <div id="library-links">
+    <%= link_to 'All', user_library_path, remote: :true, :class => "btn btn-inverse", :id => "page-link" %> |
+    <%= link_to 'Recently Played', user_library_recently_played_path, remote: :true, :class => "btn btn-inverse", :id => "page-link" %> |
+    <%= link_to 'Favorites', user_library_favorited_path, remote: :true, :class => "btn btn-inverse", :id => "page-link" %> |
+    </div>
+  </div>
+  <div id="library-music" class="span8" style="margin-top:20px; float:left;">
+    <%= render 'user_library' %>
+    <% if @recent_plays %>
+    <%= render 'recently_played' %>
+    <% elsif @favorite_page %>
+    <%= render 'favorites' %>
+    <% elsif @library_usu_results or @library_msr_results %>
+    <%= render 'library_search' %>
+    <% end %>
+  </div>
+</div>
+

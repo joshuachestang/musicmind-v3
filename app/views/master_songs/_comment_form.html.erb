@@ -1,0 +1,7 @@
+<%= form_for current_user.master_song_comments.build(:master_song_id => @master_song.id) do |f| %>
+  <div class="field" style="margin-top:60px;">
+    <%= f.text_area :comment, rows: 3 %> 
+    <%= f.hidden_field :master_song_id %>
+    <%= f.submit "Add Comment" %>
+  </div>
+<% end %>

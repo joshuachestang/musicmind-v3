@@ -1,0 +1,4 @@
+$('#cart').hide();
+$('table#cart-line-items').remove();
+$('section.checkout-buttons').remove();
+$('p#notice').html('<%= escape_javascript('Your cart is empty.') %>');

@@ -1,0 +1,49 @@
+section#invite_request_form{
+	width:800px;
+	margin:0 auto;
+	margin-top:20px;
+	
+
+}
+
+form#new_user_access_request{
+	width:600px;
+	margin:0 auto;
+	margin-bottom:20px;
+	
+}
+
+input#user_access_request_email{
+	width:300px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	font-size:20px;
+	padding:15px 5px 5px 5px;
+
+}
+
+div.input.email.required{
+	float:left;
+	}
+
+
+input#request_invite_submit_button{
+	height: 40px;
+font-size: 20px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+margin-left:0px;
+float:left;
+}
+
+button#invite_requested{
+	height: 40px;
+font-size: 20px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+margin-left:0px;
+}
+
+label.email.required{
+	color:white;
+}
