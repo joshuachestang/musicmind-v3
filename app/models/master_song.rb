@@ -1,6 +1,13 @@
 class MasterSong < ActiveRecord::Base
  require 'taglib'
 
+ scope :new, order("created_at DESC")
+ scope :upvoted, order("song_up_votes_count DESC")
+ scope :trended, order("updated_at DESC")
+ scope :free, where(:price => 0.00)
+ scope :most_listened, order("song_listens_count DESC")
+ 
+
   #search function
   #searchable do
    # text :title, :artist, :album
@@ -26,7 +33,6 @@ class MasterSong < ActiveRecord::Base
   #notifications
   acts_as_readable :on => :created_at
  
-  scope :free, where(:price => 0.00)
 
 
   validates :price, allow_blank: :true, numericality: {greater_than_or_equal_to: 0.00}

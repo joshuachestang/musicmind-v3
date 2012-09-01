@@ -10,7 +10,7 @@ class MasterSongsController < ApplicationController
   # GET /master_songs
   # GET /master_songs.json
   def index
-    @newly_added_songs = MasterSong.order("created_at DESC").page(params[:page]).per(12)
+    @newly_added_songs = MasterSong.new.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js 
@@ -18,7 +18,7 @@ class MasterSongsController < ApplicationController
   end
 
   def newly_added
-    @newly_added_songs = MasterSong.order("created_at DESC").page(params[:page]).per(12)
+    @newly_added_songs = MasterSong.new.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js {render :layout => false }
@@ -28,7 +28,7 @@ class MasterSongsController < ApplicationController
   
   def most_upvoted
     @upvoted = true
-    @most_upvoted_songs = MasterSong.order("song_up_votes_count DESC").page(params[:page]).per(12)
+    @most_upvoted_songs = MasterSong.upvoted.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js {render :layout => false }
@@ -38,7 +38,7 @@ class MasterSongsController < ApplicationController
 
   def trending
     @trending = true
-    @trending_songs = MasterSong.order("updated_at DESC").page(params[:page]).per(12)
+    @trending_songs = MasterSong.trended.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js {render :layout => false }
@@ -57,7 +57,7 @@ class MasterSongsController < ApplicationController
 
   def most_listened_to
     @most_listened = true
-    @most_listened_to_songs = MasterSong.order("song_listens_count DESC").page(params[:page]).per(12)
+    @most_listened_to_songs = MasterSong.most_listened.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js {render :layout => false }
