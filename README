@@ -2,6 +2,9 @@ The goal of MusicMind - To leverage social power to grow and provide an online m
 
 Before anything:
 Brew install ImageMagick
+Brew install elasticsearch
+Brew install 
+
 
 
 MusicMind gives you the power to access and discover music with people around you and by yourself. When it comes to music, people have both social and personal experiences. With MusicMind we want to create that balance for you in a private and social place for music. 

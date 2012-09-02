@@ -8,10 +8,10 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   </head>
+
   <body>
-    <div class="wrapper">
+
     <div class="navbar navbar-fixed-top">
         
           <% if user_signed_in? %>
@@ -42,39 +42,17 @@
                   </ul>
               </li>
             </ul>
-            <% if user_signed_in? %>
-            <section id="search-main">
-
-              <%= form_tag searches_path, method: :get, remote: :true do %>
-                
-                  <%= text_field_tag :query, params[:query], :placeholder => "Search Music, Artists, & Fans", :class => "input-large search-query" %>
-                  <%= submit_tag "Search", name: nil, remote: :true, :class => "btn" %>
-                
-              <% end %>
-                
-            </section>
-            <section id="j-player" style="position:absolute; right:380px;">
-              <%= render 'layouts/player' %>
-            </section>
-            <% else %>
-            <% end %>
+           
           </a>
             <div class="nav-collapse">
               <% if user_signed_in? %>
-              <ul class="nav pull-right">
-                  <li><%= link_to 'Your Library', user_library_path, remote: :true, :id => "page-link" %></li>
-                  <li><%= link_to 'Your Fan Bases', your_fan_bases_path, remote: :true, :id => "page-link" %></li>
-                  <li><%= link_to 'Discover', discover_path, remote: :true, :id => "page-link" %></li><br />
-                  <li><%= link_to 'Notifications', your_notifications_path, remote: :true, :id => "page-link" %></li>
-                  <li><%= link_to 'Activity Feed', activity_feed_path, remote: :true, :id => "page-link" %></li>
-                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-                <% else %>
-                <ul id="log-in" class="nav pull-right">
+                <%= render 'layouts/search_form_main' %>           
+                <%= render 'layouts/player' %>
+                <%= render 'layouts/main_nav_links' %>
+              <% else %>
                 <%= render 'devise/sessions/sign_in' %>
-                <% end %>
-              </ul>
+              <% end %>
             </div>
-           
           </div>
         </div>
       </div>
@@ -86,7 +64,7 @@
     <div id="double-wrap">
       <div class="container" id="main-container">
             <% flash.each do |name, msg| %>
-            <div class="alert alert-<%= name == :notice ? "success" : "error" %>" style="width:700px;">
+            <div class="alert alert-<%= name == :notice ? "success" : "error" %>" style="width:300px;">
               <a class="close" data-dismiss="alert">×</a>
               <%= msg %>
             </div>
@@ -98,7 +76,6 @@
       </div>
     </div>
   </div>
-</div>
   </body>
 </html>
 

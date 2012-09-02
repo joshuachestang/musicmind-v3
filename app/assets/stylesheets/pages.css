@@ -4,7 +4,7 @@ section#pages-main{
 }
 
 
-h1#about{
+h1#info-page-title{
     margin: 30px 0px 0px 0px;
     padding: 10px 0px 10px 10px;
     border-radius:7px;
@@ -15,4 +15,8 @@ h1#about{
 p#pages{
 	font-size:16px;
 	padding: 10px 0px 10px 10px;	
+}
+
+div#info-page-wrapper{
+	margin-left:10px;
 }

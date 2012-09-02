@@ -1,0 +1,8 @@
+<ul class="nav pull-right">
+                  <li><%= link_to 'Your Library', user_library_path, remote: :true, :id => "page-link" %></li>
+                  <li><%= link_to 'Your Fan Bases', your_fan_bases_path, remote: :true, :id => "page-link" %></li>
+                  <li><%= link_to 'Discover', discover_path, remote: :true, :id => "page-link" %></li><br />
+                  <li><%= link_to 'Notifications', your_notifications_path, remote: :true, :id => "page-link" %></li>
+                  <li><%= link_to 'Activity Feed', activity_feed_path, remote: :true, :id => "page-link" %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              </ul>

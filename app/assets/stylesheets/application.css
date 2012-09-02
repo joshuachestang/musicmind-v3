@@ -125,7 +125,8 @@ h1 span{
 
 div#double-wrap{
   background-image:url('groovepaper.png');
-  margin: 50px 145px 0px 145px;
+  margin: 0 auto;
+  width:80%;
   height:auto;
   border-radius:7px;
   padding-bottom:80px;
