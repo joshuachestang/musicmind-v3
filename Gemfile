@@ -13,16 +13,14 @@ end
 group :development, :test do
   gem 'sqlite3'
 end
-group :production do
-  gem 'pg'
-  gem 'thin'
-end
 
-gem "heroku"
+
+gem "passenger"
+
+gem "capistrano", "~> 2.13.3"
 
 gem "taglib-ruby", "~> 0.5.1"
 
-gem "vulcan", "~> 0.8.0"
 
 gem "thor", "~> 0.14.6"
 
