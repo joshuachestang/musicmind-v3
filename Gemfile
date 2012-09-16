@@ -12,8 +12,10 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'mysql'
 end
 
+gem "mysql2"
 
 gem "passenger"
 

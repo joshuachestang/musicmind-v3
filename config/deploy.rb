@@ -1,13 +1,13 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set :application, "musicmind"
+set :repository,  "https://github.com/joshuachestang/musicmind-v3.git"
 
-set :scm, :subversion
+set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "musicmind11.db.7988723.hostedresource.com"                          # Your HTTP server, Apache/etc
+role :app, "musicmind11.db.7988723.hostedresource.com"                          # This may be the same as your `Web` server
+role :db,  "musicmind11.db.7988723.hostedresource.com", :primary => true # This is where Rails migrations will run
+role :db,  "musicmind11.db.7988723.hostedresource.com"
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"

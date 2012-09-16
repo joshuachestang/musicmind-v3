@@ -999,3 +999,131 @@ Compiled devise.css  (0ms)  (pid 37742)
 Compiled bootstrap_and_overrides.css  (1140ms)  (pid 37742)
 Compiled jquery.fileupload-ui.css  (0ms)  (pid 37742)
 Compiled application.css  (1278ms)  (pid 37742)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Creating scope :new. Overwriting existing method MasterSong.new.
+
+
+Started GET "/" for ::1 at 2012-09-15 19:53:30 -0500
+Processing by MasterSongsController#index as HTML
+  Rendered master_songs/index.html.erb within layouts/application (39.7ms)
+Compiled carts.css  (0ms)  (pid 2351)
+Compiled events.css  (0ms)  (pid 2351)
+Compiled fan_bases.css  (0ms)  (pid 2351)
+Compiled jplayer.blue.monday.css  (0ms)  (pid 2351)
+Compiled line_items.css  (0ms)  (pid 2351)
+Compiled master_songs.css  (0ms)  (pid 2351)
+Compiled pages.css  (0ms)  (pid 2351)
+Compiled labels.css  (0ms)  (pid 2351)
+Compiled searches.css  (0ms)  (pid 2351)
+Compiled user_access_requests.css  (0ms)  (pid 2351)
+Compiled user_song_uploads.css  (0ms)  (pid 2351)
+Compiled users.css  (0ms)  (pid 2351)
+Compiled devise.css  (0ms)  (pid 2351)
+Compiled bootstrap_and_overrides.css  (1187ms)  (pid 2351)
+Compiled jquery.fileupload-ui.css  (0ms)  (pid 2351)
+Compiled application.css  (1389ms)  (pid 2351)
+Compiled jquery.js  (5ms)  (pid 2351)
+Compiled jquery_ujs.js  (0ms)  (pid 2351)
+Compiled jquery-ui.js  (53ms)  (pid 2351)
+Compiled jquery.fileupload.js  (0ms)  (pid 2351)
+Compiled jquery.fileupload-fp.js  (0ms)  (pid 2351)
+Compiled jquery.fileupload-ui.js  (0ms)  (pid 2351)
+Compiled jquery.ui.widget.js  (0ms)  (pid 2351)
+Compiled jquery.iframe-transport.js  (0ms)  (pid 2351)
+Compiled jquery_ujs_multipart_xhr.js  (0ms)  (pid 2351)
+Compiled locale.js  (0ms)  (pid 2351)
+Compiled main.js  (0ms)  (pid 2351)
+Compiled jquery.jplayer.min.js  (1ms)  (pid 2351)
+Compiled jplayer.playlist.min.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 2351)
+Compiled twitter/bootstrap.js  (299ms)  (pid 2351)
+Compiled jquery_nested_form.js  (0ms)  (pid 2351)
+Compiled jquery.sausage.js  (0ms)  (pid 2351)
+Compiled album_tracks.js  (68ms)  (pid 2351)
+Compiled albums.js  (1ms)  (pid 2351)
+Compiled bootstrap.js  (3ms)  (pid 2351)
+Compiled carts.js  (0ms)  (pid 2351)
+Compiled events.js  (0ms)  (pid 2351)
+Compiled fan_bases.js  (0ms)  (pid 2351)
+Compiled jquery.js_message.js  (0ms)  (pid 2351)
+Compiled jquery.postmessage-transport.js  (0ms)  (pid 2351)
+Compiled jquery.xdr-transport.js  (0ms)  (pid 2351)
+Compiled labels.js  (0ms)  (pid 2351)
+Compiled line_items.js  (0ms)  (pid 2351)
+Compiled master_song_comments.js  (0ms)  (pid 2351)
+Compiled master_song_relationships.js  (0ms)  (pid 2351)
+Compiled master_songs.js  (0ms)  (pid 2351)
+Compiled nested_form.js  (0ms)  (pid 2351)
+Compiled omniauth_callbacks.js  (0ms)  (pid 2351)
+Compiled pages.js  (0ms)  (pid 2351)
+Compiled searches.js  (0ms)  (pid 2351)
+Compiled song_up_votes.js  (0ms)  (pid 2351)
+Compiled tmpl.min.js  (0ms)  (pid 2351)
+Compiled user_song_uploads.js  (0ms)  (pid 2351)
+Compiled application.js  (732ms)  (pid 2351)
+  Rendered devise/sessions/_sign_in.html.erb (63.9ms)
+  Rendered layouts/_cart_display.html.erb (0.6ms)
+  Rendered user_access_requests/_form.html.erb (17.2ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 11706ms (Views: 11581.3ms | ActiveRecord: 110.6ms)
+
+
+Started GET "/assets/application-8d14abf9eb4c822aaf3019f347e252b1.css" for ::1 at 2012-09-15 19:53:42 -0500
+Served asset /application-8d14abf9eb4c822aaf3019f347e252b1.css - 200 OK (0ms)
+
+
+Started GET "/assets/application-12c6e4f9b2b9a5d119e6f32f30c0130f.js" for ::1 at 2012-09-15 19:53:42 -0500
+Served asset /application-12c6e4f9b2b9a5d119e6f32f30c0130f.js - 200 OK (263ms)
+
+
+Started GET "/assets/groovepaper.png" for ::1 at 2012-09-15 19:53:43 -0500
+Served asset /groovepaper.png - 200 OK (7ms)
+
+
+Started GET "/?_=1347756823202" for ::1 at 2012-09-15 19:53:43 -0500
+Processing by MasterSongsController#index as JS
+  Parameters: {"_"=>"1347756823202"}
+  Rendered master_songs/index.html.erb within layouts/application (42.2ms)
+  Rendered layouts/_main_content.html.erb (0.4ms)
+Completed 200 OK in 127ms (Views: 112.2ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2012-09-15 19:54:50 -0500
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (38.9ms)
+  Rendered devise/sessions/_sign_in.html.erb (4.5ms)
+  Rendered layouts/_cart_display.html.erb (1.2ms)
+  Rendered user_access_requests/_form.html.erb (17.5ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 222ms (Views: 134.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/sign_up?_=1347756890521" for ::1 at 2012-09-15 19:54:50 -0500
+Processing by RegistrationsController#new as JS
+  Parameters: {"_"=>"1347756890521"}
+  Rendered devise/shared/_links.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (67.6ms)
+  Rendered layouts/_main_content.html.erb (0.0ms)
+Completed 200 OK in 79ms (Views: 78.2ms | ActiveRecord: 0.0ms)
