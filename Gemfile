@@ -17,6 +17,8 @@ end
 
 gem "mysql2"
 
+gem "rmagick"
+
 gem "passenger"
 
 gem "capistrano", "~> 2.13.3"

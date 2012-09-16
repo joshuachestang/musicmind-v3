@@ -1127,3 +1127,432 @@ Processing by RegistrationsController#new as JS
   Rendered devise/registrations/new.html.erb within layouts/application (67.6ms)
   Rendered layouts/_main_content.html.erb (0.0ms)
 Completed 200 OK in 79ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2012-09-15 23:32:23 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoaArlrGhIFc32xZsEeV72OeZQ78yWCwl4wC/VH18Hs=", "user"=>{"user_type"=>"music artist", "email"=>"joshua.chestang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"jchest", "user_image"=>#<ActionDispatch::Http::UploadedFile:0x007fcae9343fd0 @original_filename="220px-Frank_Ocean_-_Channel_Orange.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[user_image]\"; filename=\"220px-Frank_Ocean_-_Channel_Orange.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20120915-2358-mtaz4b>>, "terms"=>"1"}, "commit"=>"Sign Up"}
+[32mCommand[0m :: identify -format %wx%h '/tmp/220px-Frank_Ocean_-_Channel_Orange20120915-2358-11aje0m.jpg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/220px-Frank_Ocean_-_Channel_Orange20120915-2358-11aje0m.jpg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/220px-Frank_Ocean_-_Channel_Orange20120915-2358-11aje0m.jpg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/220px-Frank_Ocean_-_Channel_Orange20120915-2358-11aje0m.jpg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  Rendered devise/shared/_links.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (37.4ms)
+  Rendered devise/sessions/_sign_in.html.erb (2.9ms)
+  Rendered layouts/_cart_display.html.erb (0.6ms)
+  Rendered user_access_requests/_form.html.erb (4.9ms)
+  Rendered layouts/_main_content.html.erb (0.1ms)
+Completed 200 OK in 1568ms (Views: 56.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?_=1347769945853" for ::1 at 2012-09-15 23:32:25 -0500
+Processing by UsersController#index as JS
+  Parameters: {"_"=>"1347769945853"}
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/" for ::1 at 2012-09-15 23:49:35 -0500
+Processing by MasterSongsController#index as HTML
+  Rendered master_songs/index.html.erb within layouts/application (41.9ms)
+  Rendered devise/sessions/_sign_in.html.erb (3.1ms)
+  Rendered layouts/_cart_display.html.erb (0.2ms)
+  Rendered user_access_requests/_form.html.erb (2.3ms)
+  Rendered layouts/_main_content.html.erb (0.0ms)
+Completed 200 OK in 124ms (Views: 95.7ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/?_=1347770976352" for ::1 at 2012-09-15 23:49:36 -0500
+Processing by MasterSongsController#index as JS
+  Parameters: {"_"=>"1347770976352"}
+  Rendered master_songs/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_main_content.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 1.5ms)
+Connecting to database specified by database.yml
+Creating scope :new. Overwriting existing method MasterSong.new.
+
+
+Started GET "/" for ::1 at 2012-09-15 23:51:17 -0500
+Processing by MasterSongsController#index as HTML
+  Rendered master_songs/index.html.erb within layouts/application (39.3ms)
+  Rendered devise/sessions/_sign_in.html.erb (58.1ms)
+  Rendered layouts/_cart_display.html.erb (1.0ms)
+  Rendered user_access_requests/_form.html.erb (16.8ms)
+  Rendered layouts/_main_content.html.erb (0.7ms)
+Completed 200 OK in 451ms (Views: 428.2ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/?_=1347771078557" for ::1 at 2012-09-15 23:51:18 -0500
+Processing by MasterSongsController#index as JS
+  Parameters: {"_"=>"1347771078557"}
+  Rendered master_songs/index.html.erb within layouts/application (32.0ms)
+  Rendered layouts/_main_content.html.erb (0.4ms)
+Completed 200 OK in 97ms (Views: 84.4ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2012-09-15 23:51:21 -0500
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (28.6ms)
+  Rendered devise/sessions/_sign_in.html.erb (4.2ms)
+  Rendered layouts/_cart_display.html.erb (0.7ms)
+  Rendered user_access_requests/_form.html.erb (13.8ms)
+  Rendered layouts/_main_content.html.erb (0.7ms)
+Completed 200 OK in 312ms (Views: 222.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/sign_up?_=1347771082262" for ::1 at 2012-09-15 23:51:22 -0500
+Processing by RegistrationsController#new as JS
+  Parameters: {"_"=>"1347771082262"}
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_main_content.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2012-09-15 23:51:45 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoaArlrGhIFc32xZsEeV72OeZQ78yWCwl4wC/VH18Hs=", "user"=>{"user_type"=>"music artist", "email"=>"joshua.chestang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"jches", "user_image"=>#<ActionDispatch::Http::UploadedFile:0x007fb93feec5f0 @original_filename="Rockie-Fresh.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[user_image]\"; filename=\"Rockie-Fresh.jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20120915-5060-f95fm1>>, "terms"=>"1"}, "commit"=>"Sign Up"}
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5060-b00cxj.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5060-b00cxj.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5060-b00cxj.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5060-b00cxj.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.8ms)
+  Rendered devise/sessions/_sign_in.html.erb (2.2ms)
+  Rendered layouts/_cart_display.html.erb (0.1ms)
+  Rendered user_access_requests/_form.html.erb (2.3ms)
+  Rendered layouts/_main_content.html.erb (0.1ms)
+Completed 200 OK in 385ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?_=1347771106166" for ::1 at 2012-09-15 23:51:46 -0500
+Processing by UsersController#index as JS
+  Parameters: {"_"=>"1347771106166"}
+Completed 401 Unauthorized in 1ms
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Creating scope :new. Overwriting existing method MasterSong.new.
+
+
+Started POST "/users" for ::1 at 2012-09-15 23:58:47 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoaArlrGhIFc32xZsEeV72OeZQ78yWCwl4wC/VH18Hs=", "user"=>{"user_type"=>"music artist", "email"=>"joshua.chestang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"jches", "user_image"=>#<ActionDispatch::Http::UploadedFile:0x007ff97eb8c930 @original_filename="Rockie-Fresh.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[user_image]\"; filename=\"Rockie-Fresh.jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20120915-5288-1g82bja>>, "terms"=>"1"}, "commit"=>"Sign Up"}
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5288-n6nh1d.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5288-n6nh1d.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5288-n6nh1d.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5288-n6nh1d.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  Rendered devise/shared/_links.erb (2.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (51.6ms)
+  Rendered devise/sessions/_sign_in.html.erb (6.3ms)
+  Rendered layouts/_cart_display.html.erb (0.7ms)
+  Rendered user_access_requests/_form.html.erb (16.7ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 849ms (Views: 391.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/groovepaper.png" for ::1 at 2012-09-15 23:58:48 -0500
+Served asset /groovepaper.png - 304 Not Modified (4ms)
+
+
+Started GET "/users?_=1347771528384" for ::1 at 2012-09-15 23:58:48 -0500
+Processing by UsersController#index as JS
+  Parameters: {"_"=>"1347771528384"}
+Completed 401 Unauthorized in 2ms
+
+
+Started POST "/users" for ::1 at 2012-09-15 23:59:13 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoaArlrGhIFc32xZsEeV72OeZQ78yWCwl4wC/VH18Hs=", "user"=>{"user_type"=>"music artist", "email"=>"joshua.chestang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"jches", "user_image"=>#<ActionDispatch::Http::UploadedFile:0x007ff97ede7b30 @original_filename="Rockie-Fresh.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[user_image]\"; filename=\"Rockie-Fresh.jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20120915-5295-unxn49>>, "terms"=>"1"}, "commit"=>"Sign Up"}
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5295-11t3soz.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5295-11t3soz.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5295-11t3soz.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120915-5295-11t3soz.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (37.6ms)
+  Rendered devise/sessions/_sign_in.html.erb (3.9ms)
+  Rendered layouts/_cart_display.html.erb (0.7ms)
+  Rendered user_access_requests/_form.html.erb (13.9ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 695ms (Views: 290.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users?_=1347771554425" for ::1 at 2012-09-15 23:59:14 -0500
+Processing by UsersController#index as JS
+  Parameters: {"_"=>"1347771554425"}
+Completed 401 Unauthorized in 1ms
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Creating scope :new. Overwriting existing method MasterSong.new.
+
+
+Started POST "/users" for ::1 at 2012-09-16 00:02:40 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoaArlrGhIFc32xZsEeV72OeZQ78yWCwl4wC/VH18Hs=", "user"=>{"user_type"=>"music artist", "email"=>"joshua.chestang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"jches", "user_image"=>#<ActionDispatch::Http::UploadedFile:0x007ff8b78d8850 @original_filename="Rockie-Fresh.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[user_image]\"; filename=\"Rockie-Fresh.jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20120916-5454-18pk31r>>, "terms"=>"1"}, "commit"=>"Sign Up"}
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5454-3wojb.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5454-3wojb.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5454-3wojb.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5454-3wojb.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (48.5ms)
+  Rendered devise/sessions/_sign_in.html.erb (3.9ms)
+  Rendered layouts/_cart_display.html.erb (0.6ms)
+  Rendered user_access_requests/_form.html.erb (14.8ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 778ms (Views: 309.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/groovepaper.png" for ::1 at 2012-09-16 00:02:42 -0500
+Served asset /groovepaper.png - 304 Not Modified (1ms)
+
+
+Started GET "/users?_=1347771762124" for ::1 at 2012-09-16 00:02:42 -0500
+Processing by UsersController#index as JS
+  Parameters: {"_"=>"1347771762124"}
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/" for ::1 at 2012-09-16 00:02:46 -0500
+Processing by MasterSongsController#index as JS
+  Rendered master_songs/index.html.erb within layouts/application (113.4ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 127ms (Views: 117.9ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/?_=1347771766285" for ::1 at 2012-09-16 00:02:46 -0500
+Processing by MasterSongsController#index as JS
+  Parameters: {"_"=>"1347771766285"}
+  Rendered master_songs/index.html.erb within layouts/application (32.7ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 107ms (Views: 94.3ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2012-09-16 00:02:48 -0500
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (74.9ms)
+  Rendered devise/sessions/_sign_in.html.erb (3.9ms)
+  Rendered layouts/_cart_display.html.erb (0.6ms)
+  Rendered user_access_requests/_form.html.erb (14.1ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 306ms (Views: 262.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/sign_up?_=1347771769183" for ::1 at 2012-09-16 00:02:49 -0500
+Processing by RegistrationsController#new as JS
+  Parameters: {"_"=>"1347771769183"}
+  Rendered devise/shared/_links.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_main_content.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2012-09-16 00:03:56 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoaArlrGhIFc32xZsEeV72OeZQ78yWCwl4wC/VH18Hs=", "user"=>{"user_type"=>"music artist", "email"=>"joshua.chestang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"joshuache", "user_image"=>#<ActionDispatch::Http::UploadedFile:0x007ff8b9aa9178 @original_filename="Rockie-Fresh.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[user_image]\"; filename=\"Rockie-Fresh.jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20120916-5461-z119hn>>, "terms"=>"1"}, "commit"=>"Sign Up"}
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5461-19juh8o.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5461-19juh8o.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5461-19juh8o.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5461-19juh8o.jpeg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (65.5ms)
+  Rendered devise/sessions/_sign_in.html.erb (3.7ms)
+  Rendered layouts/_cart_display.html.erb (0.2ms)
+  Rendered user_access_requests/_form.html.erb (4.2ms)
+  Rendered layouts/_main_content.html.erb (0.1ms)
+Completed 200 OK in 400ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?_=1347771836797" for ::1 at 2012-09-16 00:03:56 -0500
+Processing by UsersController#index as JS
+  Parameters: {"_"=>"1347771836797"}
+Completed 401 Unauthorized in 1ms
+Connecting to database specified by database.yml
+Creating scope :new. Overwriting existing method MasterSong.new.
+
+
+Started POST "/users" for ::1 at 2012-09-16 00:10:44 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoaArlrGhIFc32xZsEeV72OeZQ78yWCwl4wC/VH18Hs=", "user"=>{"user_type"=>"music artist", "email"=>"joshua.chestang@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"joshuache", "user_image"=>#<ActionDispatch::Http::UploadedFile:0x007fdab9defc10 @original_filename="Rockie-Fresh.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[user_image]\"; filename=\"Rockie-Fresh.jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20120916-5688-1ks2osb>>, "terms"=>"1"}, "commit"=>"Sign Up"}
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: convert '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]' -auto-orient -resize "300x300>" '/tmp/Rockie-Fresh20120916-5688-19fnln920120916-5688-afpgzx'
+[32mCommand[0m :: file -b --mime '/tmp/Rockie-Fresh20120916-5688-19fnln920120916-5688-afpgzx'
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: convert '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]' -auto-orient -resize "100x100>" '/tmp/Rockie-Fresh20120916-5688-19fnln920120916-5688-8g2qm'
+[32mCommand[0m :: file -b --mime '/tmp/Rockie-Fresh20120916-5688-19fnln920120916-5688-8g2qm'
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: convert '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]' -auto-orient -resize "150x150>" '/tmp/Rockie-Fresh20120916-5688-19fnln920120916-5688-1tajnu7'
+[32mCommand[0m :: file -b --mime '/tmp/Rockie-Fresh20120916-5688-19fnln920120916-5688-1tajnu7'
+[32mCommand[0m :: identify -format %wx%h '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]'
+[32mCommand[0m :: convert '/tmp/Rockie-Fresh20120916-5688-19fnln9.jpeg[0]' -auto-orient -resize "50x50>" '/tmp/Rockie-Fresh20120916-5688-19fnln920120916-5688-y3npor'
+[32mCommand[0m :: file -b --mime '/tmp/Rockie-Fresh20120916-5688-19fnln920120916-5688-y3npor'
+[paperclip] Saving attachments.
+[paperclip] saving /original/1/Rockie-Fresh.jpeg
+[AWS S3 200 4.510158 0 retries] put_object(:acl=>:public_read,:bucket_name=>"musicmind-alpha-prod",:content_length=>62716,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: Rockie-Fresh.jpeg,:key=>"original/1/Rockie-Fresh.jpeg")  
+
+[paperclip] saving /medium/1/Rockie-Fresh.jpeg
+[AWS S3 200 0.645937 0 retries] put_object(:acl=>:public_read,:bucket_name=>"musicmind-alpha-prod",:content_length=>21401,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: Rockie-Fresh20120916-5688-19fnln920120916-5688-afpgzx,:key=>"medium/1/Rockie-Fresh.jpeg")  
+
+[paperclip] saving /thumb/1/Rockie-Fresh.jpeg
+[AWS S3 200 0.168023 0 retries] put_object(:acl=>:public_read,:bucket_name=>"musicmind-alpha-prod",:content_length=>3587,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: Rockie-Fresh20120916-5688-19fnln920120916-5688-8g2qm,:key=>"thumb/1/Rockie-Fresh.jpeg")  
+
+[paperclip] saving /medium2/1/Rockie-Fresh.jpeg
+[AWS S3 200 0.266563 0 retries] put_object(:acl=>:public_read,:bucket_name=>"musicmind-alpha-prod",:content_length=>6896,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: Rockie-Fresh20120916-5688-19fnln920120916-5688-1tajnu7,:key=>"medium2/1/Rockie-Fresh.jpeg")  
+
+[paperclip] saving /thumb_small/1/Rockie-Fresh.jpeg
+[AWS S3 200 0.096664 0 retries] put_object(:acl=>:public_read,:bucket_name=>"musicmind-alpha-prod",:content_length=>1287,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: Rockie-Fresh20120916-5688-19fnln920120916-5688-y3npor,:key=>"thumb_small/1/Rockie-Fresh.jpeg")  
+
+[paperclip] Saving attachments.
+Redirected to http://localhost/fan_bases/new
+Completed 302 Found in 8158ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/fan_bases/new" for ::1 at 2012-09-16 00:10:52 -0500
+Processing by FanBasesController#new as HTML
+  Rendered fan_bases/_form.html.erb (12.7ms)
+  Rendered fan_bases/new.html.erb within layouts/application (81.7ms)
+  Rendered layouts/_search_form_main.html.erb (2.1ms)
+  Rendered layouts/_player.html.erb (0.6ms)
+  Rendered layouts/_main_nav_links.html.erb (3.5ms)
+  Rendered carts/_cart.html.erb (42.8ms)
+  Rendered layouts/_cart_display.html.erb (68.3ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 484ms (Views: 441.8ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/assets/jplayer.blue.monday.jpg" for ::1 at 2012-09-16 00:10:53 -0500
+
+
+Started GET "/assets/noise-1.png" for ::1 at 2012-09-16 00:10:53 -0500
+Served asset /jplayer.blue.monday.jpg - 200 OK (7ms)
+Served asset /noise-1.png - 200 OK (5ms)
+
+
+Started GET "/fan_bases/new?_=1347772253794" for ::1 at 2012-09-16 00:10:53 -0500
+Processing by FanBasesController#new as JS
+  Parameters: {"_"=>"1347772253794"}
+  Rendered fan_bases/_form.html.erb (24.0ms)
+  Rendered fan_bases/new.html.erb within layouts/application (82.6ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 233ms (Views: 108.6ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/yourlibrary" for ::1 at 2012-09-16 00:11:00 -0500
+Processing by UserSongUploadsController#show as JS
+  Rendered shared/_user_stats_main.html.erb (50.4ms)
+  Rendered user_song_uploads/_user_library.html.erb (2.9ms)
+  Rendered user_song_uploads/show.html.erb within layouts/application (79.2ms)
+  Rendered layouts/_main_content.html.erb (0.1ms)
+Completed 200 OK in 333ms (Views: 54.4ms | ActiveRecord: 56.7ms)
+
+
+Started GET "/user_song_uploads/new" for ::1 at 2012-09-16 00:11:10 -0500
+Processing by UserSongUploadsController#new as JS
+  Rendered user_song_uploads/_multi_uploader.html.erb (872.8ms)
+  Rendered user_song_uploads/new.html.erb within layouts/application (875.9ms)
+  Rendered layouts/_main_content.html.erb (0.0ms)
+Completed 200 OK in 907ms (Views: 879.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.fileupload-fp-efb69bbb04fd6fb25c4972d452a93d8b.js?_=1347772271709" for ::1 at 2012-09-16 00:11:11 -0500
+Served asset /jquery.fileupload-fp-efb69bbb04fd6fb25c4972d452a93d8b.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.fileupload-fab73de9c87ccfdf42807c658df1f020.js?_=1347772271724" for ::1 at 2012-09-16 00:11:11 -0500
+Served asset /jquery.fileupload-fab73de9c87ccfdf42807c658df1f020.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui-a087628862b55af8f951bce7085754f9.js?_=1347772271741" for ::1 at 2012-09-16 00:11:11 -0500
+Served asset /jquery.fileupload-ui-a087628862b55af8f951bce7085754f9.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.iframe-transport-a02b57524bff01c8ecee4f9170693527.js?_=1347772271761" for ::1 at 2012-09-16 00:11:11 -0500
+Served asset /jquery.iframe-transport-a02b57524bff01c8ecee4f9170693527.js - 200 OK (0ms)
+
+
+Started GET "/user_song_uploads" for ::1 at 2012-09-16 00:11:11 -0500
+Processing by UserSongUploadsController#index as JSON
+
+
+Started GET "/assets/loading.gif" for ::1 at 2012-09-16 00:11:11 -0500
+Served asset /loading.gif - 200 OK (11ms)
+
+
+Started GET "/assets/fontawesome-webfont.eot" for ::1 at 2012-09-16 00:11:11 -0500
+Served asset /fontawesome-webfont.eot - 200 OK (11ms)
+  Rendered user_song_uploads/index.html.erb within layouts/application (211.5ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for ::1 at 2012-09-16 00:11:12 -0500
+Served asset /fontawesome-webfont.woff - 200 OK (9ms)
+  Rendered layouts/_search_form_main.html.erb (1.6ms)
+  Rendered layouts/_player.html.erb (0.5ms)
+  Rendered layouts/_main_nav_links.html.erb (2.4ms)
+  Rendered carts/_cart.html.erb (8.3ms)
+  Rendered layouts/_cart_display.html.erb (12.4ms)
+  Rendered layouts/_main_content.html.erb (0.5ms)
+Completed 200 OK in 369ms (Views: 362.4ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/user_song_uploads" for ::1 at 2012-09-16 00:11:49 -0500
+Processing by UserSongUploadsController#create as JSON
+  Parameters: {"user_song_upload"=>{"song"=>#<ActionDispatch::Http::UploadedFile:0x007fdab992da88 @original_filename="12 - Interlude (DatPiff Exclusive).mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"user_song_upload[song]\"; filename=\"12 - Interlude (DatPiff Exclusive).mp3\"\r\nContent-Type: audio/mp3\r\n", @tempfile=#<File:/tmp/RackMultipart20120916-5713-1por72l>>}}
+[paperclip] Saving attachments.
+[paperclip] saving /original/1/12_-_Interlude_(DatPiff_Exclusive).mp3
+
+
+Started GET "/yourlibrary" for ::1 at 2012-09-16 00:14:24 -0500
+Processing by UserSongUploadsController#show as JS
+  Rendered shared/_user_stats_main.html.erb (118.7ms)
+  Rendered user_song_uploads/_user_library.html.erb (2.3ms)
+  Rendered user_song_uploads/show.html.erb within layouts/application (144.1ms)
+  Rendered layouts/_main_content.html.erb (0.4ms)
+Completed 200 OK in 240ms (Views: 144.2ms | ActiveRecord: 30.8ms)
+
+
+Started GET "/discover" for ::1 at 2012-09-16 00:14:27 -0500
+Processing by MasterSongsController#index as JS
+  Rendered master_songs/index.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_main_content.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 21.2ms | ActiveRecord: 1.5ms)
+[AWS S3 200 388.649184 2 retries] put_object(:acl=>:public_read,:bucket_name=>"musicmind-alpha-prod",:content_length=>2527602,:content_type=>"audio/mp3",:data=>Paperclip::UploadedFileAdapter: 12 - Interlude (DatPiff Exclusive).mp3,:key=>"original/1/12_-_Interlude_(DatPiff_Exclusive).mp3")  
+
+Completed 500 Internal Server Error in 389234ms
+
+NoMethodError (undefined method `title' for nil:NilClass):
+  app/models/user_song_upload.rb:88:in `block in set_id3_tags'
+  app/models/user_song_upload.rb:86:in `set_id3_tags'
+  app/controllers/user_song_uploads_controller.rb:42:in `create'
+
+
