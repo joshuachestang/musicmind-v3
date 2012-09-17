@@ -37,7 +37,7 @@ div.form-field span{
 }
 
 form#new_user.login{
-  width:440px;
+  width:460px;
   float:left;
   height:50px;
   margin: 5px 5px 0px 0px;
@@ -183,10 +183,10 @@ section#j-player{
   margin-right:40px;
 }
 
-div#not-logged-in{
+div#not-logged-in-2.container{
   border-bottom-right-radius:7px; 
   border-bottom-left-radius:7px; 
-  box-shadow: 0px 2px #000;
+  background-color:black;
 }
 
 div.span10{
