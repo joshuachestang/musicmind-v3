@@ -15,9 +15,12 @@ By making music discovery, listening, and storage easy, we create an ecosystem f
 The technology stack:
   
   Ruby/Rails
-  Sqlite3
+  MySql
+  Phusion Passenger
+  Capistrano
+  RackSpace
   Amazons3
-  Heroku(for deployment)
+  
   
 
 

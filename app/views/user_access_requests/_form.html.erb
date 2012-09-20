@@ -1,6 +1,6 @@
 <section id="invite_request_form">
 <%= simple_form_for UserAccessRequest.new, remote: :true do |f| %>
     <%= f.input :email, :placeholder => 'Enter Your Email', :label => '' %>
-    <div id="request_invite_submit_button"><%= f.button :submit, "Request Invite", :class => 'btn btn-large btn-warning', remote: :true, :id => "request_invite_submit_button" %></div>
+    <div id="request_invite_submit_button"><%= f.button :submit, "Request An Invite", :class => 'btn btn-large btn-warning', remote: :true, :id => "request_invite_submit_button" %></div>
   <% end %>
 </section>

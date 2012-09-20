@@ -1,6 +1,6 @@
 <div class="span9" id="song-feed">
   <% unless user_signed_in? %>
-  <h2>For the true artist and the true fan.</h2>
+  <h2 style="padding-top:0px;">Music discovery should be easy.</h2>
   <% end %>
   <h1 id="discovery-head" style="margin-left:5px;">Discover Music</h1>
   <div style="margin-left:5px;"><%= link_to 'Newly Added', master_songs_path, remote: :true, :class => "btn btn-primary", :id => "page-link" %> |

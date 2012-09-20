@@ -46,7 +46,7 @@ $(document).ready(function(){
 //back buttons, bookmark urls for ajax links
 if (history && history.pushState) {
   $(function() {
-    $("#page-link").live("click", function(e) {
+    $("a#page-link").live("click", function(e) {
       $.getScript(this.href);
       history.pushState(null, document.title, this.href);
       e.preventDefault();

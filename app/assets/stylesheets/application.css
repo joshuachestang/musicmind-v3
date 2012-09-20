@@ -124,13 +124,15 @@ h1 span{
 }
 
 div#double-wrap{
-  background-image:url('groovepaper.png');
+  background-image:url('noise-f1.gif');
   margin: 0 auto;
   width:80%;
   height:auto;
   border-radius:7px;
   padding-bottom:80px;
 }
+
+
 
 a.button.facebook {
 color: white;
@@ -187,6 +189,7 @@ div#not-logged-in-2.container{
   border-bottom-right-radius:7px; 
   border-bottom-left-radius:7px; 
   background-color:black;
+  height:40px;
 }
 
 div.span10{
@@ -199,6 +202,15 @@ div#sign-up-page{
 
 div#sign-up-form{
   margin-left:40px;
+}
+
+
+
+div#slider img{
+  height:60px;
+  width:90%;
+  margin:0 auto;
+  padding:0px 10px 0px 10px;
 }
 
 
