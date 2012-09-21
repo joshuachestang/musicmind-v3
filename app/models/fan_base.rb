@@ -9,10 +9,11 @@ class FanBase < ActiveRecord::Base
   attr_accessible :name, :user_id, :type_of_music_entity, :fb_art
 
 
-  has_attached_file :fb_art, :styles => { :medium => "300x300>", :medium2 => "200x200>", :thumb => "100x100>", :thumb_small => "50x50>" },
-   :storage => :s3,
-   :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+  has_attached_file :fb_art, :styles => { :medium => "300x300>", :medium2 => "200x200>", :thumb => "100x100>", :thumb_small => "50x50>" }
+  #,
+  # :storage => :s3,
+  # :s3_credentials => "#{Rails.root}/config/s3.yml",
+  #   :path => "/:style/:id/:filename"
 
 
 

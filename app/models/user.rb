@@ -16,9 +16,11 @@ class User < ActiveRecord::Base
 
   validates :user_type, presence: true
   validates :username, uniqueness: true
-  has_attached_file :user_image, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }, :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+  has_attached_file :user_image, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }
+
+  #, :storage => :s3,
+   # :s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username,
                   :user_image, :user_type, :provider, :uid, :account_balance

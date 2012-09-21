@@ -1,5 +1,8 @@
 class MasterSong < ActiveRecord::Base
+ 
  require 'taglib'
+ extend FriendlyId
+ friendly_id :title, :use => :slugged
 
  scope :new, order("created_at DESC")
  scope :upvoted, order("song_up_votes_count DESC")
@@ -23,8 +26,6 @@ class MasterSong < ActiveRecord::Base
     end
   end
 
-  extend FriendlyId
-  friendly_id :title, :use => :slugged
   
   #activity feed
   tracked
@@ -42,13 +43,17 @@ class MasterSong < ActiveRecord::Base
   validates_with AttachmentPresenceValidator, :attributes => :m_song
 
   
-  has_attached_file :m_song, :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+  has_attached_file :m_song
 
-  has_attached_file :song_art_work, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }, :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+  #, :storage => :s3,
+   # :s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
+
+  has_attached_file :song_art_work, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }
+
+  #, :storage => :s3,
+   # :s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
   
 
 
