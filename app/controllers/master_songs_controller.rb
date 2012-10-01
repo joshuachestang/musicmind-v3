@@ -10,7 +10,7 @@ class MasterSongsController < ApplicationController
   # GET /master_songs
   # GET /master_songs.json
   def index
-    @newly_added_songs = MasterSong.new.page(params[:page]).per(12)
+    @newly_added_songs = MasterSong.newly.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js 
@@ -18,7 +18,7 @@ class MasterSongsController < ApplicationController
   end
 
   def newly_added
-    @newly_added_songs = MasterSong.new.page(params[:page]).per(12)
+    @newly_added_songs = MasterSong.newly.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js {render :layout => false }

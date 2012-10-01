@@ -1,12 +1,14 @@
 class MasterSong < ActiveRecord::Base
- 
- require 'taglib'
 
- scope :new, order("created_at DESC")
+ scope :newly, order("created_at DESC")
  scope :upvoted, order("song_up_votes_count DESC")
  scope :trended, order("updated_at DESC")
  scope :free, where(:price => 0.00)
  scope :most_listened, order("song_listens_count DESC")
+ 
+ require 'taglib'
+
+
  
 
   #search function
@@ -24,7 +26,7 @@ class MasterSong < ActiveRecord::Base
     end
   end
 
-extend FriendlyId
+ extend FriendlyId
  friendly_id :title, :use => :slugged
   
   #activity feed

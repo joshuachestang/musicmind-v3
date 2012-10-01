@@ -97,7 +97,7 @@ include Tire::Model::Callbacks
   
 
   #master_song_relationships
-  has_many :master_songs, foreign_key: :user_id
+  has_many :master_songs, :foreign_key => "user_id"
   has_many :master_song_relationships, foreign_key: :owner_id
   has_many :master_song_ownings, through: :master_song_relationships, source: :owned
   #has_many :owning, :through => :master_song_relationships, :source => :owned
