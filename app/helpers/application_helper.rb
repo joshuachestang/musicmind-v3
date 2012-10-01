@@ -44,7 +44,7 @@ module ApplicationHelper
     seconds_in_last_minute = seconds - total_minutes.minutes.seconds
     "#{total_minutes}:#{seconds_in_last_minute}"
   end
-
+#problem with times that have 0 in seconds column of time
   
 
 #twitter sharing links on master song page

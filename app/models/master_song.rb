@@ -1,8 +1,6 @@
 class MasterSong < ActiveRecord::Base
  
  require 'taglib'
- extend FriendlyId
- friendly_id :title, :use => :slugged
 
  scope :new, order("created_at DESC")
  scope :upvoted, order("song_up_votes_count DESC")
@@ -26,6 +24,8 @@ class MasterSong < ActiveRecord::Base
     end
   end
 
+extend FriendlyId
+ friendly_id :title, :use => :slugged
   
   #activity feed
   tracked

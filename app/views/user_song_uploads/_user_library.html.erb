@@ -17,7 +17,7 @@
                       'data-type' => 'UserSongUpload'
                       %></td>
               <td><%= user_song_upload.artist %></td>
-              
+              <td><%= convert_seconds_to_time(user_song_upload.length) %></td>
               <td>
                 <div id="favorite-form-<%= user_song_upload.id %>">
                   <% unless user_song_upload.favorite == true %>

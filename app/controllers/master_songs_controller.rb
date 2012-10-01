@@ -125,9 +125,6 @@ class MasterSongsController < ApplicationController
         format.html { redirect_to @master_song, notice: 'Master song was successfully created.' }
         format.js { redirect_to @master_song, :id => "page-link" }
         format.json { render json: @master_song, status: :created, location: @master_song }
-        format.jsm do
-          render_js_message(:ok, :html => "it saved!")
-        end
       else
         format.html { render action: "new" }
         format.js
