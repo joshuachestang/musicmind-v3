@@ -1,15 +1,20 @@
-The goal of MusicMind - To leverage social power to grow and provide an online music industry for music artists and fans.
+The goal of MusicMind - To provide the necessary resources for any artist to obtain and grow a fan base long term. For all music listeners we're focusing on ways to easily discover music through sharing. Lastly, we have a grand goal of eliminating music piracy, we've created a few starter methods to do so.  
 
 Before anything:
-Brew install ImageMagick
-Brew install elasticsearch
-Brew install 
+For first time setup go to: railsinstaller.org - follow instructions in detail
+
 
 
 
 MusicMind gives you the power to access and discover music with people around you and by yourself. When it comes to music, people have both social and personal experiences. With MusicMind we want to create that balance for you in a private and social place for music. 
 
 By making music discovery, listening, and storage easy, we create an ecosystem for music. On one end its the artist, who want to build a fan base. And on the otherside is a group a dedicated fans. Now users can stay in touch with the music by.
+
+We try to stick with 3 main focuses:
+
+1. Sharing - In the  day and age we live in we understand that it is very important to create a culture of sharing. With music, to share with someone may not be legal. That said, we want to focus on creating a way for our users to broadcast what music they've added to their musicmind and if they think its good music or not. By connecting to different social platforms others have the chance to discover new music as well. Although this is a basic understanding of what we're shooting for, our main component focuses on building a network of users who participate in the idea of community.
+
+
 
 
 The technology stack:
