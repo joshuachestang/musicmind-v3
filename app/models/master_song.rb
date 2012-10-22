@@ -1,12 +1,12 @@
 class MasterSong < ActiveRecord::Base
- require 'taglib'
 
- scope :new, order("created_at DESC")
+ scope :newly, order("created_at DESC")
  scope :upvoted, order("song_up_votes_count DESC")
  scope :trended, order("updated_at DESC")
  scope :free, where(:price => 0.00)
  scope :most_listened, order("song_listens_count DESC")
  
+ require 'taglib'
 
   #search function
   #searchable do
@@ -23,8 +23,8 @@ class MasterSong < ActiveRecord::Base
     end
   end
 
-  extend FriendlyId
-  friendly_id :title, :use => :slugged
+ extend FriendlyId
+ friendly_id :title, :use => :slugged
   
   #activity feed
   tracked
@@ -42,13 +42,17 @@ class MasterSong < ActiveRecord::Base
   validates_with AttachmentPresenceValidator, :attributes => :m_song
 
   
-  has_attached_file :m_song, :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+  has_attached_file :m_song
 
-  has_attached_file :song_art_work, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }, :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+  #, :storage => :s3,
+   # :s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
+
+  has_attached_file :song_art_work, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }
+
+  #, :storage => :s3,
+   # :s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
   
 
 
@@ -104,6 +108,8 @@ before_destroy :ensure_not_referenced_by_any_line_item
       properties = fileref.audio_properties
       properties.length
     end
+    
+    
         #v = TagLib::MPEG::File.open(self.m_song.path) do |file|
    #   tag = file.id3v2_tag
    #   cover = tag.frame_list('APIC').first

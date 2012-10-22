@@ -248,8 +248,8 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.string   "album"
     t.text     "album_title"
     t.integer  "length"
-    t.boolean  "playable",                                                 :default => true
     t.string   "slug"
+    t.boolean  "playable",                                                 :default => true
     t.datetime "created_at",                                                                 :null => false
     t.datetime "updated_at",                                                                 :null => false
   end

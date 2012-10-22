@@ -10,7 +10,7 @@ class MasterSongsController < ApplicationController
   # GET /master_songs
   # GET /master_songs.json
   def index
-    @newly_added_songs = MasterSong.new.page(params[:page]).per(12)
+    @newly_added_songs = MasterSong.newly.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js 
@@ -18,7 +18,7 @@ class MasterSongsController < ApplicationController
   end
 
   def newly_added
-    @newly_added_songs = MasterSong.new.page(params[:page]).per(12)
+    @newly_added_songs = MasterSong.newly.page(params[:page]).per(12)
     respond_to do |format|
       format.html 
       format.js {render :layout => false }
@@ -125,9 +125,6 @@ class MasterSongsController < ApplicationController
         format.html { redirect_to @master_song, notice: 'Master song was successfully created.' }
         format.js { redirect_to @master_song, :id => "page-link" }
         format.json { render json: @master_song, status: :created, location: @master_song }
-        format.jsm do
-          render_js_message(:ok, :html => "it saved!")
-        end
       else
         format.html { render action: "new" }
         format.js

@@ -11,9 +11,11 @@ class Album < ActiveRecord::Base
 
     attr_accessible :album_artwork, :album_title, :album_tracks_attributes
 
-    has_attached_file :album_artwork, :styles => { :medium => "300x300>", :medium2 => "150x150>", :thumb => "100x100>" }, :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+    has_attached_file :album_artwork, :styles => { :medium => "300x300>", :medium2 => "150x150>", :thumb => "100x100>" }
+
+    #, :storage => :s3,
+    #:s3_credentials => "#{Rails.root}/config/s3.yml",
+    #  :path => "/:style/:id/:filename"
 
     def album_price
     	self.album_tracks.master_songs.sum(:price)

@@ -5,9 +5,11 @@ class UserSongUpload < ActiveRecord::Base
   
   tracked
 	belongs_to :user, dependent: :destroy
-  has_attached_file :song, :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+  has_attached_file :song
+
+  #, :storage => :s3,
+   # :s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
 
   after_save :set_id3_tags
   

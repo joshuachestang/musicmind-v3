@@ -5,10 +5,12 @@ class Label < ActiveRecord::Base
 
 	belongs_to :fan_base, dependent: :destroy
 	
-	has_attached_file :label_image, :styles => { :medium => "300x300>", :thumb => "100x100>", :thumb_small => "50x50>" }, 
-	:storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/s3.yml",
-     :path => "/:style/:id/:filename"
+	has_attached_file :label_image, :styles => { :medium => "300x300>", :thumb => "100x100>", :thumb_small => "50x50>" }
+
+	#, 
+	#:storage => :s3,
+    #:s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
 
 	attr_accessible :label_image, :fan_base_id, :name
 end

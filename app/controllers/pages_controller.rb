@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+  respond_to :js, :html, :xml, :json
   def about
   	 respond_to do | format | 
         format.html 

@@ -44,7 +44,6 @@ end
 
 
 
-  Paperclip.options[:command_path] = "/usr/local/bin/"
   
 
   ENV["TWITTER_CONSUMER_KEY"] = "ay4l7Qb57OGbS5yv0GDzMw"
