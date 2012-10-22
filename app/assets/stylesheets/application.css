@@ -182,7 +182,7 @@ section#j-player{
 div#not-logged-in-2.container{
   border-bottom-right-radius:7px; 
   border-bottom-left-radius:7px; 
-  background-color:black;
+  background-color:#0B1800;
   height:40px;
 }
 
@@ -207,6 +207,15 @@ div#slider img{
   padding:0px 10px 0px 10px;
 }
 
+footer{
+  background-image:url('bg.jpg');
+  height:100px;
+  width:85%;
+  margin:0 auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: inset 7px 7px 5px black;
+}
 
 
 

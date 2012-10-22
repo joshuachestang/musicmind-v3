@@ -1,6 +1,6 @@
 Musicmindbeta::Application.routes.draw do
 
-  resources :user_access_requests
+  resources :user_access_requests, :only => [:create, :new]
 
   resources :album_tracks
   

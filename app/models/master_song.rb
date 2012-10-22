@@ -8,9 +8,6 @@ class MasterSong < ActiveRecord::Base
  
  require 'taglib'
 
-
- 
-
   #search function
   #searchable do
    # text :title, :artist, :album
@@ -111,6 +108,8 @@ before_destroy :ensure_not_referenced_by_any_line_item
       properties = fileref.audio_properties
       properties.length
     end
+    
+    
         #v = TagLib::MPEG::File.open(self.m_song.path) do |file|
    #   tag = file.id3v2_tag
    #   cover = tag.frame_list('APIC').first

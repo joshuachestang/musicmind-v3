@@ -57,6 +57,19 @@ if (history && history.pushState) {
   });
 }
 
+if (history && history.pushState) {
+  $(function() {
+    $("#page-link").live("click", function(e) {
+      $.getScript(this.href);
+      history.pushState(null, document.title, this.href);
+      e.preventDefault();
+    });
+    $(window).bind("popstate", function() {
+      $.getScript(location.href);
+    });
+  });
+}
+
 
 //twitter button
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
