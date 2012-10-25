@@ -20,16 +20,8 @@ section#fan-base-music{
 	clear:both;
 }
 
-section#user-fan-bases{
-	float: left;
-	margin-left: 50px;
-	margin-top:20px;
-}
 
-section#fan-bases-you-are-in{
-    margin-top:20px;
-    
-  }
+
 
 div#fan-base-image{
 	float: left;
@@ -59,10 +51,47 @@ section#fan-base-owner-links{
 
 }
 
-h2#all-fan-bases-link{
-    float:right;
-    
-    }
+section.yfb{
+	float:left;
+}
+
+section.yfb#yours{
+ padding-right:60px;
+ padding-left:40px;
+}
+
+div#your-fanbase{
+    background-image:url('white_carbonfiber.png');
+    padding:40px;
+}
+
+div#divider{
+  float:left;
+}
+
+p#name{
+	display:none;
+}
+
+div#fan-of{
+  position:relative;
+}
+
+div#fan-of:hover p#name{
+	display:block;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	background-color:white;
+	width:100%;
+}
+
+
+section.yfb#yourein{
+  padding-left:60px;
+
+}
+
 
 div.fan-base{
 	margin-top:40px;

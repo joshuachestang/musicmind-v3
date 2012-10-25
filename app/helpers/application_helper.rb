@@ -42,7 +42,7 @@ module ApplicationHelper
   def convert_seconds_to_time(seconds)
     total_minutes = seconds / 1.minutes
     seconds_in_last_minute = seconds - total_minutes.minutes.seconds
-    "#{total_minutes}:#{seconds_in_last_minute}"
+    "#{total_minutes}:#{seconds_in_last_minute.to_s.rjust(2,'0')}"
   end
 #problem with times that have 0 in seconds column of time
   

@@ -14,6 +14,7 @@
 //= require jquery_ujs_multipart_xhr
 //= require locale
 //= require main
+//= require fan_bases
 //= require jquery.jplayer.min
 //= require jplayer.playlist.min
 //= require twitter/bootstrap
@@ -92,6 +93,9 @@ $(document).ready(function () {
     }
   });
 });
+
+
+
 
 
 

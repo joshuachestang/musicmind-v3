@@ -16,6 +16,10 @@ end
 
 gem "mysql2"
 
+gem 'pg'
+
+gem 'vulcan'
+
 gem "rmagick"
 
 gem "passenger"

@@ -217,5 +217,11 @@ footer{
   box-shadow: inset 7px 7px 5px black;
 }
 
+div#flash_notice{
+  margin-left:10px;
+  float:left;
+  font-size:16px;
+  padding:10px 0px 10px 20px;
+}
 
 
