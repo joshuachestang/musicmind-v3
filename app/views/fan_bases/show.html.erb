@@ -35,9 +35,13 @@
       <% end %>
     </section>
     
+    <% if @master_songs.present? %>
     <section id="fan-base-music">
       <%= render 'fan_base_music' %>
     </section>
+    <% else %>
+      <h3 style="float:left;">This person has no music in their fan base.</h3>
+    <% end %>
     
     
     <% unless @fan_base.events.empty? %>

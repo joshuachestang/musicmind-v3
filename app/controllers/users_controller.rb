@@ -21,8 +21,6 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.page(params[:page])
-    @micropost = Micropost.new
     @cart = current_cart
     @recent_master_song_ownings = @user.master_song_ownings.limit(7)
     @recently_joined_fan_bases = @user.fan_base_followings.limit(7)
