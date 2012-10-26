@@ -1,11 +1,11 @@
 <% unless @master_song.price == 0.00 %>
 	  <% unless current_cart.line_items.find_by_master_song_id(@master_song.id).present? %>
-		<div id="add-to-cart-<%= @master_song.id %>">
+		<div id="add-to-cart-<%d= @master_song.id %>" style="float:left;">
 		<%= button_to "#{number_to_currency(@master_song.price)} | Add to Cart", line_items_path(master_song_id: @master_song), remote: :true, :class => "btn" %>
 	  <% else %>
 		<%= render 'fan_bases/added_to_cart' %>
 	  <% end %>
 		</div>
 	<% else %>
-	  <div id="add-to-library-free-2"><button class="btn btn-primary disabled">Free | Must Login</button></div>		 
+	  <div id="add-to-library-free-2" style="float:left;"><button class="btn btn-primary disabled">Free | Must Login</button></div>		 
 	<% end %>
