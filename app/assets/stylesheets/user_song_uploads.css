@@ -2,6 +2,7 @@ div#library-head{
 	height:auto;
 	margin-bottom:20px;
 	margin-top: 50px;
+	margin-left:0px;
     float: left;
 	background-color: white;
 }

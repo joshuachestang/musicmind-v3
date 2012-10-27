@@ -21,6 +21,9 @@
  *= require jquery.fileupload-ui
 */
 
+body{
+  background-image:-webkit-gradient(linear, 0% 49%, 0% 100%, from(#FFFFFF), to(#ADADAD));
+}
 
 * {
   margin: 0;
@@ -124,7 +127,6 @@ h1 span{
 }
 
 div#double-wrap{
-
   margin: 0 auto;
   width:80%;
   height:auto;
