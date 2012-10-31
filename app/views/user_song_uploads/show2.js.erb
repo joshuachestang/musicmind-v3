@@ -1,3 +1,4 @@
 $("#library-music").html("<%= escape_javascript(render('user_song_uploads/user_library'))%>")
+$("ul.nav nav-list li").reset()
 $("td#favorite-usu").html("<%= escape_javascript(render('user_song_uploads/usu_favorited'))%>")
 $("td#favorite-msr").html("<%= escape_javascript(render('user_song_uploads/msr_favorited'))%>")

@@ -85,10 +85,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=
 }
 
 div.jp-audio div.jp-type-single div.jp-interface {
-	height:80px;
+	height:70px;
 }
 div.jp-audio div.jp-type-playlist div.jp-interface {
-	height:80px;
+	height:70px;
 }
 
 div.jp-video div.jp-interface {
@@ -115,7 +115,7 @@ div.jp-interface ul.jp-controls {
 
 div.jp-audio ul.jp-controls {
 	width: 400px;
-	padding:20px 20px 0 20px;
+	padding:10px 20px 0 20px;
 	margin: 0 auto;
 }
 
@@ -201,7 +201,7 @@ div.jp-progress {
 }
 div.jp-audio div.jp-progress {
 	position: absolute;
-	top:32px;
+	top:22px;
 	height:15px;
     border-radius:5px;
 }
@@ -315,8 +315,8 @@ div.jp-volume-bar {
 	cursor: pointer;
 }
 div.jp-audio div.jp-volume-bar {
-	top:37px;
-	left:397px;
+	top:28px;
+	left:399px;
 }
 div.jp-video div.jp-volume-bar {
 	top:17px;
@@ -537,7 +537,7 @@ div.jp-audio .jp-type-playlist ul.jp-toggles {
 	margin: 0;
 	position: absolute;
 	left: 250px;
-	top: 50px;
+	top: 42px;
 }
 
 div.jp-video ul.jp-toggles {

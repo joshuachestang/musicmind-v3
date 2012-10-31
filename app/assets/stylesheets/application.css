@@ -109,9 +109,10 @@ right: 50px;
 }
 
 section#search-main{
-  margin-top:35px;
-  float:left;
+  margin:15px 40px 10px 0px;
+  float:right;
   position:absolute;
+  right:0;
 }
 
 h1#not-logged-in{
@@ -184,7 +185,7 @@ section#j-player{
 div#not-logged-in-2.container{
   border-bottom-right-radius:7px; 
   border-bottom-left-radius:7px; 
-  background-color:#0B1800;
+  background-color:black;
   height:40px;
 }
 
@@ -224,6 +225,19 @@ div#flash_notice{
   float:left;
   font-size:16px;
   padding:10px 0px 10px 20px;
+}
+
+div#main-nav{
+  position: fixed;
+  top: 0;
+  left: 0px;
+  /* just used to show how to include the margin in the effect */
+  margin-top: 90px;
+
+  margin-bottom:40px;
+  width:140px;
+  
+}
 }
 
 

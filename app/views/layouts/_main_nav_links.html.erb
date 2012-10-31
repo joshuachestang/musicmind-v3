@@ -1,8 +1,12 @@
-<ul class="nav pull-right" style="width:240px;">
-                  <li><%= link_to 'Your Library', user_library_path, remote: :true, :id => "page-link", :class => "nav-links" %></li>
-                  <li><%= link_to 'Your Fan Bases', your_fan_bases_path, remote: :true, :id => "page-link", :class => "nav-links" %></li>
-                  <li><%= link_to 'Discover', discover_path, remote: :true, :id => "page-link", :class => "nav-links" %></li><br />
+<ul class="nav nav-list" id="main-nav">
+                  <li><a><%= link_to 'Your Library', user_library_path, remote: :true, :id => "page-link", :class => "nav-links" %></a></li>
+                  
+
+                  <li><a><%= link_to 'Your Fan Bases', your_fan_bases_path, remote: :true, :id => "page-link", :class => "nav-links" %></a></li>
+                  <li><a><%= link_to 'Discover', discover_path, remote: :true, :id => "page-link", :class => "nav-links" %></a></li><br />
                   <%#= link_to 'Notifications', your_notifications_path, remote: :true, :id => "page-link", :class => "nav-links" %>
                   <%#= link_to 'Activity Feed', activity_feed_path, remote: :true, :id => "page-link", :class => "nav-links" %>
-                  <li style="float:right;"><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :id => "exit-page-link", :class => "nav-links" %></li>
+                  <li style="float:right;"><a><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :id => "exit-page-link", :class => "nav-links" %></a></li>
               </ul>
+
+              <%#= 'active' if current_page?(user_library_path) %>

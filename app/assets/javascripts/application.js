@@ -95,6 +95,22 @@ $(document).ready(function () {
 });
 
 
+$(document).ready(function () {  
+  var top = $('#main-nav').offset().top - parseInt($('#main-nav').css('margin-top').replace(/auto/, 0));
+  $(window).scroll(function (event) {
+    // what the y position of the scroll is
+    var y = $(this).scrollTop();
+  
+    // whether that's below the form
+    if (y >= top) {
+      // if so, ad the fixed class
+      $('#main-nav').addClass('fixed');
+    } else {
+      // otherwise remove it
+      $('#main-nav').removeClass('fixed');
+    }
+  });
+});
 
 
 

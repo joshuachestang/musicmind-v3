@@ -9,7 +9,11 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
+  <% if user_signed_in? %>
+<div id="main-nav">
+<%= render 'layouts/main_nav_links' %>
+</div>
+<% end %>
   <body>
 
     <div class="navbar navbar-fixed-top">
@@ -31,7 +35,7 @@
             <% end %>
             <ul class="nav pull-left">
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" style="color:white; text-shadow:none;" data-toggle="dropdown">About<b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" style="color:white; text-shadow:none;" data-toggle="dropdown">Learn More<b class="caret"></b></a>
                   <ul class="dropdown-menu">
 
                     <%#= TODO place page links somewhere else on page with ajaxified links %>
@@ -48,10 +52,9 @@
            
           </a>
             <div class="nav-collapse">
-              <% if user_signed_in? %>
-                <%= render 'layouts/search_form_main' %>           
+              <% if user_signed_in? %>           
                 <%= render 'layouts/player' %>
-                <%= render 'layouts/main_nav_links' %>
+                <%= render 'layouts/search_form_main' %>
               <% else %>
                 <%= render 'devise/sessions/sign_in' %>
               <% end %>
@@ -67,7 +70,7 @@
     <div id="double-wrap">
       <div class="container" id="main-container">
             <% flash.each do |name, msg| %>
-            <div class="alert alert-<%= name == :notice ? "success" : "error" %>" style="width:300px;">
+            <div class="alert alert-<%= name == :notice ? "success" : "error" %>" style="width:100%">
               <a class="close" data-dismiss="alert">×</a>
               <%= msg %>
             </div>
