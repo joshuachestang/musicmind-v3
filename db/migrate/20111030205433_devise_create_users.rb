@@ -47,7 +47,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer :credit_balance
       t.has_attached_file :user_image
       t.integer :fan_score_count, :default => 0
-
+  
       t.timestamps
     end
 

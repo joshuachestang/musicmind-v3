@@ -41,8 +41,8 @@
                     <%#= TODO place page links somewhere else on page with ajaxified links %>
 
                       <li><%= link_to 'About', pages_about_path, remote: :true, :id => "page-link" %></li>    
-                      <li><%= link_to 'Help', pages_help_path, remote: :true, :id => "page-link" %></li>    
-                      <li><%= link_to 'Recruiting', pages_recruiting_path, remote: :true, :id => "page-link" %></li>
+                      <li><%= link_to 'Support', pages_help_path, remote: :true, :id => "page-link" %></li>    
+                      <li><%= link_to 'Careers', pages_recruiting_path, remote: :true, :id => "page-link" %></li>
                       <% unless user_signed_in? %> 
                         <li><%= link_to "Sign up", new_user_registration_path, remote: :true, :id => "page-link" %></li>
                       <% end %>
@@ -70,7 +70,7 @@
     <div id="double-wrap">
       <div class="container" id="main-container">
             <% flash.each do |name, msg| %>
-            <div class="alert alert-<%= name == :notice ? "success" : "error" %>" style="width:100%">
+            <div class="alert alert-<%= name == :notice ? "success" : "error" %>" style="width:80%; margin:0 auto; margin-top:10px;">
               <a class="close" data-dismiss="alert">×</a>
               <%= msg %>
             </div>

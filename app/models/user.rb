@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   acts_as_reader
 
 #friendly url helper
-  extend FriendlyId
-  friendly_id :username
+  # extend FriendlyId
+  # friendly_id :username
 
   #searchable do 
    # text :username

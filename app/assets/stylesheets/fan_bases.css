@@ -57,7 +57,7 @@ section.yfb{
 
 section.yfb#yours{
  padding-right:10px;
- padding-left:40px;
+ padding-left:20px;
 }
 
 div#your-fanbase{
@@ -75,6 +75,7 @@ p#name{
 
 div#fan-of{
   position:relative;
+  margin-top:20px;
 }
 
 div#fan-of:hover p#name{
@@ -89,6 +90,7 @@ div#fan-of:hover p#name{
 
 section.yfb#yourein{
   padding-left:60px;
+  width:660px;
 
 }
 
@@ -103,4 +105,11 @@ div#edit-fan-base{
 
 div#new-fan-base{
 	margin-left:40px;
+}
+
+div.alert.alert-success{
+	margin-top: 10px;
+	float: left;
+	margin-bottom: 20px;
+}
 }
