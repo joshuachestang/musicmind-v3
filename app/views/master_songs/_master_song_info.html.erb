@@ -26,7 +26,7 @@
     <% unless current_user.up_voted_song?(@master_song) %>
 	  <div id="master-song-upvote"><%= link_to "Upvote", song_up_votes_path(:master_song_id => @master_song.id), method: :post, :class => "btn icon-arrow-up", remote: :true %></div><br />
 	<% else %>
-	   <div style="margin-top:10px; float:left;"><%= render 'master_song_page_upvoted' %></div>
+	   <div style="margin-top:10px; float:left; text-shadow:0px 1px white;"><%= render 'master_song_page_upvoted' %></div>
 	<% end %>
   <% end %>
 	<div style="float:right; padding-right:20px"><%= tweet_button(:url => "http://www.musicmind.co#{url_for(@master_song)}", :text => "#{@master_song.title} by #{@master_song.artist} - add to your MusicMind library here:", :via => "musicmindalpha", :count => "none") %></div>

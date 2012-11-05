@@ -10,12 +10,13 @@ h1#info-page-title{
     border-radius:7px;
     background-color:white;
     color:#36F;
+    text-shadow:1px 1px black;
     }
 
 
 p#pages{
 	font-size:16px;
-	padding: 10px 0px 10px 10px;	
+	padding: 10px 0px 10px 0px;	
 }
 
 div#info-page-wrapper{

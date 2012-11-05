@@ -12,9 +12,9 @@
   <div id="your-fanbase">
   <ul style="list-style:none; margin-left:0px;">
   <%= link_to image_tag(current_user.fan_base.fb_art.url(:medium2)), @fan_base, remote: :true, :id => "page-link" %>
-  <li>Total Songs: <%= current_user.fan_base.number_of_songs %></li>
-  <li>Total Fans: <%= current_user.fan_base.total_fans %></li>
-  <li>Total Upvotes: <%= current_user.fan_base.total_upvotes %></li>
+  <li style="text-shadow:0px 1px white;">Total Songs: <%= current_user.fan_base.number_of_songs %></li>
+  <li style="text-shadow:0px 1px white;">Total Fans: <%= current_user.fan_base.total_fans %></li>
+  <li style="text-shadow:0px 1px white;">Total Upvotes: <%= current_user.fan_base.total_upvotes %></li>
   </ul>
 <% end %>
   </div>
@@ -35,7 +35,7 @@
 <% @fan_base_followings.each do |followed_fan_base| %>
   <div id="fan-of" style="float:left; padding-right:20px; width:200px; height:auto;">
       <%= link_to image_tag(followed_fan_base.fb_art.url(:medium2)), fan_base_path(followed_fan_base), remote: :true, :id => "page-link" %>
-     <p id="name"><%= followed_fan_base.name %></p>
+     <p id="name"><%= followed_fan_base.name.capitalize %></p>
   </div>  
 <% end %>
 <% end %>
