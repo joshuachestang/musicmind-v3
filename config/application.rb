@@ -50,5 +50,9 @@ module Musicmindbeta
 
     config.filter_parameters += [:card_number, :card_verification]
 
+     
+
   end
 end
+
+

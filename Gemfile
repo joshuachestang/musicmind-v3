@@ -67,7 +67,9 @@ gem 'unread', '~> 0.1.1'
 
 #id3 tag reader for songs
 gem "id3", "~> 1.0.0.pre6"
-#admin interface
+
+#disqus commenting
+gem "disqus", "~> 1.0.4"
 
 
 #gravatar images for users with no profile picture

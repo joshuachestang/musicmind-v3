@@ -10,33 +10,22 @@
 		
 		<%= render 'master_song_info' %>
 
-		
-      <% if user_signed_in? %>
-      <div id="comment-form">
-			<%= form_for current_user.master_song_comments.build(:master_song_id => @master_song.id), remote: :true do |f| %>
-          <%= f.text_area :comment, rows: 3 %> 
-          <%= f.hidden_field :master_song_id %>
-          <%= f.submit "Add Comment", :class => 'btn btn-primary' %>
-      </div>
-     <% end %>
-     <% end %>
-		
+				
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'musicmindco'; // required: replace example with your forum shortname
 
-		<div id="comments" class="span8">
-			<% @comments.each do |comment| %>
-        <div id="comment">
-          <div style="padding-left:15px;">
-        <%= comment.comment %><br />
-        Posted <%= time_ago_in_words(comment.created_at) %> ago.
-        <% if user_signed_in? %>
-        by: <%= link_to "#{comment.user.username}", user_path(comment.user), remote: :true, :id => "page-link" %>
-        <% else %>
-        by: <%= comment.user.username %>
-        <% end %>
-      </div>
-        </div>
-        <% end %>
-		</div>
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
 
 	</div>
 
