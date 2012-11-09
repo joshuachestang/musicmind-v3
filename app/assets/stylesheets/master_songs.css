@@ -1,4 +1,4 @@
-h1{
+5h1{
 	text-shadow:0 1px white;
 }
 
@@ -83,7 +83,9 @@ div#comment{
 }
 
 div#master-song-show{
-	margin-left: 85px;
+	margin-left: 12%;
+	margin-top:-40px;
+	width:75%;
 }
 
 div#comment-form{

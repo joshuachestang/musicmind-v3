@@ -160,6 +160,8 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.datetime "fb_art_updated_at"
     t.string   "type_of_music_entity"
     t.string   "verification"
+    t.text     "status_message"
+    t.text     "description"
     t.string   "slug"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
