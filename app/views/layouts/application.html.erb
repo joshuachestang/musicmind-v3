@@ -79,6 +79,12 @@
           <%= render 'user_access_requests/form' %>
         <% end %>
         <div id="slider"><%= image_tag("devider.png") %></div>
+        <% if user_signed_in? %>
+         <% unless current_user.user_type.present? %>
+           <%= render 'devise/registrations/user_type_form' %>
+         <% end %>
+        <% end %>
+
         <section id="main-content"><%= render 'layouts/main_content' %></section>
       </div>
     </div>

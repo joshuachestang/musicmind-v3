@@ -415,9 +415,12 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.string   "name"
     t.string   "username"
     t.string   "user_type"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country"
+    t.string   "location"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "facebook_image"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "last_seen_at"
     t.integer  "credit_balance"
     t.string   "user_image_file_name"
@@ -427,8 +430,6 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.integer  "fan_score_count",         :default => 0
     t.datetime "created_at",                              :null => false
     t.datetime "updated_at",                              :null => false
-    t.string   "provider"
-    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

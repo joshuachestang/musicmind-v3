@@ -40,9 +40,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :username
       t.string :user_type
-      t.string :city
-      t.string :state
-      t.string :country
+      t.string :location
+      t.string :first_name
+      t.string :last_name
+      t.string :facebook_image
+      t.string :provider
+      t.string :uid
       t.string :last_seen_at
       t.integer :credit_balance
       t.has_attached_file :user_image

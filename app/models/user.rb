@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   validates_acceptance_of :terms
 
-  validates :user_type, presence: true
+
   validates :username, uniqueness: true
   has_attached_file :user_image, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }
 
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     # :path => "/:style/:id/:filename"
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username,
-                  :user_image, :user_type, :provider, :uid, :account_balance
+                  :user_image, :user_type, :provider, :uid, :account_balance, :first_name, :last_name, :location, :facebook_image
 
   
   cattr_accessor :current_user
@@ -43,8 +43,14 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
-      user.uid = auth.uid
-      user.username = auth.info.nickname
+        user.uid = auth.uid
+        user.username = auth.info.nickname
+        user.email = auth.info.email
+        user.name = auth.info.name
+        user.first_name = auth.info.first_name
+        user.last_name = auth.info.last_name
+        user.location = auth.info.location
+        user.facebook_image = auth.info.image
     end
   end
 
@@ -107,8 +113,8 @@ include Tire::Model::Callbacks
 
   #comments on master songs
   has_many :master_song_comments, foreign_key: :user_id
-  #microposts  
-  has_many :microposts, foreign_key: :user_id, :dependent => :destroy
+
+
   
   #relationships
   has_many :relationships, foreign_key: :follower_id, dependent: :destroy
@@ -141,9 +147,7 @@ include Tire::Model::Callbacks
     master_song_ownings.find_by_owned_id(master_song)
   end
 
-  def feed
-    Micropost.from_users_followed_by(self)
-  end
+
 
   def notifications
     MasterSong.from_users_followed_by(self)
@@ -217,6 +221,12 @@ include Tire::Model::Callbacks
 #total amount of songs the user has upvoted
   def total_up_votes
     self.song_up_votes.size
+  end
+
+  def user_type_registered?
+    if 
+      self.user_type.present?
+    end
   end
 
 end

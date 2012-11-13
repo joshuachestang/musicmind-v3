@@ -1,0 +1,11 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+
+  <div>
+    <%= f.radio_button :user_type, 'music fan', :checked => true %> 
+    <%= label :user_type_fan, 'Music Fan' %>
+    <%= f.radio_button :user_type, 'music artist' %>
+    <%= label :user_type_artist, 'Music Artist' %>
+  </div>
+  <%= f.submit "Add Your User Type" %>
+
+<% end %>
