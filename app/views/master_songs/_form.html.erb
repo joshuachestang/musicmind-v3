@@ -7,6 +7,8 @@
     <p style="color:blue;">Can a user play this song if they have not added it to their library?</p>
     
     <%= f.collection_radio_buttons :playable, [['true', 'Can Play'] ,['false', 'Cannot Play']], :first, :last, :default => true %>
+
+    <%= f.hidden_field :album_id, :value => nil %>
   </div>
   <div class="form-field"><%= f.button :submit, :value => "Add Song", :class => "btn btn-success" %></div>
   <% end %>

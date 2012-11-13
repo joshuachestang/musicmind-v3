@@ -248,7 +248,7 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.string   "title"
     t.string   "artist"
     t.string   "album"
-    t.text     "album_title"
+    t.integer  "album_id"
     t.integer  "length"
     t.string   "slug"
     t.boolean  "playable",                                                 :default => true

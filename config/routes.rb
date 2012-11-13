@@ -1,8 +1,6 @@
 Musicmindbeta::Application.routes.draw do
 
   resources :user_access_requests, :only => [:create, :new]
-
-  resources :album_tracks
   
   resources :albums
 
@@ -38,7 +36,7 @@ Musicmindbeta::Application.routes.draw do
 
   resources :master_songs do
     collection do
-     get :most_upvoted, :trending, :free, :most_listened_to, :newly_added
+     get :most_upvoted, :trending, :free, :most_listened_to, :newly_added, :add_album_song
     end
     member do
       get :master_song_owners

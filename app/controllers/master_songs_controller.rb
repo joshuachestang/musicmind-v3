@@ -182,4 +182,16 @@ class MasterSongsController < ApplicationController
 
   def music_player_widget
   end
+
+  def add_album_song
+    @master_song = MasterSong.new 
+    @albums = current_user.albums.all
+    @hello_world = "Hello World!!!"
+    respond_to do |format|
+      format.html # new.html.erb
+      format.js
+      format.json { render json: @master_song }
+    end
+  end
+
 end

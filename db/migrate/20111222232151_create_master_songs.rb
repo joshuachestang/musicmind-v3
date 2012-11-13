@@ -13,7 +13,7 @@ class CreateMasterSongs < ActiveRecord::Migration
       t.string :title
       t.string :artist
       t.string :album
-      t.text :album_title
+      t.integer :album_id
       t.integer :length
       t.string :slug
       t.boolean :playable, :default => true

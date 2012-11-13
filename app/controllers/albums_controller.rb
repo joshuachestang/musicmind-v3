@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
-    @tracks = @album.album_tracks.all
+    @tracks = @album.master_songs.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,12 +28,11 @@ class AlbumsController < ApplicationController
   # GET /albums/new.json
   def new
     @album = Album.new
-    @master_songs = current_user.master_songs.all
-    @album.album_tracks.build(params[:album_track])
+    
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json
+      format.js
       format.json { render json: @album }
     end
   end

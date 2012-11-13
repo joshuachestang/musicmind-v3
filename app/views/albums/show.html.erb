@@ -1,14 +1,18 @@
+<section style="padding-left:20px;">
 <p id="notice"><%= notice %></p>
+
+<h1><%= @album.album_title %></h1>
 
 <%= image_tag @album.album_artwork.url(:medium) %>
 
-<%= @album.album_title %>
 
-<% @tracks.each do |track| %>
-  <%= track.id %>
+<ul>
+<% @tracks.each do |song| %>
+  <li><%= link_to "#{song.title}", master_song_path(song) %></li>
 <% end %>
+</ul>
 
-
-<%= link_to 'Add Songs To This Album', new_album_track_path(@album) %>
 <%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', :back, remote: :true, :id => "page-link" %>
+<%= link_to 'Back', :back, remote: :true, :id => "page-link" %> |
+<%= link_to 'Add Song', add_album_song_master_songs_path, remote: :true, :id => "page-link" %>
+</section>

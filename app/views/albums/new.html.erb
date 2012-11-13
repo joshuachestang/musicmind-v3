@@ -2,8 +2,4 @@
 
 <%= render 'form' %>
 
-<% @master_songs.each do |master_song| %>
-  <%= master_song.m_song_file_name %>
-<% end %>
-
-<%= link_to 'Back', albums_path %>
+<%= link_to 'Back', :back %>

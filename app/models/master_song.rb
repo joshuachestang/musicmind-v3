@@ -36,7 +36,7 @@ class MasterSong < ActiveRecord::Base
 
 
   validates :price, allow_blank: :true, numericality: {greater_than_or_equal_to: 0.00}
-  validate :album_title, allow_blank: :true
+
   
   validates :m_song, :attachment_presence => true
   validates_with AttachmentPresenceValidator, :attributes => :m_song
@@ -59,12 +59,12 @@ class MasterSong < ActiveRecord::Base
   has_many :song_listens, :as => :listenable, :class_name => "SongListen"
   has_many :line_items
   belongs_to :user
+  belongs_to :album
   has_many :song_up_votes, foreign_key: :master_song_id
   has_many :master_song_relationships, foreign_key: :owned_id
   has_many :owners, :through => :master_song_relationships, source: :owner
-  has_one :album_track, foreign_key: :ms_id
   has_many :master_song_comments, foreign_key: :master_song_id, dependent: :destroy
-  attr_accessible :price, :m_song, :song_art_work, :release_date, :title, :artist, :album, :length, :terms, :playable
+  attr_accessible :price, :m_song, :song_art_work, :release_date, :title, :artist, :album, :length, :terms, :playable, :album_id
 
 after_save :set_id3_tags
 before_destroy :ensure_not_referenced_by_any_line_item

@@ -12,7 +12,7 @@
   <li>Concert map- Location identifier to go log into concerts</li>
   <li>Ticket Sales - Sale Tickets</li>
   <li>Buy Merchandise</li>
-  <li></li>
+  <li>Facebook login - clean</li>
 
 </ul>
 <h2>What do people want to see?</h2>
@@ -74,9 +74,11 @@
 
     <% if current_user == @fan_base.user %>
       <%= link_to 'Edit', edit_fan_base_path(@fan_base), remote: :true, :id => "page-link" %> |
-      <%= link_to 'Upload Songs', new_master_song_path, remote: :true, :id => "page-link" %> |
-      <%= link_to 'Add Label', new_fan_base_label_path(@fan_base), remote: :true, :id => "page-link" %> 
-      <%#= <%= link_to 'Create An Album', new_album_path, remote: :true, :id => "page-link" %> 
+      <%= link_to 'Upload A Single Song', new_master_song_path, remote: :true, :id => "page-link" %> |
+      <%= link_to 'Add Song to an Album', add_album_song_master_songs_path, remote: :true, :id => "page-link" %> |
+      <%= link_to 'Add Label', new_fan_base_label_path(@fan_base), remote: :true, :id => "page-link" %> |
+      <%= link_to 'Add Album', new_album_path, remote: :true, :id => "page-link" %>
+
     <% else %>
     <% end %>
   </section>

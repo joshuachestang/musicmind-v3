@@ -1,0 +1,12 @@
+<%= form_for(@master_song) do |f| %>
+  <div class="form-field"><%= f.label :song %><%= f.file_field :m_song %></div>
+  <div class="form-field"><%= f.label :artwork %><%= f.file_field :song_art_work %></div>
+  <div class="form-field"><%= f.label :price %><%= f.text_field :price, :label => "Offer your music for free or a price ($0.00 to $10.00):" %></div>
+  <div class="form-field"><%= f.label :release_date %><%= f.datetime_select :release_date %></div> 
+  <div class="form-field"><%= f.label :album %><%= f.collection_select :album_id, @albums, :id, :album_title %></div>
+    
+    <div class="form-field"><%= f.collection_radio_buttons :playable, [['true', 'Can Play'] ,['false', 'Cannot Play']], :first, :last, :default => true %></div>
+  
+   <%= f.submit %>
+  <% end %>
+   

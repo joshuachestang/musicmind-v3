@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<%= nested_form_for @album do |f| %>
+<%= form_for(@album) do |f| %>
   
   <section>
     <div>
@@ -23,13 +23,6 @@
       <%= f.text_field :album_title %><br />
     </div>
   </section>
-    <%= f.fields_for :album_tracks do |track_form| %>
-      <%= track_form.text_field :ms_id %>
-      <%= track_form.link_to_remove "Remove this track" %>
-    <% end %>
-    <p><%= f.link_to_add "Add a song", :album_tracks %></p>
-  
-
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -109,11 +109,6 @@ class UserSongUploadsController < ApplicationController
     user_song_upload = current_user.user_song_uploads.find(params[:id])
     user_song_upload.update_attributes(:favorite => true)
     @user_song_upload = user_song_upload
-    
-    respond_to do |format|
-      format.html {redirect_to user_library_path, notice: 'You have favorited a song!'}
-      format.js {render :layout => false }
-    end
   end
   
   def recently_played

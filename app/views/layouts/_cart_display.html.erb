@@ -1,3 +1,5 @@
 <% if user_signed_in? %>
+<% unless current_page?(url_for(:controller => 'devise/registrations', :action => 'edit')) %>
   <%= render current_cart %>
+  <% end %>
 <% end %>
