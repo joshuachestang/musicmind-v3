@@ -1,5 +1,9 @@
 
+<% if current_user.provider.present? %>
+<a href="/users/<%= current_user.id %>" data-remote="true" id="page-link"><img src="<%= current_user.facebook_image %>"></img></a>
+<% else %>
 <%= link_to image_tag("#{current_user.user_image.url(:thumb)}", :class => "img-rounded"), current_user, remote: :true, :id => "page-link" %><br />
+<% end %>
     <h2>Your Stats</h2>
     <%= link_to "Following: #{current_user.following.count}", following_user_path(current_user), remote: :true, :class => "btn btn-primary", :id => "page-link" %><br />
     <%= link_to "Followers: #{current_user.followers.count}", followers_user_path(current_user), remote: :true, :class => "btn btn-primary", :id => "page-link" %><br />

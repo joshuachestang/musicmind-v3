@@ -2,13 +2,15 @@
   <div class="span10" style="margin:20px 20px 20px 40px;">
     <div class="row-fluid">
       <div id="user-stats" class="span2">
-        <div style="float:left;">
-        <%= image_tag @user.user_image.url(:thumb) %>
-        </div>
+        <% if current_user.provider.present? %>
+<a href="/users/<%= current_user.id %>"><img src="<%= current_user.facebook_image %>" data-remote="true" id="page-link"></img></a>
+<% else %>
+<%= link_to image_tag("#{current_user.user_image.url(:thumb)}", :class => "img-rounded"), current_user, remote: :true, :id => "page-link" %><br />
+<% end %>
         <aside style="float:left;padding-left:5px;">
           <%= @user.username.capitalize %><br />
           <% if @user == current_user %>   
-          <%= link_to 'Edit Info', edit_user_registration_path, :class => 'btn', remote: :true, :id => "page-link" %><br />
+          <%= link_to 'Edit Info', edit_user_registration_path %><br />
           <% else %>
           <%= render 'follow_form' %>
           <% end %>
