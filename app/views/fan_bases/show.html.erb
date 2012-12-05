@@ -31,13 +31,13 @@
       <% else %>
       <div class="btn btn-primary disabled" style="float:left; margin-top:15px;">Login to join this fan base</div>
     <% end %></div>
-    <h2 id="fan-base-stats">Total Songs: <%= @fan_base.number_of_songs %><br />
+    <h3 id="fan-base-stats"><div id="fb-stats">Total Songs: <%= @fan_base.number_of_songs %></div>
       <% if user_signed_in? %>
-    <%= link_to "Total Fans: #{@fan_base.total_fans}", fan_base_followers_fan_base_path(@fan_base), remote: :true, :id => "page-link" %><br />
+    <div id="fb-stats"><%= link_to "Total Fans: #{@fan_base.total_fans}", fan_base_followers_fan_base_path(@fan_base), remote: :true, :id => "page-link" %></div>
       <% else %>
-      Total Fans: <% @fan_base.total_fans %><br />
+      <div id="fb-stats">Total Fans: <% @fan_base.total_fans %></div>
       <% end %>
-    Total Upvotes: <%= @fan_base.total_upvotes %><br />
+    <div id="fb-stats">Total Upvotes: <%= @fan_base.total_upvotes %></div>
     <%= tweet_button(:url => "http://www.musicmind.co#{url_for(@fan_base)}", :text => " Join #{@fan_base.name}'s fan base and stay up to date on new releases.", :via => "mmalpha", :count => "none") %></h2>
     
 

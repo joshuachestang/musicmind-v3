@@ -4,10 +4,10 @@ h1{
 }
 
 h2{
-	padding: 40px 0px 10px 0px;
+	padding: 10px 0px 10px 0px;
 }
 
-h2#fan-base-stats{
+h3#fan-base-stats{
 	float:left;
 }
 
@@ -112,4 +112,10 @@ div.alert.alert-success{
 	float: left;
 	margin-bottom: 20px;
 }
+
+div#fb-stats{
+	background-image:url('white_carbonfiber.png');
+	padding:5px 5px 5px 5px;
+	border-radius:5px;
+	margin: 5px 0px 5px 0px;
 }
