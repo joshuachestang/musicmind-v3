@@ -3,3 +3,5 @@ $("div#upvote-form-<%= @song_up_vote.master_song_id %>").html("<%= escape_javasc
 $("div#discover-upvote-form-<%= @song_up_vote.master_song_id %>").html("<%= escape_javascript(render('master_songs/upvoted')) %>");
 
 $("div#master-song-upvote").html("<%= escape_javascript(render('master_songs/master_song_page_upvoted')) %>");
+
+$("div#upvotes-<%= @master_song.id %>").html("<%= @master_song.song_up_votes_count %>");

@@ -28,7 +28,7 @@ Musicmindbeta::Application.routes.draw do
     end
   end
 
-  devise_for :users, :controllers => { :registrations => "registrations", omniauth_callbacks: "omniauth_callbacks" }
+ 
 
   match "discover" => "master_songs#index", :as => :discover
 
@@ -90,12 +90,14 @@ Musicmindbeta::Application.routes.draw do
 
   match "notifications" => "users#notifications", :as => :your_notifications
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "devise/registrations" }
   resources :users do
     member do
       get :following, :followers, :fan_base_following, :searching, :notifications, :mark_read
     end
   end
+  
+   
   
   resources :pages
   resources :microposts, :only => [:create, :destroy]

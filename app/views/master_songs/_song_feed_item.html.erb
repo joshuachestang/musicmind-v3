@@ -58,7 +58,7 @@
       <% end %>
 
     <div id="song-stats">
-      <i class="icon-arrow-up"></i> <%= master_song.song_up_votes_count %> |
+      <i class="icon-arrow-up" style="float:left;"></i><div style="list-style:none; float:left;" id="upvotes-<%= master_song.id %>"><%= master_song.song_up_votes_count %></div> |
       <i class="icon-headphones"></i> <%= master_song.song_listens_count %> |
       <i class="icon-user"></i> <%= master_song.master_song_comments_count %>
     </div>

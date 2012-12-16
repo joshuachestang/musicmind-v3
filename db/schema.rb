@@ -247,7 +247,7 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.datetime "release_date"
     t.string   "title"
     t.string   "artist"
-    t.string   "album"
+    t.string   "album_title"
     t.integer  "album_id"
     t.integer  "length"
     t.string   "slug"

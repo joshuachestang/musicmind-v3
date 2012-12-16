@@ -79,7 +79,7 @@ class MasterSongsController < ApplicationController
     @new_comment = @master_song.master_song_comments.build
 
     respond_to do |format|
-      format.js 
+      format.js
       format.html # show.html.erb
       format.json do
         body = render_to_string(:locals => {:master_song => @master_song})

@@ -7,6 +7,7 @@ class SongUpVotesController < ApplicationController
       l.master_song_id = params[:master_song_id]
     end
     @song_up_vote.save 
+    @master_song = MasterSong.find_by_id(params[:master_song_id])
 
     respond_to do |format|
       if @song_up_vote.save

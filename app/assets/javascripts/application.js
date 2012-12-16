@@ -112,13 +112,7 @@ $(document).ready(function () {
   });
 });
 
-DISQUS.reset({
-  reload: true,
-  config: function () {  
-    this.page.identifier = "newidentifier";  
-    this.page.url = "http://example.com/#!newthread";
-  }
-});
+
 
 
 

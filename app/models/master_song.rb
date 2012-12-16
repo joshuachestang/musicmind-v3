@@ -7,7 +7,7 @@ class MasterSong < ActiveRecord::Base
  scope :most_listened, order("song_listens_count DESC")
  
  require 'taglib'
-
+  attr_accessible :price, :m_song, :song_art_work, :release_date, :title, :artist, :album_title, :length, :terms, :playable, :album_id
   #search function
   #searchable do
    # text :title, :artist, :album
@@ -64,7 +64,6 @@ class MasterSong < ActiveRecord::Base
   has_many :master_song_relationships, foreign_key: :owned_id
   has_many :owners, :through => :master_song_relationships, source: :owner
   has_many :master_song_comments, foreign_key: :master_song_id, dependent: :destroy
-  attr_accessible :price, :m_song, :song_art_work, :release_date, :title, :artist, :album, :length, :terms, :playable, :album_id
 
 after_save :set_id3_tags
 before_destroy :ensure_not_referenced_by_any_line_item
@@ -120,13 +119,12 @@ before_destroy :ensure_not_referenced_by_any_line_item
       self.update_attributes(:title => z)
     elsif artist.nil?
       self.update_attributes(:artist => y)
-    elsif album.nil?
-      self.update_attributes(:album => x) 
+    elsif album_title.nil?
+      self.update_attributes(:album_title => x) 
     elsif length.nil?
       self.update_attributes(:length => w)
        #elsif song_art_work.nil?
     #  self.update_attributes(:song_art_work => v)
-
     else
     end
   end
