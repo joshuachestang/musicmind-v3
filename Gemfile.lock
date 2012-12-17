@@ -364,7 +364,7 @@ DEPENDENCIES
   rspec-rails
   simple_form
   spork (~> 0.9.0.rc)
-  taglib-ruby (~> 0.5.1)
+  taglib-ruby
   thin
   thor (~> 0.14.6)
   tire
