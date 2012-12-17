@@ -19,7 +19,7 @@ group :development, :test do
   gem 'pg'
 end
 
-gem "mysql2"
+#gem "mysql2"
 
 gem 'pg'
 
