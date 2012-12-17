@@ -15,17 +15,17 @@ group :production do
   gem 'thin'
 end
 
-group :development, :test do
-  gem 'pg'
-end
+# group :development, :test do
+#   gem 'pg'
+# end
 
 #gem "mysql2"
 
 gem 'pg'
 
-gem 'vulcan'
+#gem 'vulcan'
 
-gem "rmagick"
+#gem "rmagick"
 
 gem "passenger"
 
