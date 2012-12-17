@@ -13,21 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120821225543) do
 
-  create_table "active_admin_comments", :force => true do |t|
-    t.string   "resource_id",   :null => false
-    t.string   "resource_type", :null => false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.text     "body"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "namespace"
-  end
-
-  add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
-
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
     t.string   "trackable_type"
@@ -37,59 +22,6 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.text     "parameters"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-  end
-
-  create_table "admin_users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-  end
-
-  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
-  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
-
-  create_table "advertisements", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "title"
-    t.text     "body"
-    t.datetime "start_date"
-    t.decimal  "budget"
-    t.string   "target_demographic"
-    t.string   "ad_type"
-    t.integer  "total_clicks"
-    t.integer  "total_impressions"
-    t.string   "ad_image_file_name"
-    t.string   "ad_image_content_type"
-    t.integer  "ad_image_file_size"
-    t.datetime "ad_image_updated_at"
-    t.string   "ip_address"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "card_type"
-    t.date     "card_expires_on"
-    t.string   "country"
-    t.text     "billing_address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zipcode"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
-  end
-
-  create_table "album_tracks", :force => true do |t|
-    t.integer  "album_id"
-    t.integer  "ms_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "albums", :force => true do |t|
@@ -108,12 +40,6 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.datetime "purchased_at"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-  end
-
-  create_table "comments", :force => true do |t|
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "credits", :force => true do |t|
@@ -138,18 +64,6 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
-
-  create_table "events", :force => true do |t|
-    t.integer  "fan_base_id"
-    t.string   "event_name"
-    t.datetime "event_time"
-    t.text     "event_address"
-    t.string   "event_city"
-    t.string   "event_state"
-    t.integer  "zip_code"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
 
   create_table "fan_bases", :force => true do |t|
     t.string   "name"
@@ -265,12 +179,6 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
-  create_table "mslistens", :force => true do |t|
-    t.string   "ms_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "order_transactions", :force => true do |t|
     t.integer  "order_id"
     t.string   "action"
@@ -339,38 +247,10 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "sysdiagrams", :primary_key => "diagram_id", :force => true do |t|
-    t.string  "name",         :limit => 128, :null => false
-    t.integer "principal_id",                :null => false
-    t.integer "version"
-    t.binary  "definition"
-  end
-
-  add_index "sysdiagrams", ["principal_id", "name"], :name => "UK_principal_name", :unique => true
-
   create_table "user_access_requests", :force => true do |t|
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "user_invites", :force => true do |t|
-    t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "user_purchase_accounts", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "payment_type"
-    t.string   "card_type"
-    t.integer  "account_number"
-    t.integer  "expiration_date"
-    t.integer  "security_code"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "user_seller_accounts", :force => true do |t|
@@ -394,11 +274,6 @@ ActiveRecord::Schema.define(:version => 20120821225543) do
     t.integer  "length"
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
-  end
-
-  create_table "user_timelines", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
