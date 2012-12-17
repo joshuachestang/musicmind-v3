@@ -29,7 +29,7 @@ gem "rmagick"
 
 gem "passenger"
 
-gem "capistrano", "~> 2.13.3"
+gem "capistrano", "~> 2.13.5"
 
 gem "taglib-ruby", "~> 0.5.1"
 
@@ -138,10 +138,10 @@ gem 'country_select'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+#gem 'capistrano'
 
 # To use debugger
 gem 'debugger'
