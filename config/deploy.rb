@@ -5,7 +5,7 @@ server "192.155.88.212", :web, :app, :db, primary: true
 set :application, "musicmind"
 set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
-#set :deploy_via, :remote_cache
+set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
