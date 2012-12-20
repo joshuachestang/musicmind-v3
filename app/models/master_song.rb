@@ -8,11 +8,7 @@ class MasterSong < ActiveRecord::Base
  
  require 'taglib'
   attr_accessible :price, :m_song, :song_art_work, :release_date, :title, :artist, :album_title, :length, :terms, :playable, :album_id
-  #search function
-  #searchable do
-   # text :title, :artist, :album
-  #end
-  #pretty urls
+  
 
   include Tire::Model::Search
   include Tire::Model::Callbacks
@@ -42,17 +38,13 @@ class MasterSong < ActiveRecord::Base
   validates_with AttachmentPresenceValidator, :attributes => :m_song
 
   
-  has_attached_file :m_song
+  has_attached_file :m_song, :storage => :s3,
+   :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :path => "/:style/:id/:filename"
 
-  #, :storage => :s3,
-   # :s3_credentials => "#{Rails.root}/config/s3.yml",
-    # :path => "/:style/:id/:filename"
-
-  has_attached_file :song_art_work, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }
-
-  #, :storage => :s3,
-   # :s3_credentials => "#{Rails.root}/config/s3.yml",
-    # :path => "/:style/:id/:filename"
+  has_attached_file :song_art_work, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }, :storage => :s3,
+   :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :path => "/:style/:id/:filename"
   
 
 
@@ -65,7 +57,7 @@ class MasterSong < ActiveRecord::Base
   has_many :owners, :through => :master_song_relationships, source: :owner
   has_many :master_song_comments, foreign_key: :master_song_id, dependent: :destroy
 
-after_save :set_id3_tags
+before_save :set_id3_tags
 before_destroy :ensure_not_referenced_by_any_line_item
 
 

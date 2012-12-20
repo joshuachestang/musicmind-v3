@@ -62,11 +62,11 @@
     <% end %>
     
     
-    <% unless @fan_base.events.empty? %>
-  	<%= @fan_base.event.first %>
-  	<%= link_to 'See all', events_path(@fan_base) %>
-    <% else %>
-    <% end %>
+    <%# unless @fan_base.events.empty? %>
+  	<%#= @fan_base.event.first %>
+  	<%#= link_to 'See all', events_path(@fan_base) %>
+    <%# else %>
+    <%# end %>
   <section id="fan-base-owner-links">
     <% if current_user == @fan_base.user %>
      <%# <%= link_to 'Create An Event', new_event_path(@fan_base) %>

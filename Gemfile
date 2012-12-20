@@ -25,13 +25,13 @@ gem 'pg'
 
 #gem 'vulcan'
 
-#gem "rmagick"
+gem "rmagick"
 
 gem "passenger"
 
 gem "capistrano", "~> 2.13.5"
 
-gem "taglib-ruby", "~> 0.4.0"
+gem "taglib-ruby"
 
 
 gem "thor", "~> 0.14.6"
