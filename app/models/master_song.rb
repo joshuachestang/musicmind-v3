@@ -7,8 +7,23 @@ class MasterSong < ActiveRecord::Base
  scope :most_listened, order("song_listens_count DESC")
  
  require 'taglib'
-  attr_accessible :price, :m_song, :song_art_work, :release_date, :title, :artist, :album_title, :length, :terms, :playable, :album_id
-  
+  has_attached_file :m_song
+  has_attached_file :song_art_work, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }
+  after_save :set_id3_tags
+
+  has_many :song_listens, :as => :listenable, :class_name => "SongListen"
+  has_many :line_items
+  belongs_to :user
+  belongs_to :album
+  has_many :song_up_votes, foreign_key: :master_song_id
+  has_many :master_song_relationships, foreign_key: :owned_id
+  has_many :owners, :through => :master_song_relationships, source: :owner
+  has_many :master_song_comments, foreign_key: :master_song_id, dependent: :destroy
+  #search function
+  #searchable do
+   # text :title, :artist, :album
+  #end
+  #pretty urls
 
   include Tire::Model::Search
   include Tire::Model::Callbacks
@@ -23,41 +38,34 @@ class MasterSong < ActiveRecord::Base
  friendly_id :title, :use => :slugged
   
   #activity feed
-  tracked
+  #tracked
   
 
   #notifications
-  acts_as_readable :on => :created_at
+  #acts_as_readable :on => :created_at
  
 
 
   validates :price, allow_blank: :true, numericality: {greater_than_or_equal_to: 0.00}
-
-  
   validates :m_song, :attachment_presence => true
   validates_with AttachmentPresenceValidator, :attributes => :m_song
 
   
-  has_attached_file :m_song, :storage => :s3,
-   :s3_credentials => "#{Rails.root}/config/s3.yml",
-    :path => "/:style/:id/:filename"
-
-  has_attached_file :song_art_work, :styles => { :medium => "300x300>", :thumb => "100x100>", :medium2 => "150x150>", :thumb_small => "50x50>" }, :storage => :s3,
-   :s3_credentials => "#{Rails.root}/config/s3.yml",
-    :path => "/:style/:id/:filename"
   
 
+  #, :storage => :s3,
+   # :s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
 
-  has_many :song_listens, :as => :listenable, :class_name => "SongListen"
-  has_many :line_items
-  belongs_to :user
-  belongs_to :album
-  has_many :song_up_votes, foreign_key: :master_song_id
-  has_many :master_song_relationships, foreign_key: :owned_id
-  has_many :owners, :through => :master_song_relationships, source: :owner
-  has_many :master_song_comments, foreign_key: :master_song_id, dependent: :destroy
+  
 
-before_save :set_id3_tags
+  #, :storage => :s3,
+   # :s3_credentials => "#{Rails.root}/config/s3.yml",
+    # :path => "/:style/:id/:filename"
+  
+  attr_accessible :price, :m_song, :song_art_work, :release_date, :title, :artist, :length, :terms, :playable, :album_id, :ep_title, :song_listens_count, :song_up_votes_count, :master_song_comments_count
+
+
 before_destroy :ensure_not_referenced_by_any_line_item
 
 
@@ -99,24 +107,14 @@ before_destroy :ensure_not_referenced_by_any_line_item
       properties = fileref.audio_properties
       properties.length
     end
-    
-    
-        #v = TagLib::MPEG::File.open(self.m_song.path) do |file|
-   #   tag = file.id3v2_tag
-   #   cover = tag.frame_list('APIC').first
-   #   cover.picture
-   # end
-
     if title.nil?
       self.update_attributes(:title => z)
     elsif artist.nil?
       self.update_attributes(:artist => y)
-    elsif album_title.nil?
-      self.update_attributes(:album_title => x) 
+    elsif ep_title.nil?
+       self.update_attributes(:ep_title => x) 
     elsif length.nil?
       self.update_attributes(:length => w)
-       #elsif song_art_work.nil?
-    #  self.update_attributes(:song_art_work => v)
     else
     end
   end

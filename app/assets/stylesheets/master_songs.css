@@ -1,4 +1,4 @@
-5h1{
+h1{
 	text-shadow:0 1px white;
 }
 
@@ -17,8 +17,8 @@ div.master_song{
 	margin: 5px 5px 5px 5px;
 	border-left:1px solid gray;
 	border-right:1px solid gray;
-	border-top:1px solid gray;
-	box-shadow:2px 2px 2px black;
+	border-top:1px solid gra
+	box-shadow:2px 2px 2px b /* in less file! */lack;
 	border-radius:7px;
 	float: left;
 	height: 335px;
@@ -49,10 +49,11 @@ div#song-stats{
 	padding:5px 30px 5px 5px;
 }
 
-div#song-stats-master-song-page{
-	border-bottom:1px solid #CFCFCF;
+div#master-song-info div#song-stats-master-song-page{
+	border-bottom:1px solid white;
 	float:right;
 	padding:5px 30px 5px 5px;
+	margin:	0px 0px 0px 20px;
 }
 
 
@@ -62,10 +63,21 @@ div#song-artwork{
 	height:150px;
 	margin:0 auto;
 }
-section#song-artwork-and-title{
+div#page-song-artwork{
 	float:left;
 	height:auto;
 	width:auto;
+	margin-right:20px;
+}
+
+div.page-add-to-cart{
+	float:right; 
+	clear:right;
+	margin:0px 0px 0px 0px;
+}
+
+input.btn{
+	margin:0px 0px 0px 0px;
 }
 
 
@@ -100,7 +112,8 @@ form#new_master_song_comment{
 }
 
 audio#master-song-play{
-	margin:10px 10px 10px 0px;
+	margin:5px 0px 0px 0px;
+	clear:right;
 }
 
 div#master-song-comments{
@@ -110,15 +123,26 @@ div#master-song-comments{
 
 div#master-song-info{
 	background-image:url('white_carbonfiber.png');
-	border-left:1px solid black;
+	/*border-left:1px solid black;
 	border-right:1px solid black;
 	border-top:1px solid black;
-	box-shadow:2px 2px 2px black;
-	width:490px;
-	height:150px;
-	padding:10px 0px 0px 20px;
+	box-shadow:2px 2px 2px black; */
+	width:800px;
+	height:auto;
+	padding:15px 15px 15px 15px;
 	font-size:18px;
-	float: right;
+	float: left;
+	margin: 60px 0px 20px 0px;
+	border-radius: 10px;
+}
+
+div#master-song-info div{
+	height:auto;
+}
+
+
+div#master-song-info div h3#song-page{
+ /* in less file! */
 }
 
 
@@ -134,6 +158,22 @@ div#main-container{
 div#master-song-upvote{
 	float:left;
 	margin-top:5px;
+}
+
+div#page-upvoted{
+	margin-top:10px; 
+	float:left; 
+	text-shadow:0px 1px white;
+}
+
+div#page-tweet-button{
+	float:left;
+	margin-left:7px; 
+	padding-right:20px;
+}
+
+div#not-logged-page-tweet-button{
+	padding-right:0px;
 }
 
 div.master-song{
@@ -153,4 +193,12 @@ div#owned-links{
 h4#song-title{
 	margin-top:2px;
 	margin-bottom:2px;
+}
+div#add-to-library-free-2{
+	float:left;
+}
+
+a#page-song-play{
+	float:left;
+	clear:right;
 }

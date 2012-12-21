@@ -23,6 +23,12 @@ end
 
 gem 'pg'
 
+gem 'sqlite3'
+
+gem 'less-rails'
+
+gem 'therubyracer'
+
 #gem 'vulcan'
 
 gem "rmagick"
@@ -31,7 +37,7 @@ gem "passenger"
 
 gem "capistrano", "~> 2.13.5"
 
-gem "taglib-ruby"
+gem "taglib-ruby", :git => "https://github.com/robinst/taglib-ruby.git"
 
 
 gem "thor", "~> 0.14.6"
@@ -39,7 +45,7 @@ gem "thor", "~> 0.14.6"
 gem 'delayed_job_active_record'
 
 
-gem "twitter-bootstrap-rails", "~> 2.1.1"
+gem "twitter-bootstrap-rails" #, "~> 2.1.1"
 
 gem 'json', '~> 1.6.5'
 

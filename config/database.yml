@@ -1,11 +1,8 @@
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: musicmind_development
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  username: joshuachestang
-  password:
-  host: localhost
+  timeout: 5000
 
 test:
   adapter: postgresql
@@ -13,7 +10,7 @@ test:
   database: musicmind_test
   pool: 5
   username: joshuachestang
-  password:
+  password: secret
   host: localhost
 
 production:

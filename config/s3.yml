@@ -1,12 +1,12 @@
-development:
-  bucket: musicmind-alpha-dev
-  access_key_id: AKIAILH5LYBRN56XXTAQ
-  secret_access_key: 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
-test:
-  bucket: musicmind-alpha-test
-  access_key_id: AKIAILH5LYBRN56XXTAQ
-  secret_access_key: 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
-production:
-  bucket: musicmind-alpha-prod
-  access_key_id: AKIAILH5LYBRN56XXTAQ
-  secret_access_key: 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
+# development:
+#   bucket: musicmind-alpha-dev
+#   access_key_id: AKIAILH5LYBRN56XXTAQ
+#   secret_access_key: 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
+# test:
+#   bucket: musicmind-alpha-test
+#   access_key_id: AKIAILH5LYBRN56XXTAQ
+#   secret_access_key: 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
+# production:
+#   bucket: musicmind-alpha-prod
+#   access_key_id: AKIAILH5LYBRN56XXTAQ
+#   secret_access_key: 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
