@@ -1,4 +1,4 @@
-<h4>This song has been added to your library.</h4>
+<button class="btn btn-primary disabled" style="float:left;">Added To Library</button>
 <% unless @master_song.playable %>
   <%= link_to 'Play Song', @master_song.m_song.url, class: :play, remote: :true, 
     'data-id' => @master_song.id ,

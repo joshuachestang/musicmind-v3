@@ -17,8 +17,8 @@ div.master_song{
 	margin: 5px 5px 5px 5px;
 	border-left:1px solid gray;
 	border-right:1px solid gray;
-	border-top:1px solid gra
-	box-shadow:2px 2px 2px b /* in less file! */lack;
+	border-top:1px solid gray;
+	border-bottom:1px solid gray;
 	border-radius:7px;
 	float: left;
 	height: 335px;
@@ -187,7 +187,7 @@ div#master-song-info-line-1{
 
 div#owned-links{
 	float:left;
-	margin:30px 0px 10px 0px;
+	margin:0px 0px 10px 0px;
 }
 
 h4#song-title{

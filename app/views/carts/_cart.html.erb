@@ -1,19 +1,24 @@
 <% unless cart.line_items.empty? %>
-<div id="carty">
-<h3>Your Cart</h3>
-<table class="table table-bordered">
- <%= render(cart.line_items) %>
-</table>
-<div id="quick-cart-total">Total:<%= number_to_currency(cart.total_price) %></div><br />
-<div style="margin-bottom:3px;"class="btn"><%= link_to cart_path(current_cart), remote: :true, :id => "page-link" do %>
-  <i style="padding-right:2px;"class="icon-shopping-cart icon-white"></i>Cart
-  <% end %>
-</div>
-<% if user_signed_in? %>
-<div style="margin-bottom:7px; margin-top:4px;"><%= link_to new_order_path, :class => "btn btn-success", remote: :true, :id => "page-link" do %><i style="padding-right:2px;"class="icon-ok icon-white"></i>Checkout</div><% end %>
-<% else %>
-<% end %>
-<%= link_to cart, method: :delete, :class => "btn btn-danger", :data => { :confirm => 'Are you sure?' }, remote: :true do %>
-<i class="icon-trash icon-white" style="padding-right:2px;"></i>Empty Cart<% end %>
-</div>
+	<div id="carty">
+		<h3>Your Cart</h3>
+		<table class="table table-bordered">
+		  <%= render(cart.line_items) %>
+		</table>
+		<div id="quick-cart-total">Total:<%= number_to_currency(cart.total_price) %></div><br />
+		<div style="margin-bottom:3px;"class="btn">
+			<%= link_to cart_path(current_cart), remote: :true, :id => "page-link" do %>
+				<i style="padding-right:2px;"class="icon-shopping-cart icon-white"></i>Cart
+			<% end %>
+		</div>
+		<% if user_signed_in? %>
+			<div style="margin-bottom:7px; margin-top:4px;">
+				<%= link_to new_order_path, :class => "btn btn-success", remote: :true, :id => "page-link" do %>
+					<i style="padding-right:2px;"class="icon-ok icon-white"></i>Checkout</div>
+				<% end %>
+		<% else %>
+			<%= link_to cart, method: :delete, :class => "btn btn-danger", :data => { :confirm => 'Are you sure?' }, remote: :true do %>
+				<i class="icon-trash icon-white" style="padding-right:2px;"></i>Empty Cart
+			<% end %>
+		<% end %>
+	</div>
 <% end %>

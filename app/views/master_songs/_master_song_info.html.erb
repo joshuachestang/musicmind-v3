@@ -8,10 +8,14 @@
     <%= image_tag @master_song.song_art_work(:medium) %>
   </div>
   <h2 id="song-page">
-    <%= @master_song.title %> <br />by: <%= link_to "#{@master_song.user.fan_base.name}", fan_base_path(@master_song.user.fan_base), remote: :true, :id => "page-link" %>
+    <%= truncate(@master_song.title, :length => 25) %> <br />by: <%= link_to "#{@master_song.user.fan_base.name}", fan_base_path(@master_song.user.fan_base), remote: :true, :id => "page-link" %>
   </h2>
   <h3 id="song-page">
+   <% if @master_song.released? %>
     Released <%= time_ago_in_words(@master_song.created_at) %> ago.
+   <% else %>
+    Release Date: <%= @master_song.release_date.strftime("%B %e %Y") %>
+   <% end %>
   </h3>
   <% if user_signed_in? %>      
     <%= render 'signed_in_master_song_info' %>
@@ -24,7 +28,7 @@
 
 
 <!--div id="fb-root">
-  <%= facebook_share_once %></div><br />
+  <%#= facebook_share_once %></div><br />
 </div-->
 
 <script type="text/javascript">

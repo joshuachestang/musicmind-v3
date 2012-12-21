@@ -5,11 +5,10 @@
       <source src="<%= @master_song.m_song.url %>" type="audio/ogg" />
       <source src="<%= @master_song.m_song.url %>" type="audio/mp3" />
       </audio>
-
+      <br />
     <% end %>
   <% end %>
-<% end %>
-<% unless @master_song.price == 0.00 %>
+  <% unless @master_song.price == 0.00 %>
 	
 	<% unless current_cart.line_items.find_by_master_song_id(@master_song.id).present? %>
 		<div id="add-to-cart-<%= @master_song.id %>" style="float:right;">
@@ -19,15 +18,29 @@
 		<%= render 'fan_bases/added_to_cart' %>
 	<% end %>
 	
-<% else %>
-	<div id="add-to-library-free-2">
+  <% else %>
+	<div id="add-to-library-free-2" style="float:right; margin-top:4px;">
 		<button class="btn btn-primary disabled">
 			Free | Must Login
 		</button>
-	</div>		 
-<% end %>
-<div class="tweet-button" id="not-logged-page-tweet-button" style="float:right; margin-top:13px;">
-  <%= tweet_button(:url => "http://www.musicmind.co#{url_for(@master_song)}", :text => "#{@master_song.title} by #{@master_song.artist} - add to your MusicMind library here:", :via => "musicmindalpha", :count => "none") %>
+	</div>	
+	<br />	 
+  <% end %>
+
+<% else %>
+
+<% unless current_cart.line_items.find_by_master_song_id(@master_song.id).present? %>
+		<div id="add-to-cart-<%= @master_song.id %>" style="float:left;">
+			<%= button_to "#{number_to_currency(@master_song.price)} | Pre-Order", line_items_path(master_song_id: @master_song), remote: :true, :class => 'btn btn-warning' %>
+		</div>
+	<% else %>
+		<%= render 'fan_bases/added_to_cart_pre_order' %>
+	<% end %>
+		
+<% end %> 
+<div class="tweet-button" id="not-logged-page-tweet-button" style="float:right; margin: 10px 10px 0px 10px;">
+  <%= tweet_button(:url => "http://www.musicmind.co#{url_for(@master_song)}", :text => truncate("#{@master_song.title} by #{@master_song.artist} - add to your MusicMind", :length => 20), :via => "musicmindalpha", :count => "none") %>
 </div>
+
 
 

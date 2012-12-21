@@ -21,7 +21,7 @@
 			<% end %>
 
 		<% else %>
-			<div id="add-to-library-free-2" style="float:left;">
+			<div id="add-to-library-free-2" style="float:right;">
 				<%= form_for current_user.master_song_relationships.build(:owned_id => @master_song.id), remote: :true do |f| %>
 					<%= f.hidden_field :owned_id %>
 					<%= f.submit "Free | Add To Your Library", :class => 'btn' %>
@@ -30,13 +30,13 @@
 		<% end %>
 
 	<% else %>
-		<div id="owned-links"><%= render 'owned_song_links' %></div>
+		<div id="owned-links" style="float:right;"><%= render 'owned_song_links' %></div>
 	<% end %>
 
 <% else %>
 
 	<% unless current_cart.line_items.find_by_master_song_id(@master_song.id).present? %>
-		<div id="add-to-cart-<%= @master_song.id %>" style="float:left;">
+		<div id="add-to-cart-<%= @master_song.id %>" style="float:right;">
 			<%= button_to "#{number_to_currency(@master_song.price)} | Pre-Order", line_items_path(master_song_id: @master_song), remote: :true, :class => 'btn btn-warning' %>
 		</div>
 	<% else %>
@@ -54,6 +54,6 @@
         <%= render 'master_song_page_upvoted' %>
     <% end %>
 <div class="tweet-button" id="page-tweet-button">
-  <%= tweet_button(:url => "http://www.musicmind.co#{url_for(@master_song)}", :text => "#{@master_song.title} by #{@master_song.artist} - add to your MusicMind library here:", :via => "musicmindalpha", :count => "none") %>
+  <%= tweet_button(:url => "http://www.musicmind.co#{url_for(@master_song)}", :text => truncate("#{@master_song.title} by #{@master_song.artist} - add to your MusicMind", :length => 30), :via => "musicmindalpha", :count => "none") %>
 </div>
 </div>
