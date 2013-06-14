@@ -40,10 +40,7 @@ Musicmindbeta::Application.configure do
     :password => "2BZS23Q36PG6AZZP",
     :signature => "A5tRViS56TbtX3Mc8LK7btxNOU73A9qcAYOqCT.vVj3EhqB1Ea919glt"
   )
-end
-
-
-
+  end
   
 
   ENV["TWITTER_CONSUMER_KEY"] = "ay4l7Qb57OGbS5yv0GDzMw"
