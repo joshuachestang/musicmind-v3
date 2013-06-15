@@ -4,13 +4,13 @@ Musicmindbeta::Application.routes.draw do
   
   resources :albums
 
-  match 'download/:id' =>  'user_song_uploads#download', :as => :download
+  get 'download/:id' =>  'user_song_uploads#download', :as => :download
 
   resources :song_up_votes, :only => [:create, :destroy]
 
-  match "ms_listen_increment.json" => "master_songs#increment"
+  get "ms_listen_increment.json" => "master_songs#increment"
 
-  match "create_listen.json" => "song_listens#create"
+  get "create_listen.json" => "song_listens#create"
 
   resources :searches
 
@@ -30,7 +30,7 @@ Musicmindbeta::Application.routes.draw do
 
  
 
-  match "discover" => "master_songs#index", :as => :discover
+  get "discover" => "master_songs#index", :as => :discover
 
   resources :master_song_comments
 
@@ -43,13 +43,13 @@ Musicmindbeta::Application.routes.draw do
     end
   end
 
-  match "favorited" => "user_song_uploads#favorited", :as => :user_library_favorited
+  get "favorited" => "user_song_uploads#favorited", :as => :user_library_favorited
 
-  match "your_fan_bases" => "fan_bases#your_fan_bases", :as => :your_fan_bases
+  get "your_fan_bases" => "fan_bases#your_fan_bases", :as => :your_fan_bases
 
-  match "yourlibrary" => "user_song_uploads#show", :as => :user_library
+  get "yourlibrary" => "user_song_uploads#show", :as => :user_library
 
-  match "recentlyplayed" => "user_song_uploads#recently_played", :as => :user_library_recently_played
+  get "recentlyplayed" => "user_song_uploads#recently_played", :as => :user_library_recently_played
   
   
   resources :user_song_uploads do
@@ -86,11 +86,16 @@ Musicmindbeta::Application.routes.draw do
   get "pages/artist_info"
 
 
-  match "activityfeed" => "users#index", :as => :activity_feed
+  get "activityfeed" => "users#index", :as => :activity_feed
 
-  match "notifications" => "users#notifications", :as => :your_notifications
+  get "notifications" => "users#notifications", :as => :your_notifications
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "devise/registrations" }
+  # devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "devise/registrations" }
+  devise_for :users, :skip => [:sessions] do
+    get '/signin'   => "devise/sessions#new",       :as => :new_user_session
+    post '/signin'  => 'devise/sessions#create',    :as => :user_session
+    get '/signout'  => 'devise/sessions#destroy',   :as => :destroy_user_session
+  end
   resources :users do
     member do
       get :following, :followers, :fan_base_following, :searching, :notifications, :mark_read

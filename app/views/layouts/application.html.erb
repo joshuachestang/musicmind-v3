@@ -10,20 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <% if user_signed_in? %>
-<div id="main-nav">
+
 <%= render 'layouts/main_nav_links' %>
-</div>
+
 <% end %>
   <body>
 
-    <div class="navbar navbar-fixed-top">
+
+
         
           <% if user_signed_in? %>
           <div class="navbar-inner">
           <div class="container">
             <% else %>
-          <div id="log-in" class="container">
-            <div id="not-logged-in-2" class="container">
+          <div class="container">
+            <div class="container">
           <% end %>
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
               <span class="icon-bar"></span>
@@ -62,13 +63,13 @@
           </div>
         </div>
       </div>
-      <div id="cartWrapper">
+      
         <div id="cart">
           <%= render 'layouts/cart_display' %>
         </div>
-      </div>
-    <div id="double-wrap">
-      <div class="container" id="main-container">
+      
+    <div>
+      <div class="container">
             <% flash.each do |name, msg| %>
             <div class="alert alert-<%= name == :notice ? "success" : "error" %>" style="width:80%; margin:0 auto; margin-top:10px;">
               <a class="close" data-dismiss="alert">×</a>
@@ -78,14 +79,14 @@
         <% unless user_signed_in? %>
           <%= render 'user_access_requests/form' %>
         <% end %>
-        <div id="slider"><%= image_tag("devider.png") %></div>
+       <%= image_tag("devider.png") %>
         <% if user_signed_in? %>
          <% unless current_user.user_type.present? %>
            <%= render 'devise/registrations/user_type_form' %>
          <% end %>
         <% end %>
 
-        <section id="main-content"><%= render 'layouts/main_content' %></section>
+        <%= render 'layouts/main_content' %>
       </div>
     </div>
   </div>

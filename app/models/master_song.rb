@@ -1,10 +1,11 @@
 class MasterSong < ActiveRecord::Base
 
- scope :newly, order("created_at DESC")
- scope :upvoted, order("song_up_votes_count DESC")
- scope :trended, order("updated_at DESC")
- scope :free, where(:price => 0.00)
- scope :most_listened, order("song_listens_count DESC")
+ scope :newly, -> { order("created_at DESC") }
+ scope :upvoted, -> { order("song_up_votes_count DESC") }
+ scope :trended, -> { order("updated_at DESC") }
+ scope :free, -> { where(:price => 0.00) }
+ scope :most_listened, -> { order("song_listens_count DESC") }
+
  
  require 'taglib'
   has_attached_file :m_song

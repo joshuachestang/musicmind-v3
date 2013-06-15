@@ -1,14 +1,21 @@
 source 'http://rubygems.org'
 
-ruby '2.0.0'
-gem  'rails', '3.2.8'
+gem 'rails', '4.0.0.rc1'
+gem 'sqlite3'
+gem 'sprockets-rails', '~> 2.0.0.rc4'
+gem 'sass-rails',   '~> 4.0.0.rc1'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'jquery-rails'
+
+gem 'paper_trail', github: 'airblade/paper_trail', branch: 'rails4'
+
+# add these gems to help with the transition:
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 
 group :production do
   gem 'pg'
@@ -23,7 +30,7 @@ end
 
 gem 'pg'
 
-gem 'sqlite3'
+
 
 gem 'less-rails'
 
@@ -40,9 +47,9 @@ gem "capistrano", "~> 2.13.5"
 gem "taglib-ruby", :git => "https://github.com/robinst/taglib-ruby.git"
 
 
-gem "thor", "~> 0.14.6"
+# gem "thor", "~> 0.14.6"
 
-gem 'delayed_job_active_record'
+# gem 'delayed_job_active_record'
 
 
 gem "twitter-bootstrap-rails" #, "~> 2.1.1"
@@ -71,13 +78,13 @@ gem 'kaminari'
 
 
 #user authentication
-gem 'devise'
+gem 'devise', '3.0.0.rc'
 
 #notification - basic
 gem 'unread', '~> 0.1.1'
 
 #id3 tag reader for songs
-gem "id3", "~> 1.0.0.pre6"
+# gem "id3", "~> 1.0.0.pre6"
 
 #disqus commenting
 gem "disqus", "~> 1.0.4"
@@ -93,7 +100,7 @@ gem 'aws-sdk'
 gem 'omniauth-twitter'
 
 #pretty urls
-gem 'friendly_id'
+gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'rails4'
 
 gem 'tire'
 
