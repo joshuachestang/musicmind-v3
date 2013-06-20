@@ -1,6 +1,6 @@
-<div class="master_song">
+<div id="master_song_feed_item" class="column_3">
    <div>
-    <h4 id="song-title"><%= link_to truncate("#{master_song.title}", :length => 25), master_song_path(master_song), remote: :true, :id => "page-link" %></h4>
+    <h4 id="song-title"><%= link_to truncate("#{master_song.title}", :length => 20), master_song_path(master_song), remote: :true, :id => "page-link", :alt => "#{master_song.title}" %></h4>
    </div>
    
    <div id="line-2">

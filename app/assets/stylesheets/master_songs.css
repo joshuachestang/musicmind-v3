@@ -1,3 +1,25 @@
+h1{
+	padding-left:0px;
+}
+h2, h3, h4, h5, h6{
+	padding-left:5px;
+}
+
+div#master_songs{
+	padding-left:	4px;
+}
+
+#master_song_feed_item{
+	background-image:url('fabric_of_squares_gray.png');
+	margin-bottom:20px;
+	margin-top:5px;
+	height:329px;
+	padding:10px;
+	box-shadow: 0 1px 3px 3px rgba(0,0,0,0.33);
+}
+
+
+
 /*h1{
 	text-shadow:0 1px white;
 }

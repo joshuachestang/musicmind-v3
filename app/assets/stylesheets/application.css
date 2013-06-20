@@ -6,6 +6,9 @@
  *= require_self
  *= require foundation
  *= require foundation_and_overrides
+ *= require tuktuk
+ *= require tuktuk.icons
+ *= require tuktuk.theme
  *= require carts
  *= require events
  *= require fan_bases

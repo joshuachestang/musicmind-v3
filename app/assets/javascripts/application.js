@@ -5,7 +5,7 @@
 // the compiled file.
 //= require jquery
 //= require jquery_ujs
-
+//= require tuktuk
 //= require jquery.fileupload
 //= require jquery.fileupload-fp
 //= require jquery.fileupload-ui
