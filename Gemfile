@@ -1,13 +1,17 @@
 source 'http://rubygems.org'
 
 ruby '2.0.0'
-gem  'rails', '3.2.8'
+gem 'rails', '3.2.13'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'less-rails'
+  gem 'therubyracer'
+  gem 'compass'
+  gem "zurb-foundation", "~> 4.2.2"
 end
 
 group :production do
@@ -22,12 +26,11 @@ end
 #gem "mysql2"
 
 gem 'pg'
-
 gem 'sqlite3'
 
-gem 'less-rails'
 
-gem 'therubyracer'
+
+
 
 #gem 'vulcan'
 
@@ -158,3 +161,6 @@ group :test do
   gem 'minitest'
 end
 gem "mocha", :group => :test
+
+
+gem 'activerecord-deprecated_finders'

@@ -5,7 +5,7 @@
 // the compiled file.
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
+
 //= require jquery.fileupload
 //= require jquery.fileupload-fp
 //= require jquery.fileupload-ui
@@ -118,3 +118,5 @@ $(document).ready(function () {
 
 
 
+
+$(function(){ $(document).foundation(); });

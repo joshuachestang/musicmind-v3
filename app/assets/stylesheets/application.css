@@ -4,6 +4,8 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
 
  *= require_self
+ *= require foundation
+ *= require foundation_and_overrides
  *= require carts
  *= require events
  *= require fan_bases
@@ -17,11 +19,10 @@
  *= require user_song_uploads
  *= require users
  *= require devise
- *= require bootstrap_and_overrides
  *= require jquery.fileupload-ui
 */
 
-body{
+/*/*body{
   background-image:url('paper.jpeg');
 }
 
@@ -107,7 +108,7 @@ right: 50px;
   top: 0;
   right: 25px;
   /* just used to show how to include the margin in the effect */
-  margin-top: 90px;
+/*  margin-top: 90px;
   padding: 19px 10px 5px 10px;
   margin-bottom:40px;
   width:140px;
@@ -238,15 +239,6 @@ div#main-nav{
   top: 0;
   left: 0px;
   /* just used to show how to include the margin in the effect */
-  margin-top: 90px;
 
-  margin-bottom:40px;
-  width:140px;
-  
-}
-
-div.navbar-inner{
-  border-bottom:4px solid white;
-}
 
 
